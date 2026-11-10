@@ -155,7 +155,7 @@ function ayat_render_collection_cards( $terms, $heading = 'h3' ) {
 		echo '<span class="collection-card__body">';
 		echo '<' . $tag . ' class="collection-card__title">' . esc_html( $term->name ) . '</' . $tag . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		/* translators: %d: number of products */
-		echo '<span class="collection-card__count">' . esc_html( sprintf( _n( '%d piece', '%d pieces', (int) $term->count, 'ayatcollections' ), (int) $term->count ) ) . ' · ' . esc_html__( 'Shop now', 'ayatcollections' ) . '</span>';
+		echo '<span class="collection-card__count">' . esc_html( sprintf( _n( '%d piece', '%d pieces', (int) $term->count, 'ayatcollections' ), (int) $term->count ) ) . '<span class="collection-card__shop"> · ' . esc_html__( 'Shop now', 'ayatcollections' ) . '</span></span>';
 		echo '</span>';
 		echo '</a></li>';
 	}

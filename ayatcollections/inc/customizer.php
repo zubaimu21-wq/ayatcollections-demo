@@ -32,7 +32,7 @@ function ayat_slide_defaults() {
 			'alt'          => __( 'Gold kundan choker with emerald and ruby stones on deep purple velvet', 'ayatcollections' ),
 			'focal_x'      => 72,
 			'focal_y'      => 50,
-			'm_focal_x'    => 74,
+			'm_focal_x'    => 94,
 			'm_focal_y'    => 50,
 		),
 		2 => array(
@@ -45,7 +45,7 @@ function ayat_slide_defaults() {
 			'alt'          => __( 'Gold jhumka earrings with pearls and a gold ring on plum silk', 'ayatcollections' ),
 			'focal_x'      => 78,
 			'focal_y'      => 55,
-			'm_focal_x'    => 80,
+			'm_focal_x'    => 84,
 			'm_focal_y'    => 55,
 		),
 		3 => array(
@@ -58,7 +58,7 @@ function ayat_slide_defaults() {
 			'alt'          => __( 'Stacked gold bangles and a zircon tennis bracelet on black marble with purple satin', 'ayatcollections' ),
 			'focal_x'      => 70,
 			'focal_y'      => 50,
-			'm_focal_x'    => 72,
+			'm_focal_x'    => 80,
 			'm_focal_y'    => 50,
 		),
 	);

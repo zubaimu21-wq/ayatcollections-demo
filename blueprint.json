@@ -19,7 +19,7 @@
       "woocommerce_onboarding_profile": { "skipped": true },
       "woocommerce_hold_stock_minutes": ""
     } },
-    { "step": "writeFile", "path": "/wordpress/wp-content/mu-plugins/demo-env.php", "data": "<?php\n// Demo environment only: run background jobs inline instead of loopback requests.\nadd_filter('action_scheduler_allow_async_request_runner', '__return_false');\n" },
+    { "step": "writeFile", "path": "/wordpress/wp-content/mu-plugins/demo-env.php", "data": "<?php\n// Demo environment only: run background jobs inline instead of loopback requests.\nadd_filter('action_scheduler_allow_async_request_runner', '__return_false');\n// Show the store as customers see it (admin is still available at /wp-admin/).\nadd_filter('show_admin_bar', '__return_false');\n" },
     { "step": "runPHP", "code": "<?php\nrequire '/wordpress/wp-load.php';\nrequire_once get_template_directory() . '/inc/sample-import.php';\nayat_run_setup( array( 'products' => true, 'pages' => true, 'store' => true, 'permalinks' => true, 'noindex' => true ) );\nfor ( $i = 0; $i < 8; $i++ ) { ayat_import_product( $i ); }\nupdate_option( 'woocommerce_hold_stock_minutes', '' );\nflush_rewrite_rules();\n" }
   ]
 }
