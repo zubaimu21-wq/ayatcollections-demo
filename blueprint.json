@@ -1,0 +1,25 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "Ayatcollections demo store",
+    "description": "WordPress + WooCommerce with the Ayatcollections theme and 8 sample products.",
+    "author": "zubaimu21-wq"
+  },
+  "landingPage": "/",
+  "preferredVersions": { "php": "8.2", "wp": "latest" },
+  "features": { "networking": true },
+  "login": false,
+  "steps": [
+    { "step": "installPlugin", "pluginData": { "resource": "wordpress.org/plugins", "slug": "woocommerce" }, "options": { "activate": true } },
+    { "step": "installTheme", "themeData": { "resource": "url", "url": "https://raw.githubusercontent.com/zubaimu21-wq/ayatcollections-demo/main/Ayatcollections-WordPress.zip" }, "options": { "activate": true } },
+    { "step": "setSiteOptions", "options": {
+      "blogname": "Ayatcollections",
+      "blogdescription": "Artificial jewellery from Pakistan",
+      "woocommerce_coming_soon": "no",
+      "woocommerce_onboarding_profile": { "skipped": true },
+      "woocommerce_hold_stock_minutes": ""
+    } },
+    { "step": "writeFile", "path": "/wordpress/wp-content/mu-plugins/demo-env.php", "data": "<?php\n// Demo environment only: run background jobs inline instead of loopback requests.\nadd_filter('action_scheduler_allow_async_request_runner', '__return_false');\n" },
+    { "step": "runPHP", "code": "<?php\nrequire '/wordpress/wp-load.php';\nrequire_once get_template_directory() . '/inc/sample-import.php';\nayat_run_setup( array( 'products' => true, 'pages' => true, 'store' => true, 'permalinks' => true, 'noindex' => true ) );\nfor ( $i = 0; $i < 8; $i++ ) { ayat_import_product( $i ); }\nupdate_option( 'woocommerce_hold_stock_minutes', '' );\nflush_rewrite_rules();\n" }
+  ]
+}

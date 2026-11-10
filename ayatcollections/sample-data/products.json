@@ -1,0 +1,66 @@
+{
+  "categories": [
+    { "name": "Earrings",  "slug": "earrings",  "image": "noor-kundan-jhumka",   "description": "Jhumkas, studs and drops — from bridal kundan to everyday pearls." },
+    { "name": "Necklaces", "slug": "necklaces", "image": "rania-kundan-choker",  "description": "Chokers, sets and fine layered chains." },
+    { "name": "Bracelets", "slug": "bracelets", "image": "laila-kara-bangles",   "description": "Bangles, karas and sparkling tennis bracelets." },
+    { "name": "Rings",     "slug": "rings",     "image": "hira-emerald-ring",    "description": "Cocktail rings and stackable bands." }
+  ],
+  "products": [
+    {
+      "sku": "AYC-EAR-001", "name": "Noor Kundan Jhumka Earrings", "category": "earrings", "type": "simple",
+      "regular_price": "3450", "sale_price": "2950", "stock": 18, "featured": true,
+      "image": "noor-kundan-jhumka", "alt": "Gold-plated kundan jhumka earrings with white stones and pearl fringe",
+      "short": "Bell-shaped gold-tone jhumkas set with white kundan stones and a fringe of faux pearls.",
+      "description": "Our Noor jhumkas pair a floral kundan stud with a domed bell finished in fine gold-tone plating and edged with faux pearls. Lightweight enough for a full evening, they suit mehndi, Eid and wedding looks.\n\nMaterial: brass alloy with gold-tone plating, kundan glass stones, faux pearls.\nLength: approx. 5.5 cm. Push-back closure.\nCare: keep dry, avoid perfume, store in the Ayatcollections pouch."
+    },
+    {
+      "sku": "AYC-EAR-002", "name": "Zara Pearl Drop Earrings", "category": "earrings", "type": "simple",
+      "regular_price": "1850", "stock": 30,
+      "image": "zara-pearl-drop", "alt": "Gold-tone pearl drop earrings with zircon studs",
+      "short": "A clean faux-pearl drop on a sparkling zircon stud — made for every day.",
+      "description": "Zara drops hang a lustrous faux pearl from a polished gold-tone cone and a single cubic zirconia stud. Simple enough for work, elegant enough for dinner.\n\nMaterial: alloy with gold-tone plating, cubic zirconia, faux pearl.\nLength: approx. 2.5 cm. Butterfly back.\nCare: wipe with a soft dry cloth after wearing."
+    },
+    {
+      "sku": "AYC-NEC-001", "name": "Rania Kundan Choker", "category": "necklaces", "type": "simple",
+      "regular_price": "7950", "stock": 8, "featured": true,
+      "image": "rania-kundan-choker", "alt": "Gold-plated kundan choker with ruby and emerald stones and pearl drops",
+      "short": "A bridal-weight choker of kundan, ruby-red and emerald-green stones with pearl drops.",
+      "description": "Rania is our statement choker: rows of kundan framed with ruby-red and emerald-green stones, finished with a cascade of faux pearl drops. Adjustable dori tie at the back.\n\nMaterial: alloy with gold-tone plating, kundan glass stones, coloured glass stones, faux pearls.\nFit: adjustable, 30–38 cm.\nCare: store flat in its box; avoid water and perfume."
+    },
+    {
+      "sku": "AYC-NEC-002", "name": "Mehr Layered Pendant Necklace", "category": "necklaces", "type": "simple",
+      "regular_price": "2650", "stock": 22,
+      "image": "mehr-layered-pendant", "alt": "Three-layer gold-tone chain necklace with crescent charm and purple stone",
+      "short": "Three fine chains with a crescent charm and a purple stone pendant.",
+      "description": "Mehr layers three delicate gold-tone chains — a beaded strand, a crescent moon charm and a small purple stone drop — on one clasp, so they never tangle.\n\nMaterial: alloy with gold-tone plating, glass stone.\nLength: 40 / 45 / 50 cm with 5 cm extender. Lobster clasp.\nCare: fasten before storing to keep the layers apart."
+    },
+    {
+      "sku": "AYC-BRA-001", "name": "Laila Gold Kara Bangle Set", "category": "bracelets", "type": "variable",
+      "regular_price": "4200", "image": "laila-kara-bangles", "alt": "Set of four engraved gold-plated kara bangles",
+      "attribute": "Bangle size", "options": ["2.4", "2.6", "2.8"], "variation_stock": [6, 10, 6],
+      "short": "Four engraved gold-tone karas, sold as a set. Choose your bangle size.",
+      "description": "The Laila set is four engraved karas with a soft, hand-polished shine. Wear all four together or split them across both wrists.\n\nMaterial: alloy with gold-tone plating.\nSizes: 2.4 (small), 2.6 (medium), 2.8 (large) — the inner diameter in inches.\nCare: remove before washing hands; store in the pouch."
+    },
+    {
+      "sku": "AYC-BRA-002", "name": "Sana Zircon Tennis Bracelet", "category": "bracelets", "type": "simple",
+      "regular_price": "3250", "stock": 14,
+      "image": "sana-tennis-bracelet", "alt": "Silver-tone cubic zirconia tennis bracelet",
+      "short": "A continuous line of sparkling cubic zirconia in a silver-tone setting.",
+      "description": "Sana is a classic tennis bracelet with a full row of round cubic zirconia stones in four-claw settings and a secure box clasp.\n\nMaterial: alloy with rhodium-tone plating, cubic zirconia.\nLength: 17.5 cm.\nCare: clean gently with a soft brush and dry cloth."
+    },
+    {
+      "sku": "AYC-RNG-001", "name": "Hira Emerald Cocktail Ring", "category": "rings", "type": "variable",
+      "regular_price": "2450", "image": "hira-emerald-ring", "alt": "Gold-plated cocktail ring with oval green stone and zircon halo",
+      "attribute": "Ring size", "options": ["6", "7", "8"], "variation_stock": [5, 8, 5],
+      "short": "An oval emerald-green stone in a halo of zircons. Choose your ring size.",
+      "description": "Hira sets a large oval emerald-green stone in a bright halo of small zircons on a gold-tone band — an easy way to finish a festive look.\n\nMaterial: alloy with gold-tone plating, glass stone, cubic zirconia.\nSizes: 6, 7, 8 (US).\nCare: remove before applying lotion or perfume."
+    },
+    {
+      "sku": "AYC-RNG-002", "name": "Amal Stackable Ring Set", "category": "rings", "type": "simple",
+      "regular_price": "1650", "stock": 25,
+      "image": "amal-stack-rings", "alt": "Three thin stackable gold-tone rings, one with a small purple stone",
+      "short": "Three slim bands — plain, pavé and a purple stone — to wear together or apart.",
+      "description": "Amal is a trio of slim stacking rings: a plain polished band, a pavé zircon band and a band set with a single purple stone. One size fits most (US 6–7).\n\nMaterial: alloy with gold-tone plating, cubic zirconia, glass stone.\nCare: store each ring separately to avoid scratches."
+    }
+  ]
+}
