@@ -1045,3 +1045,32 @@ h1, h2, h3, h4, .sec-title, .hero-split__title { color: #2e2210; }
 	background: transparent !important;
 }
 .cards3__item { background: rgba(255, 250, 241, .55) !important; }
+
+/* ---------- Full-width carousel (CSS only, 3 slides x 5s) ---------- */
+.carousel { position: relative; height: clamp(420px, 44vw, 640px); overflow: hidden; background: linear-gradient(135deg, #fdf7ec 0%, #f3e3c3 60%, #ead19f 100%); }
+.carousel__slide { position: absolute; inset: 0; opacity: 0; animation: ayat-carousel 15s infinite; animation-delay: calc(var(--i) * 5s); }
+.carousel__img { position: absolute; right: 4%; top: 6%; height: 88%; width: 52%; object-fit: contain; mix-blend-mode: multiply; animation: ayat-zoom 15s infinite; animation-delay: calc(var(--i) * 5s); }
+.carousel__text { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.carousel__text > * { max-width: 440px; }
+.carousel__title { font-size: clamp(40px, 5.6vw, 78px); line-height: 1.05; margin: 0; color: #2e2210; }
+.carousel .ornament { margin: 20px 0 22px; }
+.carousel__text p { color: #5a4526; margin: 0 0 28px; }
+.carousel__dots { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; gap: 10px; z-index: 2; }
+.carousel__dots span { width: 28px; height: 3px; background: rgba(138, 100, 36, .25); position: relative; overflow: hidden; }
+.carousel__dots span::after { content: ""; position: absolute; inset: 0; background: #b8893f; transform: scaleX(0); transform-origin: left; animation: ayat-dot 15s infinite; }
+.carousel__dots span:nth-child(2)::after { animation-delay: 5s; }
+.carousel__dots span:nth-child(3)::after { animation-delay: 10s; }
+@keyframes ayat-carousel { 0% { opacity: 0; } 4% { opacity: 1; } 33% { opacity: 1; } 37% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes ayat-zoom { 0% { transform: scale(1.06); } 37% { transform: scale(1); } 100% { transform: scale(1); } }
+@keyframes ayat-dot { 0% { transform: scaleX(0); } 33% { transform: scaleX(1); } 34%, 100% { transform: scaleX(0); } }
+.carousel:hover .carousel__slide, .carousel:hover .carousel__img, .carousel:hover .carousel__dots span::after { animation-play-state: paused; }
+@media (max-width: 760px) {
+	.carousel { height: 560px; }
+	.carousel__img { left: 5%; right: 5%; top: 3%; width: 90%; height: 50%; }
+	.carousel__text { justify-content: flex-end; padding-bottom: 54px; }
+	.carousel__title { font-size: 36px; }
+	.carousel .ornament { margin: 12px 0 14px; }
+	.carousel__text p { margin-bottom: 18px; font-size: 14px; }
+}
+
+.carousel__slide { background: linear-gradient(135deg, #fdf7ec 0%, #f3e3c3 60%, #ead19f 100%); }
