@@ -80,10 +80,7 @@ function ayat_import_image( $slug, $alt, $post_id = 0 ) {
 		return (int) $existing[0];
 	}
 
-	$src = AYAT_DIR . '/assets/images/products/' . $slug . '.webp';
-	if ( ! file_exists( $src ) ) {
-		$src = AYAT_DIR . '/assets/images/hero/' . $slug . '.webp';
-	}
+	$src = AYAT_DIR . '/assets/images/demo/' . $slug . '.webp';
 	if ( ! file_exists( $src ) ) {
 		return 0;
 	}
@@ -113,6 +110,24 @@ function ayat_import_image( $slug, $alt, $post_id = 0 ) {
 
 	update_post_meta( $id, '_wp_attachment_image_alt', $alt );
 	update_post_meta( $id, '_ayat_sample_image', $slug );
+
+	// Label clearly as a demo image in the Media Library, with the Unsplash credit.
+	$credit = '';
+	$cfile  = AYAT_DIR . '/assets/images/demo/credits.json';
+	if ( file_exists( $cfile ) ) {
+		foreach ( (array) json_decode( (string) file_get_contents( $cfile ), true ) as $c ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+			if ( isset( $c['file'] ) && $c['file'] === $slug . '.webp' ) {
+				$credit = sprintf( 'Photo by %s on Unsplash (%s)', $c['photographer'], $c['url'] );
+			}
+		}
+	}
+	wp_update_post(
+		array(
+			'ID'           => $id,
+			'post_title'   => 'DEMO IMAGE – replace with your own photo – ' . $slug,
+			'post_excerpt' => $credit,
+		)
+	);
 	return (int) $id;
 }
 
@@ -251,7 +266,14 @@ function ayat_import_product( $index ) {
 				$product->save();
 				$cat = isset( $cat_ids[ $p['category'] ] ) ? (int) $cat_ids[ $p['category'] ] : 0;
 				if ( $cat && ! get_term_meta( $cat, 'thumbnail_id', true ) ) {
-					update_term_meta( $cat, 'thumbnail_id', $img );
+					$cat_img = 0;
+					foreach ( $data['categories'] as $c ) {
+						if ( $c['slug'] === $p['category'] && ! empty( $c['image'] ) ) {
+							/* translators: %s: collection name */
+							$cat_img = ayat_import_image( $c['image'], sprintf( __( '%s collection (demo photo)', 'ayatcollections' ), $c['name'] ) );
+						}
+					}
+					update_term_meta( $cat, 'thumbnail_id', $cat_img ? $cat_img : $img );
 				}
 			}
 
@@ -334,9 +356,21 @@ function ayat_setup_pages() {
 						);
 					}
 				}
+				foreach ( array( __( 'About Us', 'ayatcollections' ) => home_url( '/#about' ), __( 'Contact', 'ayatcollections' ) => home_url( '/#contact' ) ) as $title => $url ) {
+					wp_update_nav_menu_item(
+						$menu_id,
+						0,
+						array(
+							'menu-item-title'  => $title,
+							'menu-item-url'    => $url,
+							'menu-item-type'   => 'custom',
+							'menu-item-status' => 'publish',
+						)
+					);
+				}
 				$locations['primary'] = $menu_id;
 				set_theme_mod( 'nav_menu_locations', $locations );
-				$log[] = __( 'Primary menu created: Shop, New Arrivals, Collections.', 'ayatcollections' );
+				$log[] = __( 'Primary menu created: Shop, New Arrivals, Collections, About Us, Contact.', 'ayatcollections' );
 			}
 		}
 	}

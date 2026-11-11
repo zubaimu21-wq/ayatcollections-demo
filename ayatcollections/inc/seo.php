@@ -13,33 +13,11 @@ defined( 'ABSPATH' ) || exit;
  * Preload the first hero image on the homepage so it is the LCP candidate.
  */
 function ayat_preload_hero() {
-	if ( ! is_front_page() || ! function_exists( 'ayat_get_slide' ) ) {
+	if ( ! is_front_page() || ! function_exists( 'ayat_home_img_url' ) ) {
 		return;
 	}
-	for ( $i = 1; $i <= ayat_slide_count(); $i++ ) {
-		$slide = ayat_get_slide( $i );
-		if ( ! $slide ) {
-			continue;
-		}
-		if ( $slide['image_id'] ) {
-			$src    = wp_get_attachment_image_url( $slide['image_id'], 'ayat-hero' );
-			$srcset = wp_get_attachment_image_srcset( $slide['image_id'], 'ayat-hero' );
-			if ( $src ) {
-				printf(
-					'<link rel="preload" as="image" href="%1$s"%2$s imagesizes="100vw" fetchpriority="high">' . "\n",
-					esc_url( $src ),
-					$srcset ? ' imagesrcset="' . esc_attr( $srcset ) . '"' : ''
-				);
-			}
-		} else {
-			printf(
-				'<link rel="preload" as="image" href="%1$s" imagesrcset="%2$s 960w, %1$s 1792w" imagesizes="100vw" fetchpriority="high">' . "\n",
-				esc_url( $slide['fallback'] ),
-				esc_url( $slide['fallback_sm'] )
-			);
-		}
-		break; // Only the first visible slide.
-	}
+	printf( '<link rel="preload" as="image" href="%s" fetchpriority="high">' . "
+", esc_url( ayat_home_img_url( 'hero_img' ) ) );
 }
 add_action( 'wp_head', 'ayat_preload_hero', 2 );
 

@@ -60,6 +60,8 @@ function ayat_fallback_menu() {
 		array( __( 'Shop', 'ayatcollections' ), $shop ),
 		array( __( 'New Arrivals', 'ayatcollections' ), $arrivals ? get_permalink( $arrivals ) : add_query_arg( 'orderby', 'date', $shop ) ),
 		array( __( 'Collections', 'ayatcollections' ), $colls ? get_permalink( $colls ) : $shop ),
+		array( __( 'About Us', 'ayatcollections' ), home_url( '/#about' ) ),
+		array( __( 'Contact', 'ayatcollections' ), home_url( '/#contact' ) ),
 	);
 
 	echo '<ul id="primary-menu" class="menu">';

@@ -1,42 +1,48 @@
 <?php
 /**
- * Site footer: call to action, logo, links and social icons.
+ * Footer: logo, link columns, social links and copyright.
  *
  * @package Ayatcollections
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$socials  = ayat_social_links();
-$cta_link = ayat_home( 'cta_link' );
-if ( '' === $cta_link ) {
-	$cta_link = isset( $socials['WhatsApp'] ) ? $socials['WhatsApp'] : ( get_theme_mod( 'ayat_email' ) ? 'mailto:' . antispambot( get_theme_mod( 'ayat_email' ) ) : '' );
-}
-if ( '' === $cta_link ) {
-	$cta_link = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
-}
-$icons = array(
-	'Facebook'  => 'facebook.svg',
-	'Instagram' => 'instagram.svg',
-	'YouTube'   => 'youtube.svg',
-);
+$socials = ayat_social_links();
+$shop    = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
+$colls   = get_page_by_path( 'collections' );
+$arr     = get_page_by_path( 'new-arrivals' );
 ?>
 <footer class="site-footer">
-	<div class="wrap site-footer__cta">
-		<h2 class="display display--center"><?php echo esc_html( ayat_home( 'cta_title' ) ); ?></h2>
-		<p class="site-footer__text"><?php echo esc_html( ayat_home( 'cta_text' ) ); ?></p>
-		<?php if ( $cta_link ) : ?>
-			<a class="btn-line btn-line--light" href="<?php echo esc_url( ayat_resolve_link( $cta_link ) ); ?>" rel="noopener"><?php echo esc_html( ayat_home( 'cta_btn' ) ); ?></a>
-		<?php endif; ?>
-	</div>
+	<div class="wrap site-footer__grid">
+		<div class="site-footer__brand">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__logo">
+				<img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-gold.webp' ); ?>" width="68" height="70" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" loading="lazy">
+			</a>
+			<?php if ( get_theme_mod( 'ayat_address' ) ) : ?>
+				<p><?php echo esc_html( get_theme_mod( 'ayat_address' ) ); ?></p>
+			<?php endif; ?>
+		</div>
 
-	<div class="wrap site-footer__bar">
-		<a class="site-footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-gold.webp' ); ?>" width="58" height="60" alt="" loading="lazy">
-			<span>Ayat Collections</span>
-		</a>
+		<nav class="site-footer__col" aria-label="<?php esc_attr_e( 'Shop', 'ayatcollections' ); ?>">
+			<h2 class="site-footer__title"><?php esc_html_e( 'Shop', 'ayatcollections' ); ?></h2>
+			<ul role="list">
+				<li><a href="<?php echo esc_url( $shop ); ?>"><?php esc_html_e( 'All jewellery', 'ayatcollections' ); ?></a></li>
+				<?php if ( $arr ) : ?><li><a href="<?php echo esc_url( get_permalink( $arr ) ); ?>"><?php esc_html_e( 'New Arrivals', 'ayatcollections' ); ?></a></li><?php endif; ?>
+				<?php if ( $colls ) : ?><li><a href="<?php echo esc_url( get_permalink( $colls ) ); ?>"><?php esc_html_e( 'Collections', 'ayatcollections' ); ?></a></li><?php endif; ?>
+			</ul>
+		</nav>
 
-		<nav class="site-footer__links" aria-label="<?php esc_attr_e( 'Footer', 'ayatcollections' ); ?>">
+		<nav class="site-footer__col" aria-label="<?php esc_attr_e( 'Collections', 'ayatcollections' ); ?>">
+			<h2 class="site-footer__title"><?php esc_html_e( 'Collections', 'ayatcollections' ); ?></h2>
+			<ul role="list">
+				<?php foreach ( ayat_get_collections( 6 ) as $t ) : ?>
+					<li><a href="<?php echo esc_url( get_term_link( $t ) ); ?>"><?php echo esc_html( $t->name ); ?></a></li>
+				<?php endforeach; ?>
+			</ul>
+		</nav>
+
+		<nav class="site-footer__col" aria-label="<?php esc_attr_e( 'Help', 'ayatcollections' ); ?>">
+			<h2 class="site-footer__title"><?php esc_html_e( 'Help', 'ayatcollections' ); ?></h2>
 			<?php
 			wp_nav_menu(
 				array(
@@ -45,15 +51,14 @@ $icons = array(
 					'depth'          => 1,
 					'fallback_cb'    => static function () {
 						echo '<ul role="list">';
-						foreach ( ayat_get_collections( 4 ) as $t ) {
-							echo '<li><a href="' . esc_url( get_term_link( $t ) ) . '">' . esc_html( $t->name ) . '</a></li>';
-						}
+						echo '<li><a href="' . esc_url( home_url( '/#about' ) ) . '">' . esc_html__( 'About us', 'ayatcollections' ) . '</a></li>';
+						echo '<li><a href="' . esc_url( home_url( '/#contact' ) ) . '">' . esc_html__( 'Contact us', 'ayatcollections' ) . '</a></li>';
 						if ( function_exists( 'wc_get_page_permalink' ) ) {
 							echo '<li><a href="' . esc_url( wc_get_page_permalink( 'myaccount' ) ) . '">' . esc_html__( 'My account', 'ayatcollections' ) . '</a></li>';
 						}
 						$privacy = get_privacy_policy_url();
 						if ( $privacy ) {
-							echo '<li><a href="' . esc_url( $privacy ) . '">' . esc_html__( 'Privacy', 'ayatcollections' ) . '</a></li>';
+							echo '<li><a href="' . esc_url( $privacy ) . '">' . esc_html__( 'Privacy policy', 'ayatcollections' ) . '</a></li>';
 						}
 						echo '</ul>';
 					},
@@ -62,23 +67,24 @@ $icons = array(
 			?>
 		</nav>
 
-		<?php if ( $socials ) : ?>
-			<ul class="site-footer__social" role="list">
-				<?php foreach ( $socials as $label => $url ) : ?>
-					<li>
-						<a href="<?php echo esc_url( $url ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $label ); ?>">
-							<?php if ( isset( $icons[ $label ] ) ) : ?>
-								<img src="<?php echo esc_url( AYAT_URI . '/assets/images/design/' . $icons[ $label ] ); ?>" width="43" height="45" alt="" loading="lazy">
-							<?php else : ?>
-								<svg width="43" height="45" viewBox="0 0 43 45" aria-hidden="true"><ellipse cx="21.5" cy="22.5" rx="21" ry="22" fill="none" stroke="#fff"/><path fill="#fff" d="M21.6 13.5a8.9 8.9 0 0 0-7.6 13.4l-1.2 4.4 4.5-1.2a8.9 8.9 0 1 0 4.3-16.6Zm0 16.3c-1.4 0-2.7-.4-3.8-1.1l-.3-.2-2.7.7.7-2.6-.2-.3a7.4 7.4 0 1 1 6.3 3.5Zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.1 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1l-.5-.2Z"/></svg>
-							<?php endif; ?>
-						</a>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-		<?php endif; ?>
+		<div class="site-footer__col">
+			<h2 class="site-footer__title"><?php esc_html_e( 'Follow Us', 'ayatcollections' ); ?></h2>
+			<?php if ( $socials ) : ?>
+				<ul class="site-footer__social" role="list">
+					<?php foreach ( $socials as $label => $url ) : ?>
+						<li><a href="<?php echo esc_url( $url ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $label ); ?>"><?php echo ayat_social_icon( $label ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			<?php if ( get_theme_mod( 'ayat_phone' ) ) : ?>
+				<p><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', get_theme_mod( 'ayat_phone' ) ) ); ?>"><?php echo esc_html( get_theme_mod( 'ayat_phone' ) ); ?></a></p>
+			<?php endif; ?>
+		</div>
 	</div>
-	<p class="wrap site-footer__copy">&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?></p>
+	<div class="wrap site-footer__bottom">
+		<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?></p>
+		<p><?php esc_html_e( 'All rights reserved', 'ayatcollections' ); ?></p>
+	</div>
 </footer>
 <?php wp_footer(); ?>
 </body>

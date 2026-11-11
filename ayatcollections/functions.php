@@ -98,14 +98,10 @@ add_action( 'widgets_init', 'ayat_widgets_init' );
  * Styles and scripts.
  */
 function ayat_assets() {
-	wp_enqueue_style( 'ayat-fonts', 'https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=Inter:wght@300;400;500;600&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_style( 'ayat-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 	wp_enqueue_style( 'ayat-style', get_stylesheet_uri(), array(), AYAT_VERSION );
 
 	wp_enqueue_script( 'ayat-site', AYAT_URI . '/assets/js/site.js', array(), AYAT_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
-
-	if ( is_front_page() ) {
-		wp_enqueue_script( 'ayat-slider', AYAT_URI . '/assets/js/slider.js', array(), AYAT_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'ayat_assets' );
 
