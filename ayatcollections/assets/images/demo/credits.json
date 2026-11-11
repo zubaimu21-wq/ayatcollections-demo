@@ -1,194 +1,226 @@
 [
   {
     "file": "demo-hero.webp",
-    "photographer": "Sabrianna",
-    "url": "https://unsplash.com/photos/NhrcL_C0sFA",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/n9roPJ9uIbE",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-col-earrings.webp",
-    "photographer": "v.govindaraj raj",
-    "url": "https://unsplash.com/photos/mMY40tE1QG4",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Aniket Sharma",
+    "url": "https://unsplash.com/photos/OExX5suedaA",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-col-necklaces.webp",
-    "photographer": "PRAHANT STUDIO",
-    "url": "https://unsplash.com/photos/vbsN7MUXyT4",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/Uv5_xs6IG9k",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-col-rings.webp",
-    "photographer": "Andrey Soldatov",
-    "url": "https://unsplash.com/photos/wOfSP_0MO_g",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/fz0VMD5QNh0",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-col-bracelets.webp",
     "photographer": "Ruan Richard Rodrigues",
     "url": "https://unsplash.com/photos/O7YCeE_65TE",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-bespoke-main.webp",
-    "photographer": "SKG Photography",
-    "url": "https://unsplash.com/photos/zW7hVlt6Oa0",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Sabesh Photography LTD",
+    "url": "https://unsplash.com/photos/njVir8eVq1M",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-bespoke-1.webp",
     "photographer": "Subham Hait",
     "url": "https://unsplash.com/photos/fVeujn3i5ZE",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-bespoke-2.webp",
     "photographer": "Vaibhav Nagare",
     "url": "https://unsplash.com/photos/e8LrvEAZqYM",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-special-1.webp",
     "photographer": "Sabrianna",
     "url": "https://unsplash.com/photos/5KNtM3vBm9I",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-special-2.webp",
     "photographer": "Vaibhav Nagare",
     "url": "https://unsplash.com/photos/vv2vIFeNEMg",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-special-3.webp",
-    "photographer": "Nataliya Melnychuk",
-    "url": "https://unsplash.com/photos/oO0JAOJhquk",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Bulbul Ahmed",
+    "url": "https://unsplash.com/photos/KVoWg1W2ztk",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-about.webp",
     "photographer": "iKshana Productions",
     "url": "https://unsplash.com/photos/KxHcyNOIO_M",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-royal-banner.webp",
     "photographer": "Hosniye sadeghi",
     "url": "https://unsplash.com/photos/_Ycmc96ZxWM",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-service-bridal.webp",
-    "photographer": "Aayush(gop) Rawat",
-    "url": "https://unsplash.com/photos/VPwSJhu5uhs",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "shades by 43",
+    "url": "https://unsplash.com/photos/Rm9DL9DmGi4",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-service-custom.webp",
-    "photographer": "GN Group",
-    "url": "https://unsplash.com/photos/e7KQ0yocfRE",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/F49KbbEA9FE",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-service-gift.webp",
-    "photographer": "Alex Azabache",
-    "url": "https://unsplash.com/photos/y2ErhoE92KA",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/68ulKJRHGUs",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-service-care.webp",
-    "photographer": "GN Group",
-    "url": "https://unsplash.com/photos/9rdoc89WxP0",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Atul Mohan",
+    "url": "https://unsplash.com/photos/SmnqtLFnNnw",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-quote.webp",
-    "photographer": "Khizar Rathore",
-    "url": "https://unsplash.com/photos/AoZrJQ80KCc",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/Xwr-GeDQkco",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-boutique.webp",
-    "photographer": "SAYAN Bhaskar",
-    "url": "https://unsplash.com/photos/U0nWBqGsTMk",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "v.govindaraj raj",
+    "url": "https://unsplash.com/photos/mMY40tE1QG4",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-newsletter.webp",
-    "photographer": "MAYANK GEHLOT",
-    "url": "https://unsplash.com/photos/XPUxDVWBGYM",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/Uv5_xs6IG9k",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-tip-1.webp",
     "photographer": "Mariano Rivas",
     "url": "https://unsplash.com/photos/ZYet8yoepik",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-tip-2.webp",
     "photographer": "Syed F Hashemi",
     "url": "https://unsplash.com/photos/aldDZePniqg",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-tip-3.webp",
-    "photographer": "McFollis",
-    "url": "https://unsplash.com/photos/w4IlgRAqpx0",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/qgQkbMQBifw",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-contact-bg.webp",
     "photographer": "Nataliya Melnychuk",
     "url": "https://unsplash.com/photos/5ngCICAXiH0",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-jhumka.webp",
     "photographer": "Sayak Bala",
     "url": "https://unsplash.com/photos/qdg5cHUuTCU",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-drop-earrings.webp",
-    "photographer": "Aniket Sharma",
-    "url": "https://unsplash.com/photos/OExX5suedaA",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/-R9iGxfYmhs",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-choker.webp",
-    "photographer": "Vaibhav Nagare",
-    "url": "https://unsplash.com/photos/G3Hrl6WzQYQ",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/Xwr-GeDQkco",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-pendant.webp",
-    "photographer": "Atul Mohan",
-    "url": "https://unsplash.com/photos/TmOPo7TpLzw",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/68ulKJRHGUs",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-bangles.webp",
     "photographer": "César O'neill",
     "url": "https://unsplash.com/photos/WFonAPTKxCU",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-stone-bangle.webp",
     "photographer": "Imam Kurniawan",
     "url": "https://unsplash.com/photos/qoGdi3R3ekQ",
-    "license": "Unsplash License (free for commercial use)"
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-halo-ring.webp",
-    "photographer": "Sabrianna",
-    "url": "https://unsplash.com/photos/V3RCa8hZqPc",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/n9roPJ9uIbE",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   },
   {
     "file": "demo-product-ring-set.webp",
-    "photographer": "JESUS ECA",
-    "url": "https://unsplash.com/photos/wewzzx11ShI",
-    "license": "Unsplash License (free for commercial use)"
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/qgQkbMQBifw",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
   }
 ]

@@ -23,9 +23,46 @@ $contact = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'
 				<p class="hero-split__lead"><?php echo esc_html( $h( 'hero_text' ) ); ?></p>
 				<a class="btn-gold" href="<?php echo esc_url( ayat_resolve_link( $h( 'hero_link' ) ) ); ?>"><?php echo esc_html( $h( 'hero_btn' ) ); ?></a>
 			</div>
-			<div class="hero-split__media"><?php echo ayat_home_img( 'hero_img', __( 'Gold ring with a clear stone on a white surface', 'ayatcollections' ), '', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<div class="hero-split__media hero-show" aria-label="<?php esc_attr_e( 'Featured jewellery', 'ayatcollections' ); ?>" role="img">
+				<?php echo ayat_home_img( 'hero_img', __( 'Gold ring with a crystal bar', 'ayatcollections' ), 'hero-show__img', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php
+				$ayat_show = array(
+					'demo-product-drop-earrings' => __( 'Gold-tone ribbed hoop earrings', 'ayatcollections' ),
+					'demo-product-choker'        => __( 'Gold-tone heart pendant with crystals', 'ayatcollections' ),
+					'demo-product-jhumka'        => __( 'Gold-tone jhumka earrings', 'ayatcollections' ),
+				);
+				foreach ( $ayat_show as $file => $alt ) {
+					printf( '<img class="hero-show__img" src="%1$s" width="1000" height="1000" alt="%2$s" loading="lazy" decoding="async" data-demo-image="1">', esc_url( AYAT_URI . '/assets/images/demo/' . $file . '.webp' ), esc_attr( $alt ) );
+				}
+				?>
+				<span class="hero-show__shine" aria-hidden="true"></span>
+			</div>
 		</div>
 	</section>
+
+	<?php
+	$ayat_strip = function_exists( 'ayat_best_sellers' ) ? ayat_best_sellers( 8 ) : array();
+	if ( $ayat_strip ) :
+		?>
+		<section class="marquee" aria-label="<?php esc_attr_e( 'Shop the collection', 'ayatcollections' ); ?>">
+			<button type="button" class="marquee__toggle" aria-pressed="false" aria-label="<?php esc_attr_e( 'Pause moving products', 'ayatcollections' ); ?>" onclick="var m=this.parentNode,p=m.classList.toggle('is-paused');this.setAttribute('aria-pressed',p);this.innerHTML=p?'&#9654;':'&#10074;&#10074;';this.setAttribute('aria-label',p?'Play moving products':'Pause moving products');">&#10074;&#10074;</button>
+			<div class="marquee__track">
+				<?php for ( $ayat_loop = 0; $ayat_loop < 2; $ayat_loop++ ) : ?>
+					<ul class="marquee__list" role="list"<?php echo $ayat_loop ? ' aria-hidden="true"' : ''; ?>>
+						<?php foreach ( $ayat_strip as $p ) : ?>
+							<li class="marquee__item">
+								<a href="<?php echo esc_url( $p->get_permalink() ); ?>"<?php echo $ayat_loop ? ' tabindex="-1"' : ''; ?>>
+									<?php echo $p->get_image( 'woocommerce_thumbnail', array( 'class' => 'marquee__img', 'loading' => 'lazy' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<span class="marquee__name"><?php echo esc_html( $p->get_name() ); ?></span>
+									<span class="marquee__price"><?php echo wp_kses_post( wc_price( $p->is_type( 'variable' ) ? $p->get_variation_price( 'min' ) : $p->get_price() ) ); ?></span>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endfor; ?>
+			</div>
+		</section>
+	<?php endif; ?>
 
 	<!-- 2. Collections -->
 	<section class="band band--grey" id="collections" aria-labelledby="col-title">

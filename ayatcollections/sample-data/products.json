@@ -42,39 +42,39 @@
     },
     {
       "sku": "AYC-EAR-002",
-      "name": "Zara Floral Drop Earrings",
+      "name": "Zara Textured Hoop Earrings",
       "category": "earrings",
       "type": "simple",
       "regular_price": "1850",
       "stock": 30,
       "image": "demo-product-drop-earrings",
-      "alt": "Rose-gold floral drop earrings on white fabric (demo photo)",
-      "short": "Delicate rose-gold flower drops on fine hooks — light enough for every day.",
+      "alt": "Gold-tone ribbed hoop earrings on white (demo photo)",
+      "short": "Bold ribbed gold-tone hoops for everyday shine.",
       "description": "Zara drops are shaped like an opening bloom in a warm rose-gold tone, hung on slim hook fittings. Pretty with western and eastern outfits alike.\n\nMaterial: alloy with rose-gold-tone plating.\nLength: approx. 3 cm. Hook closure.\nCare: wipe with a soft dry cloth after wearing."
     },
     {
       "sku": "AYC-NEC-001",
-      "name": "Rania Gold Bead Necklace",
+      "name": "Rania Pavé Heart Pendant",
       "category": "necklaces",
       "type": "simple",
       "regular_price": "7950",
       "stock": 8,
       "featured": true,
       "image": "demo-product-choker",
-      "alt": "Gold-tone beaded temple necklace with coloured stones (demo photo)",
-      "short": "A rich gold-tone bead necklace with coloured stone accents, made for festive wear.",
+      "alt": "Gold-tone heart pendant set with crystals on a fine chain (demo photo)",
+      "short": "A crystal-studded heart pendant on a delicate chain.",
       "description": "Rania layers rows of gold-tone beads and petals with coloured stone accents for a classic festive look. Wear it with a matching pair of jhumkas for mehndi or Eid.\n\nMaterial: alloy with gold-tone plating, glass stones.\nFit: adjustable dori, 36–44 cm.\nCare: store flat in its box; avoid water and perfume."
     },
     {
       "sku": "AYC-NEC-002",
-      "name": "Mehr Teardrop Pendant",
+      "name": "Mehr Crystal Bar Set",
       "category": "necklaces",
       "type": "simple",
       "regular_price": "2650",
       "stock": 22,
       "image": "demo-product-pendant",
-      "alt": "Gold-tone teardrop pendant on a fine chain (demo photo)",
-      "short": "A teardrop pendant with a soft gold finish on a fine chain.",
+      "alt": "Gold-tone necklace, earrings and ring set with crystal bars (demo photo)",
+      "short": "Matching necklace, earrings and ring with sliding crystal bars.",
       "description": "Mehr is a simple teardrop pendant in a polished gold tone on a fine cable chain — an easy everyday piece and a lovely gift.\n\nMaterial: alloy with gold-tone plating.\nLength: 45 cm with 5 cm extender. Lobster clasp.\nCare: fasten the clasp before storing."
     },
     {
@@ -113,12 +113,12 @@
     },
     {
       "sku": "AYC-RNG-001",
-      "name": "Hira Pink Halo Ring",
+      "name": "Hira Crystal Bar Ring",
       "category": "rings",
       "type": "variable",
       "regular_price": "2450",
       "image": "demo-product-halo-ring",
-      "alt": "Rose-gold ring with a pink stone in a crystal halo (demo photo)",
+      "alt": "Gold-tone ring with a crystal bar on white (demo photo)",
       "attribute": "Ring size",
       "options": [
         "6",
@@ -130,19 +130,19 @@
         8,
         5
       ],
-      "short": "A pink cushion stone in a halo of crystals. Choose your ring size.",
+      "short": "A slim gold-tone ring with a sparkling crystal bar. Choose your size.",
       "description": "Hira sets a cushion-cut pink stone in a bright halo of small crystals on a rose-gold-tone band — a sweet statement ring for engagements and parties.\n\nMaterial: alloy with rose-gold-tone plating, glass stone, cubic zirconia.\nSizes: 6, 7, 8 (US).\nCare: remove before applying lotion or perfume."
     },
     {
       "sku": "AYC-RNG-002",
-      "name": "Amal Stackable Ring Trio",
+      "name": "Amal Chain Link Ring",
       "category": "rings",
       "type": "simple",
       "regular_price": "1650",
       "stock": 25,
       "image": "demo-product-ring-set",
-      "alt": "Three slim gold-tone rings with small stones in a ring box (demo photo)",
-      "short": "Three slim rings with tiny stones — wear them together or apart.",
+      "alt": "Gold-tone chain link ring with crystals on white (demo photo)",
+      "short": "A modern chain-link ring with a crystal accent.",
       "description": "Amal is a trio of slim stacking rings: a plain polished band, a pavé zircon band and a band set with a single purple stone. One size fits most (US 6–7).\n\nMaterial: alloy with gold-tone plating, cubic zirconia, glass stone.\nCare: store each ring separately to avoid scratches."
     }
   ]

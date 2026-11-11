@@ -285,3 +285,26 @@ function ayat_contact_submit() {
 }
 add_action( 'admin_post_nopriv_ayat_contact', 'ayat_contact_submit' );
 add_action( 'admin_post_ayat_contact', 'ayat_contact_submit' );
+
+/**
+ * Products for the moving strip: best sellers first, then newest.
+ *
+ * @param int $limit Count.
+ * @return WC_Product[]
+ */
+function ayat_best_sellers( $limit = 8 ) {
+	if ( ! function_exists( 'wc_get_product' ) ) {
+		return array();
+	}
+	$ids = get_posts(
+		array(
+			'post_type'      => 'product',
+			'post_status'    => 'publish',
+			'posts_per_page' => $limit,
+			'fields'         => 'ids',
+			'meta_key'       => 'total_sales', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'orderby'        => array( 'meta_value_num' => 'DESC', 'date' => 'DESC' ),
+		)
+	);
+	return array_values( array_filter( array_map( 'wc_get_product', $ids ) ) );
+}
