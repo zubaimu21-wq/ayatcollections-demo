@@ -65,16 +65,17 @@
 		}
 	}
 
-	// Jewellery box replay + gentle scroll reveal (skipped when reduced motion is on).
+	// Jewellery box pause/play (the box opens and closes on a loop) + gentle scroll reveal.
 	function motion() {
 		var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		var box = document.querySelector('[data-jbox]');
-		var replay = document.querySelector('[data-jbox-replay]');
-		if (box && replay) {
-			replay.addEventListener('click', function () {
-				box.classList.remove('is-play');
-				void box.offsetWidth;
-				box.classList.add('is-play');
+		var toggle = document.querySelector('[data-jbox-toggle]');
+		if (box && toggle) {
+			toggle.addEventListener('click', function () {
+				var paused = box.classList.toggle('is-paused');
+				toggle.setAttribute('aria-pressed', paused ? 'true' : 'false');
+				toggle.querySelector('[data-label]').textContent = paused ? toggle.getAttribute('data-play') : toggle.getAttribute('data-pause');
+				toggle.querySelector('[aria-hidden]').textContent = paused ? '▶' : '❚❚';
 			});
 		}
 		var items = document.querySelectorAll('[data-reveal]');
