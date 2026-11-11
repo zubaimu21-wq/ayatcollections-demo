@@ -18,7 +18,7 @@ $contact = isset( $socials['WhatsApp'] ) ? $socials['WhatsApp'] : ( $email ? 'ma
 				<li><a href="<?php echo esc_url( $url ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $label ); ?>"><?php echo ayat_social_icon( $label ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a></li>
 			<?php endforeach; ?>
 		</ul>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__logo"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-gold.webp' ); ?>" width="116" height="120" alt="" loading="lazy"><span class="site-logo__text">Ayat <span>Collections</span></span></a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__logo"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" loading="lazy"></a>
 		<p class="site-footer__contact">
 			<?php if ( $phone ) : ?><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><?php endif; ?>
 			<?php if ( $email ) : ?><a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a><?php endif; ?>

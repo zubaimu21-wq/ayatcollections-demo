@@ -39,11 +39,11 @@ function ayat_logo() {
 		the_custom_logo();
 		return;
 	}
-	// Bundled brand logo (gold on black) with a readable wordmark beside it.
+	// Bundled SHAYA by Aayat Collections logo (transparent, gold).
 	printf(
-		'<a href="%1$s" class="site-logo" rel="home"><img src="%2$s" width="232" height="240" alt="" class="site-logo__mark"><span class="site-logo__text">Ayat <span>Collections</span></span><span class="screen-reader-text">%3$s</span></a>',
+		'<a href="%1$s" class="site-logo" rel="home"><img src="%2$s" width="277" height="360" alt="" class="site-logo__mark"><span class="screen-reader-text">%3$s</span></a>',
 		esc_url( home_url( '/' ) ),
-		esc_url( AYAT_URI . '/assets/images/logo-gold.webp' ),
+		esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ),
 		esc_html( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Ayat Collections' )
 	);
 }

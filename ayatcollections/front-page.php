@@ -58,7 +58,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 							<span class="jbox__glint" aria-hidden="true"></span>
 						</div>
 						<div class="jbox__lid" aria-hidden="true">
-							<span class="jbox__lid-out"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-gold.webp' ); ?>" width="116" height="120" alt=""></span>
+							<span class="jbox__lid-out"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt=""></span>
 							<span class="jbox__lid-in"></span>
 						</div>
 					</div>

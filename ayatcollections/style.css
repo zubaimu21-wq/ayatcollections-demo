@@ -1320,3 +1320,17 @@ html { scroll-padding-top: 96px; }
 .site-footer__links a, .site-footer__contact a { display: inline-flex; align-items: center; min-height: 44px; padding: 0; }
 @media (max-width: 767px) { .look__list a { grid-template-columns: 22px 56px 1fr; } .look__price { margin: 0; } .site-footer__bottom { flex-direction: column; align-items: center; } }
 @media (max-width: 1024px) { .home-main .collection-card__shop { display: none; } }
+
+/* SHAYA logo: prominent, left-aligned */
+.site-header .site-branding { order: -1; margin-right: auto; }
+.site-header .site-logo { display: flex; align-items: center; }
+.site-header .site-logo__mark { height: 92px; width: auto; }
+.site-header__inner { padding-block: 8px; }
+.site-footer__logo img { width: auto; height: 120px; }
+.jbox__lid-out img { width: auto; height: 48%; }
+@media (max-width: 960px) { .site-header .primary-nav { order: 3; } }
+@media (max-width: 767px) { .site-header .site-logo__mark { height: 64px; } .site-footer__logo img { height: 100px; } }
+@media (max-width: 380px) { .site-header .site-logo__mark { height: 56px; } }
+body .site-header .site-branding .site-logo img.site-logo__mark { height: 92px; width: auto; max-height: none; }
+@media (max-width: 767px) { body .site-header .site-branding .site-logo img.site-logo__mark { height: 72px; } }
+@media (max-width: 380px) { body .site-header .site-branding .site-logo img.site-logo__mark { height: 64px; } }
