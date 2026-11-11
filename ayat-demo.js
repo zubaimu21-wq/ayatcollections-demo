@@ -119,6 +119,15 @@
 			return;
 		}
 
+		if (/admin-post\.php/.test(f.getAttribute('action') || '')) {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			if (!f.checkValidity()) { f.reportValidity(); return; }
+			f.reset();
+			toast('<span>Thank you! We will be in touch soon. (Demo store: messages are not sent.)</span>');
+			return;
+		}
+
 		if (f.matches('.woocommerce-ordering')) { e.preventDefault(); e.stopImmediatePropagation(); sortProducts($('select.orderby', f).value); return; }
 
 		if (f.matches('.ayat-search, .woocommerce-product-search, .search-form')) {
