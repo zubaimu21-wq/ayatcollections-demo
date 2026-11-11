@@ -116,7 +116,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 							<a class="header-icon header-account" href="/ayatcollections-demo/my-account/">
 					<svg class="icon icon-user" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>					<span class="screen-reader-text">My account</span>
 				</a>
-						<a href="/ayatcollections-demo/cart/" class="header-icon header-bag" aria-label="Bag, 0 items"><svg class="icon icon-bag" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header-icon__text">Bag</span><span class="bag-count is-empty" aria-hidden="true">0</span></a>		</div>
+						<a href="/ayatcollections-demo/bag/" class="header-icon header-bag" aria-label="Bag, 0 items"><svg class="icon icon-bag" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header-icon__text">Bag</span><span class="bag-count is-empty" aria-hidden="true">0</span></a>		</div>
 	</div>
 
 	<div class="header-search" id="header-search" hidden>
@@ -291,7 +291,7 @@ Care: keep dry, avoid perfume, store in the Ayatcollections pouch.</p>
 		<div class="footer-col">
 			<h2 class="footer-title">Contact</h2>
 			<ul role="list">
-																									<li>Add contact details in Appearance → Customize → Store details.</li>
+																									
 							</ul>
 		</div>
 	</div>
@@ -360,24 +360,8 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=/ayatcollections-demo/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
-<div id="ayat-demo-toast" role="dialog" aria-live="polite" hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:460px;margin:0 auto;background:#22092f;color:#fff;padding:16px 18px;box-shadow:0 10px 30px rgba(0,0,0,.3);font:15px/1.5 Jost,system-ui,sans-serif">
-<p style="margin:0 0 10px">This quick preview shows the design. To add to bag, search, sort and place a test Cash on Delivery order, open the full shopping demo.</p>
-<p style="margin:0;display:flex;gap:10px;flex-wrap:wrap"><a href="https://playground.wordpress.net/?mode=seamless&blueprint-url=https://raw.githubusercontent.com/zubaimu21-wq/ayatcollections-demo/main/blueprint.json" style="background:#c9a24a;color:#22092f;padding:10px 16px;text-decoration:none;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px">Open full demo</a><button type="button" id="ayat-demo-close" style="background:none;border:1px solid rgba(255,255,255,.4);color:#fff;padding:10px 16px;cursor:pointer;font-size:12px;letter-spacing:.08em;text-transform:uppercase">Keep browsing</button></p>
-</div>
-<script>
-(function(){
-  var t=document.getElementById('ayat-demo-toast');
-  function show(e){ if(e){e.preventDefault(); e.stopPropagation();} t.hidden=false; t.querySelector('a').focus(); }
-  document.getElementById('ayat-demo-close').addEventListener('click',function(){t.hidden=true;});
-  document.addEventListener('submit',function(e){ show(e); },true);
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('a,button'); if(!a) return;
-    if(a.id==='ayat-demo-close' || a.closest('#ayat-demo-toast')) return;
-    var h=a.getAttribute('href')||'';
-    if(a.matches('.add_to_cart_button,.single_add_to_cart_button,.header-bag,.header-account,.checkout-button') || /add-to-cart=|\/(cart|checkout|my-account)\/|[?&]orderby=|[?&]s=/.test(h)) show(e);
-  },true);
-  var ob=document.querySelector('select.orderby'); if(ob){ ob.addEventListener('change',function(e){ e.stopImmediatePropagation(); show(); },true); }
-})();
-</script>
+
+
+<script src="/ayatcollections-demo/ayat-demo.js?v=2" defer></script>
 </body>
 </html>
