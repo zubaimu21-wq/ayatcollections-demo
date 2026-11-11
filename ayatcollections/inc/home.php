@@ -19,13 +19,13 @@ defined( 'ABSPATH' ) || exit;
 function ayat_home_fields() {
 	return array(
 		// 1. Hero.
-		'hero_eyebrow'    => array( 'hero', 'text', __( 'Small label', 'ayatcollections' ), __( 'The Ayat Jewellery Box', 'ayatcollections' ) ),
+		'hero_eyebrow'    => array( 'hero', 'text', __( 'Small label', 'ayatcollections' ), __( 'The SHAYA Jewellery Box', 'ayatcollections' ) ),
 		'hero_title'      => array( 'hero', 'text', __( 'Heading', 'ayatcollections' ), __( 'Jewellery That', 'ayatcollections' ) ),
 		'hero_script'     => array( 'hero', 'text', __( 'Heading, second line', 'ayatcollections' ), __( 'Tells Your Story', 'ayatcollections' ) ),
-		'hero_text'       => array( 'hero', 'text', __( 'Text', 'ayatcollections' ), __( 'Kundan, gold-tone and crystal pieces, gift-boxed and delivered across Pakistan with Cash on Delivery.', 'ayatcollections' ) ),
+		'hero_text'       => array( 'hero', 'text', __( 'Text', 'ayatcollections' ), __( 'Gold-tone stainless steel jewellery that is anti-tarnish and waterproof, made to shine every day. Gift-boxed and delivered across Pakistan with Cash on Delivery.', 'ayatcollections' ) ),
 		'hero_btn'        => array( 'hero', 'text', __( 'Button label', 'ayatcollections' ), __( 'Shop Collection', 'ayatcollections' ) ),
 		'hero_link'       => array( 'hero', 'link', __( 'Button link', 'ayatcollections' ), '/shop/' ),
-		'hero_img'        => array( 'hero', 'image', __( 'Jewellery inside the box (transparent PNG/WebP works best)', 'ayatcollections' ), 'demo-box-reveal' ),
+		'hero_img'        => array( 'hero', 'image', __( 'Jewellery inside the box (transparent PNG/WebP works best)', 'ayatcollections' ), 'demo-box-reveal-steel' ),
 		// 2. Collections, new arrivals, shop the look.
 		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Shop by Collection', 'ayatcollections' ) ),
 		'new_title'       => array( 'collections', 'text', __( 'New arrivals heading', 'ayatcollections' ), __( 'New Arrivals', 'ayatcollections' ) ),

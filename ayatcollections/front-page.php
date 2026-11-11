@@ -54,7 +54,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 				<div class="jbox is-play" data-jbox>
 					<div class="jbox__tray">
 						<div class="jbox__cushion">
-							<img class="jbox__jewel" src="<?php echo esc_url( ayat_home_img_url( 'hero_img' ) ); ?>" width="720" height="851" alt="<?php esc_attr_e( 'Gold kundan pendant necklace resting in a black velvet jewellery box', 'ayatcollections' ); ?>" fetchpriority="high" decoding="async">
+							<img class="jbox__jewel" src="<?php echo esc_url( ayat_home_img_url( 'hero_img' ) ); ?>" width="720" height="236" alt="<?php esc_attr_e( 'Gold-tone stainless steel rings resting in a black velvet jewellery box', 'ayatcollections' ); ?>" fetchpriority="high" decoding="async">
 							<span class="jbox__glint" aria-hidden="true"></span>
 						</div>
 						<div class="jbox__lid" aria-hidden="true">
@@ -63,7 +63,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 						</div>
 					</div>
 				</div>
-				<button class="jbox__replay" type="button" data-jbox-replay><span aria-hidden="true">&#8635;</span> <?php esc_html_e( 'Replay', 'ayatcollections' ); ?></button>
+				<button class="jbox__replay" type="button" data-jbox-toggle aria-pressed="false" data-pause="<?php esc_attr_e( 'Pause', 'ayatcollections' ); ?>" data-play="<?php esc_attr_e( 'Play', 'ayatcollections' ); ?>"><span aria-hidden="true">&#10074;&#10074;</span> <span data-label><?php esc_html_e( 'Pause', 'ayatcollections' ); ?></span></button>
 			</div>
 		</div>
 	</section>
