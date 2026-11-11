@@ -24,7 +24,7 @@
 	/* ---------- styles for the demo views ---------- */
 	var css = document.createElement('style');
 	css.textContent = [
-		'.demo-toast{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:440px;margin:0 auto;background:#22092f;color:#fff;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.3);display:flex;gap:12px;align-items:center;justify-content:space-between;font-size:15px}',
+		'.demo-toast{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:440px;margin:0 auto;background:#0b0b0b;color:#f3ead8;border:1px solid #c99a52;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.3);display:flex;gap:12px;align-items:center;justify-content:space-between;font-size:15px}',
 		'.demo-toast a{color:#e4c77f;font-weight:600;white-space:nowrap}',
 		'.demo-view h1{margin-bottom:20px}',
 		'.demo-empty{padding:40px 0;text-align:center}',
