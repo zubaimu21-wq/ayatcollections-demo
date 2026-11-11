@@ -17,7 +17,7 @@ $contact = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'
 	<!-- 1. Full-width carousel (CSS animated) -->
 	<section class="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
 		<div class="carousel__slide" style="--i:0">
-			<img class="carousel__img" src="<?php echo esc_url( AYAT_URI . '/assets/images/demo/demo-bespoke-main.webp' ); ?>" alt="<?php esc_attr_e( 'Pakistani bride wearing gold kundan jewellery', 'ayatcollections' ); ?>" fetchpriority="high" data-demo-image="1">
+			<img class="carousel__img" src="<?php echo esc_url( AYAT_URI . '/assets/images/demo/demo-bespoke-main.webp' ); ?>" alt="<?php esc_attr_e( 'Gold crown pendant necklace', 'ayatcollections' ); ?>" fetchpriority="high" data-demo-image="1">
 			<div class="wrap carousel__text">
 				<h1 class="carousel__title"><?php esc_html_e( 'Bridal Elegance', 'ayatcollections' ); ?></h1>
 				<?php echo ayat_ornament(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -26,7 +26,7 @@ $contact = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'
 			</div>
 		</div>
 		<div class="carousel__slide" style="--i:1">
-			<img class="carousel__img" src="<?php echo esc_url( AYAT_URI . '/assets/images/demo/demo-about.webp' ); ?>" alt="<?php esc_attr_e( 'Bride in traditional gold jewellery and red dupatta', 'ayatcollections' ); ?>" loading="lazy" data-demo-image="1">
+			<img class="carousel__img" src="<?php echo esc_url( AYAT_URI . '/assets/images/demo/demo-about.webp' ); ?>" alt="<?php esc_attr_e( 'Gold temple necklace with ruby pendant', 'ayatcollections' ); ?>" loading="lazy" data-demo-image="1">
 			<div class="wrap carousel__text">
 				<h2 class="carousel__title"><?php esc_html_e( 'Royal Gold', 'ayatcollections' ); ?></h2>
 				<?php echo ayat_ornament(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -96,7 +96,7 @@ $contact = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'
 			<h2 id="bes-title" class="sec-title"><?php echo esc_html( $h( 'bes_title' ) ); ?></h2>
 			<?php echo ayat_ornament(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<a class="gallery3" href="<?php echo esc_url( ayat_resolve_link( $h( 'bes_link' ) ) ); ?>">
-				<span class="gallery3__main"><?php echo ayat_home_img( 'bes_img', __( 'Bride wearing gold kundan jewellery with a red sari', 'ayatcollections' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+				<span class="gallery3__main"><?php echo ayat_home_img( 'bes_img', __( 'Gold crown pendant necklace', 'ayatcollections' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 				<span class="gallery3__side"><?php echo ayat_home_img( 'bes_img2', __( 'Gold paisley earrings on black velvet', 'ayatcollections' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 				<span class="gallery3__side"><?php echo ayat_home_img( 'bes_img3', __( 'Gold temple necklace with a ruby pendant', 'ayatcollections' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 			</a>
@@ -121,7 +121,7 @@ $contact = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'
 
 	<!-- 5. About -->
 	<section class="split split--about" id="about" aria-labelledby="about-title">
-		<div class="split__media split__media--white"><?php echo ayat_home_img( 'about_img', __( 'Woman wearing traditional gold jewellery', 'ayatcollections' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+		<div class="split__media split__media--white"><?php echo ayat_home_img( 'about_img', __( 'Gold temple necklace with ruby pendant', 'ayatcollections' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
 		<div class="split__text split__text--grey">
 			<h2 id="about-title" class="sec-title sec-title--left"><?php echo esc_html( $h( 'about_title' ) ); ?></h2>
 			<?php echo ayat_ornament(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
