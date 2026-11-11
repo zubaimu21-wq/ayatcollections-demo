@@ -1026,3 +1026,22 @@ h1, h2, h3, h4, .sec-title, .hero-split__title { color: #2e2210; }
 .hero-show .hero-show__img { animation: none !important; opacity: 0; transform: none; }
 .hero-show .hero-show__img:first-of-type { opacity: 1; }
 .hero-show__shine, .marquee { display: none !important; }
+
+/* Photos blend into the theme colour: white photo backgrounds take the
+   section's light-gold tone (multiply), jewellery colours stay true. */
+.woocommerce ul.products li.product a img,
+.woocommerce div.product div.images img,
+.woocommerce div.product div.images .flex-control-thumbs img,
+.collection-card__media img, .hero-split__media img, .hero-show__img,
+.gallery3 img, .cards3__media img, .split__media img, .royal__media img,
+.newsletter__media img, .grid2__media img, .tips__media img,
+.woocommerce-cart-form img, .wc-block-components-product-image img, .demo-line img, .marquee__img {
+	mix-blend-mode: multiply;
+	background: transparent !important;
+}
+.collection-card__media, .hero-show, .hero-split__media, .gallery3 span, .cards3__item, .cards3__media,
+.split__media, .split__media--dark, .royal__media, .newsletter__media, .grid2__media, .tips__media,
+.woocommerce div.product div.images, .woocommerce div.product div.images .woocommerce-product-gallery__image {
+	background: transparent !important;
+}
+.cards3__item { background: rgba(255, 250, 241, .55) !important; }
