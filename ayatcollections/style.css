@@ -1334,3 +1334,38 @@ html { scroll-padding-top: 96px; }
 body .site-header .site-branding .site-logo img.site-logo__mark { height: 92px; width: auto; max-height: none; }
 @media (max-width: 767px) { body .site-header .site-branding .site-logo img.site-logo__mark { height: 72px; } }
 @media (max-width: 380px) { body .site-header .site-branding .site-logo img.site-logo__mark { height: 64px; } }
+
+/* Black-shaded header so the gold logo stands out */
+body .site-header { background: linear-gradient(180deg, #1b1b1b 0%, #0b0b0b 100%); border-bottom: 1px solid rgba(199,146,68,.45); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.announcement { background: #000; border-bottom: 1px solid rgba(199,146,68,.25); }
+body .site-header .primary-nav a { color: #f3e6cc; }
+body .site-header .primary-nav a:hover, body .site-header .primary-nav .current-menu-item > a { color: #e2b866; border-bottom-color: #c79244; }
+body .site-header .header-icon { color: #f3e6cc; }
+body .site-header .header-icon:hover { color: #e2b866; }
+body .site-header .bag-count, body .site-header .bag-count.is-empty { background: transparent; color: #f3e6cc; border: 1px solid #c79244; }
+body .site-header .bag-count:not(.is-empty) { background: #c79244; color: #111; }
+body .site-header .header-search { background: #111; border-top: 1px solid rgba(199,146,68,.3); }
+@media (max-width: 960px) {
+	body .site-header .primary-nav { background: #111; border-bottom: 1px solid rgba(199,146,68,.4); }
+	body .site-header .primary-nav a { border-bottom-color: rgba(199,146,68,.2); }
+}
+
+/* Black-shaded footer, logo on the left */
+body .site-footer { background: linear-gradient(180deg, #1b1b1b 0%, #070707 100%); border-top: 1px solid rgba(199,146,68,.45); }
+body .site-footer { color: #cfc2a6; }
+body .site-footer a { color: #f3e6cc; }
+body .site-footer a:hover { color: #e2b866; }
+body .site-footer__row { grid-template-columns: auto 1fr auto; align-items: center; gap: 32px; }
+body .site-footer__logo { order: -1; justify-self: start; }
+body .site-footer__social { justify-self: center; }
+body .site-footer__social a { color: #f3e6cc; border-color: rgba(199,146,68,.6); background: transparent; }
+body .site-footer__social a:hover { background: #c79244; color: #111; }
+body .site-footer__contact { justify-self: end; }
+body .site-footer__bottom { border-top-color: rgba(199,146,68,.3); color: #b9ab8e; }
+@media (max-width: 767px) {
+	body .site-footer__row { grid-template-columns: auto 1fr; justify-items: start; text-align: left; gap: 18px 20px; }
+	body .site-footer__logo { grid-row: 1 / 3; align-self: center; }
+	body .site-footer__social, body .site-footer__contact { justify-self: start; justify-content: flex-start; }
+	body .site-footer__bottom { align-items: flex-start; text-align: left; }
+	body .site-footer__links { justify-content: flex-start; }
+}
