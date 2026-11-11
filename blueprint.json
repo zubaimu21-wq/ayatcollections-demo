@@ -13,7 +13,7 @@
     { "step": "installPlugin", "pluginData": { "resource": "wordpress.org/plugins", "slug": "woocommerce" }, "options": { "activate": true } },
     { "step": "installTheme", "themeData": { "resource": "url", "url": "https://raw.githubusercontent.com/zubaimu21-wq/ayatcollections-demo/main/Ayatcollections-WordPress.zip" }, "options": { "activate": true } },
     { "step": "setSiteOptions", "options": {
-      "blogname": "Ayatcollections",
+      "blogname": "Ayat Collections",
       "blogdescription": "Artificial jewellery from Pakistan",
       "woocommerce_coming_soon": "no",
       "woocommerce_onboarding_profile": { "skipped": true },

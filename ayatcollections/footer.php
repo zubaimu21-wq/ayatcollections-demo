@@ -15,7 +15,7 @@ $fb    = get_theme_mod( 'ayat_facebook', '' );
 <footer class="site-footer">
 	<div class="container site-footer__grid">
 		<div class="footer-brand">
-			<p class="footer-logo">Ayat<span>collections</span></p>
+			<p class="footer-logo"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-black.webp' ); ?>" width="117" height="120" alt="" loading="lazy"><span>Ayat Collections</span></p>
 			<p><?php echo esc_html( get_theme_mod( 'ayat_footer_about', __( 'Artificial jewellery designed in Pakistan — kundan, pearls and everyday gold tone.', 'ayatcollections' ) ) ); ?></p>
 		</div>
 

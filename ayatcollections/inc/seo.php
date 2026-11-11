@@ -44,6 +44,22 @@ function ayat_preload_hero() {
 add_action( 'wp_head', 'ayat_preload_hero', 2 );
 
 /**
+ * Browser-tab and home-screen icon from the brand pack, used until a Site Icon
+ * is set in Appearance → Customize → Site Identity.
+ */
+function ayat_fallback_site_icon() {
+	if ( has_site_icon() ) {
+		return;
+	}
+	$base = AYAT_URI . '/assets/images/';
+	printf( '<link rel="icon" href="%s" sizes="32x32">' . "\n", esc_url( $base . 'favicon-32.png' ) );
+	printf( '<link rel="icon" href="%s" sizes="192x192">' . "\n", esc_url( $base . 'site-icon-192.png' ) );
+	printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( $base . 'apple-touch-icon.png' ) );
+	echo '<meta name="theme-color" content="#080808">' . "\n";
+}
+add_action( 'wp_head', 'ayat_fallback_site_icon', 3 );
+
+/**
  * On the homepage everything below the hero is below the fold: make sure
  * product and collection images there are lazy-loaded (the hero sets its own
  * eager / high-priority attributes and is not affected).
