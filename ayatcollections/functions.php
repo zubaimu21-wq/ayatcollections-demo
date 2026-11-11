@@ -15,6 +15,7 @@ require AYAT_DIR . '/inc/template-tags.php';
 require AYAT_DIR . '/inc/customizer.php';
 require AYAT_DIR . '/inc/collections.php';
 require AYAT_DIR . '/inc/seo.php';
+require AYAT_DIR . '/inc/home.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require AYAT_DIR . '/inc/woocommerce.php';
@@ -97,7 +98,7 @@ add_action( 'widgets_init', 'ayat_widgets_init' );
  * Styles and scripts.
  */
 function ayat_assets() {
-	wp_enqueue_style( 'ayat-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_style( 'ayat-fonts', 'https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=Inter:wght@300;400;500;600&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 	wp_enqueue_style( 'ayat-style', get_stylesheet_uri(), array(), AYAT_VERSION );
 
 	wp_enqueue_script( 'ayat-site', AYAT_URI . '/assets/js/site.js', array(), AYAT_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );

@@ -69,3 +69,8 @@ Create a **top-level** category (Products → Categories, Parent = None) and pub
 - Bundled photos are WebP. WordPress creates responsive sizes for anything you upload.
 - The first hero image is preloaded with `fetchpriority="high"`, while other slides and below-the-fold images load lazily.
 - For production, add a page-cache plugin and serve images through your host's CDN if one is available.
+
+## 11. Design credit and photos
+The homepage layout is based on the free Figma template **"Jewelry Collection Landing Page"** by **Maker**, licensed **CC BY 4.0** (https://www.figma.com/community/file/1400704973504268696). Keep this credit (it is also in the theme description).
+
+The large homepage photos (models wearing jewellery) come from that template and are there for the demo. Before launch, replace them with your own photos in **Appearance → Customize → Homepage slider** and **Homepage sections**. Your product photos are managed in WooCommerce → Products.

@@ -60,9 +60,9 @@
 			}
 		});
 
-		window.addEventListener('resize', function () {
-			if (window.innerWidth > 960) { closeMenu(); }
-		});
+		if (nav) {
+			nav.addEventListener('click', function (e) { if (e.target.closest('a')) { closeMenu(); } });
+		}
 	}
 
 	if (document.readyState === 'loading') {

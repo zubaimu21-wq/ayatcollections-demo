@@ -1,6 +1,7 @@
 <?php
 /**
- * Homepage: hero slider, collections, new arrivals.
+ * Homepage. Layout follows the "Jewelry Collection Landing Page" Figma
+ * template (Maker, CC BY 4.0), rebuilt for Ayat Collections + WooCommerce.
  *
  * @package Ayatcollections
  */
@@ -8,62 +9,77 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-
-$collections_page = get_page_by_path( 'collections' );
-$arrivals_page    = get_page_by_path( 'new-arrivals' );
-$shop_url         = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
+$shop = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
 ?>
 <main id="main" class="site-main home-main">
-	<h1 class="screen-reader-text"><?php echo esc_html( get_bloginfo( 'name' ) ); ?> — <?php echo esc_html( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : __( 'Artificial jewellery', 'ayatcollections' ) ); ?></h1>
+	<h1 class="screen-reader-text"><?php echo esc_html( get_bloginfo( 'name' ) ); ?> — <?php echo esc_html( get_bloginfo( 'description' ) ); ?></h1>
 
 	<?php get_template_part( 'template-parts/hero-slider' ); ?>
 
-	<?php
-	$intro_title = get_theme_mod( 'ayat_intro_title', __( 'Jewellery for every celebration, and every day in between', 'ayatcollections' ) );
-	$intro_text  = get_theme_mod( 'ayat_intro_text', __( 'Kundan, pearls and polished gold tone — designed in Pakistan and finished by hand, at prices that let you wear something special more often.', 'ayatcollections' ) );
-	if ( $intro_title ) :
-		?>
-		<section class="intro" aria-labelledby="home-intro-title">
-			<div class="container intro__inner">
-				<h2 id="home-intro-title" class="intro__title"><?php echo esc_html( $intro_title ); ?></h2>
-				<div class="intro__side">
-					<?php if ( $intro_text ) : ?>
-						<p><?php echo esc_html( $intro_text ); ?></p>
-					<?php endif; ?>
-					<a class="circle-link" href="<?php echo esc_url( $shop_url ); ?>"><span><?php esc_html_e( 'Explore the shop', 'ayatcollections' ); ?></span></a>
-				</div>
-			</div>
-		</section>
-	<?php endif; ?>
-
-	<section class="section section--collections" aria-labelledby="home-collections-title">
-		<div class="container">
-			<div class="section-head">
-				<h2 id="home-collections-title" class="section-title"><?php esc_html_e( 'Shop by collection', 'ayatcollections' ); ?></h2>
-				<a class="link-more" href="<?php echo esc_url( $collections_page ? get_permalink( $collections_page ) : $shop_url ); ?>"><?php esc_html_e( 'All collections', 'ayatcollections' ); ?></a>
-			</div>
-			<?php ayat_render_collection_cards( ayat_get_collections( 8 ) ); ?>
+	<section class="showcase showcase--one" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
+		<div class="wrap showcase__grid">
+			<div class="showcase__big"><?php echo ayat_home_img( 'f1_big', 'showcase__img', '(max-width: 700px) 100vw, 50vw' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<?php ayat_home_card( 'f1_small', 'showcase__card--small' ); ?>
+			<?php ayat_home_card( 'f1_tall', 'showcase__card--tall' ); ?>
+			<span class="ring ring--a" aria-hidden="true"></span>
+			<span class="ring ring--b" aria-hidden="true"></span>
 		</div>
 	</section>
 
-	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-		<section class="section section--arrivals" aria-labelledby="home-arrivals-title">
-			<div class="container">
-				<div class="section-head">
-					<h2 id="home-arrivals-title" class="section-title"><?php esc_html_e( 'New Arrivals', 'ayatcollections' ); ?></h2>
-					<a class="link-more" href="<?php echo esc_url( $arrivals_page ? get_permalink( $arrivals_page ) : add_query_arg( 'orderby', 'date', $shop_url ) ); ?>"><?php esc_html_e( 'View all', 'ayatcollections' ); ?></a>
-				</div>
-				<?php echo do_shortcode( '[products limit="8" columns="4" orderby="date" order="DESC" visibility="visible"]' ); ?>
+	<section class="story" aria-labelledby="story-title">
+		<div class="wrap story__grid">
+			<div class="story__text">
+				<p class="eyebrow"><?php echo esc_html( ayat_home( 'col_eyebrow' ) ); ?></p>
+				<h2 id="story-title" class="display"><?php echo esc_html( ayat_home( 'col_title' ) ); ?></h2>
+				<p class="lead"><?php echo esc_html( ayat_home( 'col_text' ) ); ?></p>
+				<a class="btn-line" href="<?php echo esc_url( ayat_resolve_link( ayat_home( 'col_link' ) ) ); ?>"><?php echo esc_html( ayat_home( 'col_btn' ) ); ?></a>
+			</div>
+			<div class="story__media"><?php echo ayat_home_img( 'col_img', 'showcase__img', '(max-width: 700px) 100vw, 50vw' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<span class="ring ring--c" aria-hidden="true"></span>
+		</div>
+	</section>
+
+	<section class="showcase showcase--two" aria-label="<?php esc_attr_e( 'More collections', 'ayatcollections' ); ?>">
+		<div class="wrap showcase__grid">
+			<div class="showcase__big"><?php echo ayat_home_img( 'f2_big', 'showcase__img', '(max-width: 700px) 100vw, 50vw' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<?php ayat_home_card( 'f2_small', 'showcase__card--small' ); ?>
+			<?php ayat_home_card( 'f2_tall', 'showcase__card--tall' ); ?>
+		</div>
+	</section>
+
+	<?php $best = ayat_best_sellers( 4 ); ?>
+	<?php if ( $best ) : ?>
+		<section class="best" aria-labelledby="best-title">
+			<div class="wrap">
+				<h2 id="best-title" class="display display--center"><?php echo esc_html( ayat_home( 'best_title' ) ); ?></h2>
+				<ul class="best__grid" role="list">
+					<?php foreach ( $best as $p ) : ?>
+						<li class="best__item">
+							<a href="<?php echo esc_url( $p->get_permalink() ); ?>" class="best__link">
+								<span class="best__media"><?php echo $p->get_image( 'woocommerce_thumbnail', array( 'class' => 'best__img', 'loading' => 'lazy' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+								<span class="best__name"><?php echo esc_html( $p->get_name() ); ?></span>
+								<span class="best__price"><?php echo wp_kses_post( wc_price( $p->is_type( 'variable' ) ? $p->get_variation_price( 'min' ) : $p->get_price() ) ); ?></span>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+				<p class="center"><a class="btn-line btn-line--light" href="<?php echo esc_url( $shop ); ?>"><?php echo esc_html( ayat_home( 'best_btn' ) ); ?></a></p>
 			</div>
 		</section>
 	<?php endif; ?>
 
-	<section class="trust-strip" aria-label="<?php esc_attr_e( 'Why shop with us', 'ayatcollections' ); ?>">
-		<ul class="container trust-strip__list" role="list">
-			<li><strong><?php esc_html_e( 'Cash on Delivery', 'ayatcollections' ); ?></strong><span><?php esc_html_e( 'Pay when your order arrives', 'ayatcollections' ); ?></span></li>
-			<li><strong><?php esc_html_e( 'Nationwide delivery', 'ayatcollections' ); ?></strong><span><?php esc_html_e( '3–5 working days', 'ayatcollections' ); ?></span></li>
-			<li><strong><?php esc_html_e( 'Gift-ready packing', 'ayatcollections' ); ?></strong><span><?php esc_html_e( 'Every piece arrives boxed', 'ayatcollections' ); ?></span></li>
-		</ul>
+	<section class="gift" aria-labelledby="gift-title">
+		<div class="wrap">
+			<h2 id="gift-title" class="display"><?php echo esc_html( ayat_home( 'gift_title' ) ); ?></h2>
+			<div class="gift__grid">
+				<div class="gift__media"><?php echo ayat_home_img( 'gift_img', 'showcase__img', '(max-width: 700px) 100vw, 55vw' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+				<span class="ring ring--d" aria-hidden="true"></span>
+				<div class="gift__text">
+					<p class="lead"><?php echo esc_html( ayat_home( 'gift_text' ) ); ?></p>
+					<a class="btn-line" href="<?php echo esc_url( ayat_resolve_link( ayat_home( 'gift_link' ) ) ); ?>"><?php echo esc_html( ayat_home( 'gift_btn' ) ); ?></a>
+				</div>
+			</div>
+		</div>
 	</section>
 </main>
 <?php

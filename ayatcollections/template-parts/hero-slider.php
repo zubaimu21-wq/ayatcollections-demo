@@ -67,7 +67,14 @@ $interval = ayat_sanitize_interval( get_theme_mod( 'ayat_slider_interval', 5500 
 						<?php if ( $s['eyebrow'] ) : ?>
 							<p class="hero__eyebrow"><?php echo esc_html( $s['eyebrow'] ); ?></p>
 						<?php endif; ?>
-						<h2 class="hero__title"><?php echo esc_html( $s['headline'] ); ?></h2>
+						<?php $ayat_parts = explode( ':', $s['headline'], 2 ); ?>
+						<h2 class="hero__title">
+							<?php if ( 2 === count( $ayat_parts ) ) : ?>
+								<strong><?php echo esc_html( $ayat_parts[0] ); ?>:</strong> <?php echo esc_html( trim( $ayat_parts[1] ) ); ?>
+							<?php else : ?>
+								<?php echo esc_html( $s['headline'] ); ?>
+							<?php endif; ?>
+						</h2>
 						<?php if ( $s['text'] ) : ?>
 							<p class="hero__lead"><?php echo esc_html( $s['text'] ); ?></p>
 						<?php endif; ?>
