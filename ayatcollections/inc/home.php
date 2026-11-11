@@ -19,11 +19,13 @@ defined( 'ABSPATH' ) || exit;
 function ayat_home_fields() {
 	return array(
 		// 1. Hero.
-		'hero_title'      => array( 'hero', 'text', __( 'Heading', 'ayatcollections' ), __( 'Royal Gold', 'ayatcollections' ) ),
-		'hero_text'       => array( 'hero', 'textarea', __( 'Text', 'ayatcollections' ), __( 'Artificial jewellery made for the special people in your life — kundan, pearls and polished gold tone, designed in Pakistan and delivered with Cash on Delivery.', 'ayatcollections' ) ),
+		'hero_eyebrow'    => array( 'hero', 'text', __( 'Small label', 'ayatcollections' ), __( 'Timeless Elegance', 'ayatcollections' ) ),
+		'hero_title'      => array( 'hero', 'text', __( 'Heading', 'ayatcollections' ), __( 'Jewellery That', 'ayatcollections' ) ),
+		'hero_script'     => array( 'hero', 'text', __( 'Script line', 'ayatcollections' ), __( 'Tells Your Story', 'ayatcollections' ) ),
+		'hero_text'       => array( 'hero', 'text', __( 'Tag line', 'ayatcollections' ), __( 'Premium artificial jewellery  |  Kundan & gold tone  |  Everyday luxury', 'ayatcollections' ) ),
 		'hero_btn'        => array( 'hero', 'text', __( 'Button label', 'ayatcollections' ), __( 'Shop Now', 'ayatcollections' ) ),
 		'hero_link'       => array( 'hero', 'link', __( 'Button link', 'ayatcollections' ), '/shop/' ),
-		'hero_img'        => array( 'hero', 'image', __( 'Photo', 'ayatcollections' ), 'demo-hero' ),
+		'hero_img'        => array( 'hero', 'image', __( 'Photo', 'ayatcollections' ), 'demo-banner' ),
 		// 2. Collections.
 		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Our Collections', 'ayatcollections' ) ),
 		'new_title'       => array( 'collections', 'text', __( 'New arrivals heading', 'ayatcollections' ), __( 'New Arrivals', 'ayatcollections' ) ),

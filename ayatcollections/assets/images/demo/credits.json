@@ -222,5 +222,12 @@
     "url": "https://unsplash.com/photos/qgQkbMQBifw",
     "license": "Unsplash License (free for commercial use)",
     "background": "removed, placed on white"
+  },
+  {
+    "file": "demo-banner.webp",
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/Uv5_xs6IG9k",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "original cream fabric, left side faded to theme colour"
   }
 ]
