@@ -68,7 +68,7 @@ $fb    = get_theme_mod( 'ayat_facebook', '' );
 				<?php if ( $fb ) : ?>
 					<li><a href="<?php echo esc_url( $fb ); ?>" rel="noopener">Facebook</a></li>
 				<?php endif; ?>
-				<?php if ( ! $phone && ! $email && ! $insta && ! $fb ) : ?>
+				<?php if ( ! $phone && ! $email && ! $insta && ! $fb && current_user_can( 'edit_theme_options' ) ) : ?>
 					<li><?php esc_html_e( 'Add contact details in Appearance → Customize → Store details.', 'ayatcollections' ); ?></li>
 				<?php endif; ?>
 			</ul>
