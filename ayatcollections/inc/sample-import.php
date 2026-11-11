@@ -338,8 +338,8 @@ function ayat_setup_pages() {
 			if ( ! is_wp_error( $menu_id ) ) {
 				$items = array(
 					array( __( 'Shop', 'ayatcollections' ), wc_get_page_id( 'shop' ) ),
-					array( __( 'New Arrivals', 'ayatcollections' ), $ids['new-arrivals'] ),
 					array( __( 'Collections', 'ayatcollections' ), $ids['collections'] ),
+					array( __( 'New Arrivals', 'ayatcollections' ), $ids['new-arrivals'] ),
 				);
 				foreach ( $items as $item ) {
 					if ( $item[1] > 0 ) {
@@ -356,7 +356,7 @@ function ayat_setup_pages() {
 						);
 					}
 				}
-				foreach ( array( __( 'About Us', 'ayatcollections' ) => home_url( '/#about' ), __( 'Contact', 'ayatcollections' ) => home_url( '/#contact' ) ) as $title => $url ) {
+				foreach ( array() as $title => $url ) {
 					wp_update_nav_menu_item(
 						$menu_id,
 						0,

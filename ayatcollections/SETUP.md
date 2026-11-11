@@ -28,6 +28,9 @@ To replace them:
 - **Collection photos:** go to **Products → Categories** and change the **Thumbnail**.
 - **Homepage photos and text:** go to **Appearance → Customize → Homepage**. There are 13 sections; upload a photo to replace each demo one, and edit headings, text, buttons and links.
 
+- **Jewellery-box hero:** Appearance → Customize → Homepage → 1. Hero → "Jewellery inside the box". A transparent PNG/WebP of one piece looks best. The box opens once (about 2 seconds) and visitors with reduced motion see the open box straight away.
+- **Shop the Look:** same panel, section 2: photo, heading, text and the product slugs to link (comma separated).
+
 ## 4. Logo, contact details and social links
 - **Appearance → Customize → Site Identity**: the Royal A gold logo is built in. Upload a different logo here if needed, and set the **Site Icon** (browser tab icon).
 - **Appearance → Customize → Store details**: WhatsApp/phone, email, address, Instagram, Facebook, TikTok, YouTube and the top announcement bar.

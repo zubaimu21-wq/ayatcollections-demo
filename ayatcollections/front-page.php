@@ -1,7 +1,7 @@
 <?php
 /**
- * Homepage: banner, collection circles, best sellers, trust strip.
- * Texts and banner photo: Appearance → Customize → Homepage → 1. Top banner.
+ * Homepage: jewellery-box hero, collections, new arrivals, shop the look, trust strip.
+ * Texts and photos: Appearance → Customize → Homepage.
  *
  * @package Ayatcollections
  */
@@ -9,49 +9,119 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
+
+$shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
+$arrivals = get_page_by_path( 'new-arrivals' );
+
+// Collections in a fixed order, falling back to any collections.
+$terms = array();
+foreach ( array( 'earrings', 'necklaces', 'rings', 'bracelets' ) as $slug ) {
+	$t = get_term_by( 'slug', $slug, 'product_cat' );
+	if ( $t && ! is_wp_error( $t ) ) {
+		$terms[] = $t;
+	}
+}
+if ( count( $terms ) < 2 ) {
+	$terms = ayat_get_collections( 4 );
+}
+
+// Shop the look products.
+$look = array();
+if ( function_exists( 'wc_get_product' ) ) {
+	foreach ( array_filter( array_map( 'trim', explode( ',', (string) ayat_home( 'look_products' ) ) ) ) as $slug ) {
+		$post = get_page_by_path( sanitize_title( $slug ), OBJECT, 'product' );
+		$prod = $post ? wc_get_product( $post ) : null;
+		if ( $prod && $prod->is_visible() ) {
+			$look[] = $prod;
+		}
+	}
+}
 ?>
 <main id="main" class="site-main home-main">
 
-	<section class="banner" style="--banner:url('<?php echo esc_url( ayat_home_img_url( 'hero_img' ) ); ?>')">
-		<div class="wrap banner__text">
-			<p class="banner__eyebrow"><?php echo esc_html( ayat_home( 'hero_eyebrow' ) ); ?></p>
-			<h1 class="banner__title"><?php echo esc_html( ayat_home( 'hero_title' ) ); ?> <span><?php echo esc_html( ayat_home( 'hero_script' ) ); ?></span></h1>
-			<p class="banner__tags"><?php echo esc_html( ayat_home( 'hero_text' ) ); ?></p>
-			<a class="btn-gold" href="<?php echo esc_url( ayat_resolve_link( ayat_home( 'hero_link' ) ) ); ?>"><?php echo esc_html( ayat_home( 'hero_btn' ) ); ?> <span aria-hidden="true">&rarr;</span></a>
+	<section class="hero-box" aria-labelledby="hero-title">
+		<div class="wrap hero-box__inner">
+			<div class="hero-box__copy">
+				<p class="eyebrow"><?php echo esc_html( ayat_home( 'hero_eyebrow' ) ); ?></p>
+				<h1 id="hero-title" class="hero-box__title"><?php echo esc_html( ayat_home( 'hero_title' ) ); ?> <em><?php echo esc_html( ayat_home( 'hero_script' ) ); ?></em></h1>
+				<p class="hero-box__text"><?php echo esc_html( ayat_home( 'hero_text' ) ); ?></p>
+				<p class="hero-box__actions">
+					<a class="btn-ink" href="<?php echo esc_url( ayat_resolve_link( ayat_home( 'hero_link' ) ) ); ?>"><?php echo esc_html( ayat_home( 'hero_btn' ) ); ?></a>
+					<a class="link-gold" href="#collections"><?php esc_html_e( 'Browse collections', 'ayatcollections' ); ?></a>
+				</p>
+			</div>
+			<div class="hero-box__stage">
+				<div class="jbox is-play" data-jbox>
+					<div class="jbox__tray">
+						<div class="jbox__cushion">
+							<img class="jbox__jewel" src="<?php echo esc_url( ayat_home_img_url( 'hero_img' ) ); ?>" width="720" height="851" alt="<?php esc_attr_e( 'Gold kundan pendant necklace resting in a black velvet jewellery box', 'ayatcollections' ); ?>" fetchpriority="high" decoding="async">
+							<span class="jbox__glint" aria-hidden="true"></span>
+						</div>
+						<div class="jbox__lid" aria-hidden="true">
+							<span class="jbox__lid-out"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-gold.webp' ); ?>" width="116" height="120" alt=""></span>
+							<span class="jbox__lid-in"></span>
+						</div>
+					</div>
+				</div>
+				<button class="jbox__replay" type="button" data-jbox-replay><span aria-hidden="true">&#8635;</span> <?php esc_html_e( 'Replay', 'ayatcollections' ); ?></button>
+			</div>
 		</div>
 	</section>
 
-	<section class="circles" aria-label="<?php esc_attr_e( 'Shop by collection', 'ayatcollections' ); ?>">
-		<ul class="wrap circles__list" role="list">
-			<?php foreach ( ayat_get_collections( 4 ) as $term ) : ?>
-				<?php $img = ayat_collection_image_id( $term ); ?>
-				<li>
-					<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="circles__link">
-						<span class="circles__img"><?php echo $img ? wp_get_attachment_image( $img, 'medium', false, array( 'alt' => $term->name, 'loading' => 'lazy' ) ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
-						<span class="circles__name"><?php echo esc_html( $term->name ); ?></span>
-						<span class="circles__cta"><?php esc_html_e( 'Shop Now', 'ayatcollections' ); ?> &rarr;</span>
-					</a>
-				</li>
-			<?php endforeach; ?>
-		</ul>
+	<section class="home-sec" id="collections" aria-labelledby="col-title">
+		<div class="wrap">
+			<div class="sec-head" data-reveal>
+				<h2 id="col-title"><?php echo esc_html( ayat_home( 'col_title' ) ); ?></h2>
+				<a class="link-gold" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'View all', 'ayatcollections' ); ?></a>
+			</div>
+			<div data-reveal><?php ayat_render_collection_cards( $terms, 'h3' ); ?></div>
+		</div>
 	</section>
 
 	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-		<section class="bestsellers" aria-labelledby="bs-title">
+		<section class="home-sec home-sec--tint" aria-labelledby="new-title">
 			<div class="wrap">
-				<p class="bestsellers__eyebrow"><?php esc_html_e( 'Featured Products', 'ayatcollections' ); ?></p>
-				<h2 id="bs-title" class="bestsellers__title"><span><?php esc_html_e( 'Our Best Sellers', 'ayatcollections' ); ?></span></h2>
-				<?php echo do_shortcode( '[products limit="6" columns="6" orderby="popularity" visibility="visible"]' ); ?>
+				<div class="sec-head" data-reveal>
+					<h2 id="new-title"><?php echo esc_html( ayat_home( 'new_title' ) ); ?></h2>
+					<a class="link-gold" href="<?php echo esc_url( $arrivals ? get_permalink( $arrivals ) : add_query_arg( 'orderby', 'date', $shop_url ) ); ?>"><?php esc_html_e( 'View all', 'ayatcollections' ); ?></a>
+				</div>
+				<div data-reveal><?php echo do_shortcode( '[products limit="8" columns="4" orderby="date" order="DESC" visibility="visible"]' ); ?></div>
+			</div>
+		</section>
+	<?php endif; ?>
+
+	<?php if ( $look ) : ?>
+		<section class="home-sec look" aria-labelledby="look-title">
+			<div class="wrap look__inner">
+				<figure class="look__media" data-reveal>
+					<?php echo ayat_home_img( 'look_img', ayat_home( 'look_title' ), 'look__img' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</figure>
+				<div class="look__copy" data-reveal>
+					<p class="eyebrow"><?php esc_html_e( 'Shop the Look', 'ayatcollections' ); ?></p>
+					<h2 id="look-title"><?php echo esc_html( ayat_home( 'look_title' ) ); ?></h2>
+					<p><?php echo esc_html( ayat_home( 'look_text' ) ); ?></p>
+					<ol class="look__list">
+						<?php foreach ( $look as $prod ) : ?>
+							<li>
+								<a href="<?php echo esc_url( $prod->get_permalink() ); ?>">
+									<?php echo $prod->get_image( 'woocommerce_thumbnail', array( 'loading' => 'lazy', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<span class="look__name"><?php echo esc_html( $prod->get_name() ); ?></span>
+									<span class="look__price"><?php echo wp_kses_post( $prod->get_price_html() ); ?></span>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ol>
+				</div>
 			</div>
 		</section>
 	<?php endif; ?>
 
 	<section class="perks" aria-label="<?php esc_attr_e( 'Why shop with us', 'ayatcollections' ); ?>">
 		<ul class="wrap perks__list" role="list">
-			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7M5.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM17.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg><span><strong><?php esc_html_e( 'Cash on Delivery', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Available in Pakistan', 'ayatcollections' ); ?></span></li>
+			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7M5.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM17.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg><span><strong><?php esc_html_e( 'Cash on Delivery', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Across Pakistan', 'ayatcollections' ); ?></span></li>
 			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span><strong><?php esc_html_e( 'Secure Shopping', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Your trust matters', 'ayatcollections' ); ?></span></li>
-			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5zM3 7.5 12 12l9-4.5M12 12v9"/></svg><span><strong><?php esc_html_e( 'Easy Returns', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Hassle-free exchange', 'ayatcollections' ); ?></span></li>
-			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 1.5-2 2-5 2"/></svg><span><strong><?php esc_html_e( 'WhatsApp Support', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Get help anytime', 'ayatcollections' ); ?></span></li>
+			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5zM3 7.5 12 12l9-4.5M12 12v9"/></svg><span><strong><?php esc_html_e( 'Gift Boxed', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Easy exchange', 'ayatcollections' ); ?></span></li>
+			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 1.5-2 2-5 2"/></svg><span><strong><?php esc_html_e( 'WhatsApp Support', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Help before you order', 'ayatcollections' ); ?></span></li>
 		</ul>
 	</section>
 </main>

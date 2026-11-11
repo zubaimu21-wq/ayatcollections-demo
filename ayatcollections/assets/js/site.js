@@ -65,6 +65,34 @@
 		}
 	}
 
+	// Jewellery box replay + gentle scroll reveal (skipped when reduced motion is on).
+	function motion() {
+		var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		var box = document.querySelector('[data-jbox]');
+		var replay = document.querySelector('[data-jbox-replay]');
+		if (box && replay) {
+			replay.addEventListener('click', function () {
+				box.classList.remove('is-play');
+				void box.offsetWidth;
+				box.classList.add('is-play');
+			});
+		}
+		var items = document.querySelectorAll('[data-reveal]');
+		if (still || !('IntersectionObserver' in window) || !items.length) { return; }
+		document.documentElement.classList.add('js-reveal');
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (en) {
+				if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+			});
+		}, { rootMargin: '0px 0px -8% 0px' });
+		items.forEach(function (el) { io.observe(el); });
+	}
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', motion);
+	} else {
+		motion();
+	}
+
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', setup);
 	} else {

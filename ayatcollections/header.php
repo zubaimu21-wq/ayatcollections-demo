@@ -1,6 +1,6 @@
 <?php
 /**
- * Site header: logo left; menu, search, account and bag right.
+ * Site header: one row: logo, menu, then search, account and bag.
  *
  * @package Ayatcollections
  */
@@ -24,8 +24,10 @@ $announcement = get_theme_mod( 'ayat_announcement', __( 'Cash on Delivery across
 
 <header class="site-header" id="site-header">
 	<div class="wrap site-header__inner">
-		<div class="header-search-inline"><?php if ( function_exists( 'get_product_search_form' ) ) { get_product_search_form(); } else { get_search_form(); } ?></div>
 		<div class="site-branding"><?php ayat_logo(); ?></div>
+		<nav id="primary-nav" class="primary-nav" aria-label="<?php esc_attr_e( 'Main', 'ayatcollections' ); ?>">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_id' => 'primary-menu', 'depth' => 2, 'fallback_cb' => 'ayat_fallback_menu' ) ); ?>
+		</nav>
 		<div class="header-actions">
 			<button class="header-icon search-toggle" type="button" aria-controls="header-search" aria-expanded="false"><?php echo ayat_icon( 'search' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span class="screen-reader-text"><?php esc_html_e( 'Search', 'ayatcollections' ); ?></span></button>
 			<?php if ( function_exists( 'wc_get_page_permalink' ) ) : ?>
@@ -35,9 +37,6 @@ $announcement = get_theme_mod( 'ayat_announcement', __( 'Cash on Delivery across
 			<button class="header-icon menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false"><?php echo ayat_icon( 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span class="screen-reader-text"><?php esc_html_e( 'Menu', 'ayatcollections' ); ?></span></button>
 		</div>
 	</div>
-	<nav id="primary-nav" class="primary-nav" aria-label="<?php esc_attr_e( 'Main', 'ayatcollections' ); ?>">
-		<div class="wrap"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_id' => 'primary-menu', 'depth' => 2, 'fallback_cb' => 'ayat_fallback_menu' ) ); ?></div>
-	</nav>
 	<div class="header-search" id="header-search" hidden>
 		<div class="wrap"><?php if ( function_exists( 'get_product_search_form' ) ) { get_product_search_form(); } else { get_search_form(); } ?></div>
 	</div>

@@ -19,16 +19,20 @@ defined( 'ABSPATH' ) || exit;
 function ayat_home_fields() {
 	return array(
 		// 1. Hero.
-		'hero_eyebrow'    => array( 'hero', 'text', __( 'Small label', 'ayatcollections' ), __( 'Timeless Elegance', 'ayatcollections' ) ),
+		'hero_eyebrow'    => array( 'hero', 'text', __( 'Small label', 'ayatcollections' ), __( 'The Ayat Jewellery Box', 'ayatcollections' ) ),
 		'hero_title'      => array( 'hero', 'text', __( 'Heading', 'ayatcollections' ), __( 'Jewellery That', 'ayatcollections' ) ),
-		'hero_script'     => array( 'hero', 'text', __( 'Script line', 'ayatcollections' ), __( 'Tells Your Story', 'ayatcollections' ) ),
-		'hero_text'       => array( 'hero', 'text', __( 'Tag line', 'ayatcollections' ), __( 'Premium artificial jewellery  |  Kundan & gold tone  |  Everyday luxury', 'ayatcollections' ) ),
-		'hero_btn'        => array( 'hero', 'text', __( 'Button label', 'ayatcollections' ), __( 'Shop Now', 'ayatcollections' ) ),
+		'hero_script'     => array( 'hero', 'text', __( 'Heading, second line', 'ayatcollections' ), __( 'Tells Your Story', 'ayatcollections' ) ),
+		'hero_text'       => array( 'hero', 'text', __( 'Text', 'ayatcollections' ), __( 'Kundan, gold-tone and crystal pieces, gift-boxed and delivered across Pakistan with Cash on Delivery.', 'ayatcollections' ) ),
+		'hero_btn'        => array( 'hero', 'text', __( 'Button label', 'ayatcollections' ), __( 'Shop Collection', 'ayatcollections' ) ),
 		'hero_link'       => array( 'hero', 'link', __( 'Button link', 'ayatcollections' ), '/shop/' ),
-		'hero_img'        => array( 'hero', 'image', __( 'Photo', 'ayatcollections' ), 'demo-banner' ),
-		// 2. Collections.
-		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Our Collections', 'ayatcollections' ) ),
+		'hero_img'        => array( 'hero', 'image', __( 'Jewellery inside the box (transparent PNG/WebP works best)', 'ayatcollections' ), 'demo-box-reveal' ),
+		// 2. Collections, new arrivals, shop the look.
+		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Shop by Collection', 'ayatcollections' ) ),
 		'new_title'       => array( 'collections', 'text', __( 'New arrivals heading', 'ayatcollections' ), __( 'New Arrivals', 'ayatcollections' ) ),
+		'look_title'      => array( 'collections', 'text', __( 'Shop the look heading', 'ayatcollections' ), __( 'The Mehr Layered Look', 'ayatcollections' ) ),
+		'look_text'       => array( 'collections', 'text', __( 'Shop the look text', 'ayatcollections' ), __( 'A fine bar pendant, a crystal ring and a slim band, styled together for everyday shine.', 'ayatcollections' ) ),
+		'look_img'        => array( 'collections', 'image', __( 'Shop the look photo', 'ayatcollections' ), 'demo-newsletter' ),
+		'look_products'   => array( 'collections', 'text', __( 'Shop the look product slugs (comma separated)', 'ayatcollections' ), 'mehr-crystal-bar-set, hira-crystal-bar-ring, amal-chain-link-ring' ),
 		// 3. Bridal / bespoke gallery.
 		'bes_title'       => array( 'bespoke', 'text', __( 'Heading', 'ayatcollections' ), __( 'Bridal Jewellery', 'ayatcollections' ) ),
 		'bes_img'         => array( 'bespoke', 'image', __( 'Large photo', 'ayatcollections' ), 'demo-bespoke-main' ),
