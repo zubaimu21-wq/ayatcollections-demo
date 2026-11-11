@@ -967,3 +967,62 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--
 .newsletter__media::before { background: linear-gradient(90deg, var(--black) 0%, rgba(17,17,17,0) 25%); }
 .woocommerce ul.products li.product a img, .woocommerce div.product div.images img { background: #fff; }
 @media (max-width: 760px) { .newsletter__media { position: relative; width: 100%; aspect-ratio: 1.3; } .newsletter__media::before { background: none; } .royal__media::before { background: none; } }
+
+/* =====================================================================
+   Light gold theme: no dark areas; two-tone (double-shaded) gold
+   gradients where black was used; static homepage (no motion).
+   ===================================================================== */
+:root {
+	--cream: #fbf5ea;
+	--cream-2: #f6ebd6;
+	--gold-grad: linear-gradient(135deg, #f7ead0 0%, #ecd5a6 55%, #e2c58c 100%);
+	--gold-grad-soft: linear-gradient(135deg, #fdf7ec 0%, #f3e3c3 100%);
+	--grey: #f6ebd6;
+	--ink-soft: #3a2c17;
+}
+body { background: var(--cream); color: var(--ink-soft); }
+h1, h2, h3, h4, .sec-title, .hero-split__title { color: #2e2210; }
+.site-header { background: #fffaf1; border-bottom-color: #ecdcbc; }
+.announcement { background: var(--gold-grad); color: #4a3512; }
+.hero-split, .band { background: var(--cream); }
+.band--grey, .split__text--grey, .tips__row, .trust { background: var(--cream-2); }
+.band--dark { background: var(--gold-grad); color: var(--ink-soft); }
+.band--dark .sec-title { color: #2e2210; }
+.split__text { background: #fffaf1; }
+.split__media, .split__media--dark { background: #fff; }
+
+/* Former black banners → double-shaded gold */
+.royal, .newsletter { background: var(--gold-grad); color: var(--ink-soft); }
+.royal__title { color: #2e2210; }
+.royal__media::before, .newsletter__media::before { content: none; }
+.royal__media, .newsletter__media { background: #fff; }
+.newsletter__form input { background: #fffaf1; border-color: #d9bf8c; color: var(--ink-soft); }
+
+/* Footer → double-shaded gold */
+.site-footer { background: var(--gold-grad); color: #4a3512; }
+.site-footer a { color: #3a2c17; }
+.site-footer a:hover { color: #8a6424; }
+.site-footer__title { color: #6b4c18; }
+.site-footer__bottom { border-top-color: rgba(107, 76, 24, .2); color: #6b4c18; }
+.site-footer__social a { color: #6b4c18; border-color: rgba(107, 76, 24, .45); }
+.site-footer__social a:hover { background: #fffaf1; color: #6b4c18; }
+
+/* Buttons: gold double shade instead of black */
+.btn-gold, .btn, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce a.button.alt, .woocommerce button.button.alt, .wp-element-button, .wc-block-components-button:not(.is-link), .ayat-search__btn {
+	background: linear-gradient(135deg, #d9b26c 0%, #b8893f 100%); border-color: #b8893f; color: #fff;
+}
+.btn-gold:hover, .btn:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .wp-element-button:hover, .ayat-search__btn:hover {
+	background: linear-gradient(135deg, #e6c48a 0%, #cc9e5a 100%); border-color: #cc9e5a; color: #fff;
+}
+.btn-line, .woocommerce ul.products li.product .button { border-color: #b8893f; color: #6b4c18; background: transparent; }
+.btn-line:hover, .woocommerce ul.products li.product .button:hover { background: var(--gold-grad); color: #3a2c17; border-color: #cc9e5a; }
+.badge--new, .chip.is-active { background: linear-gradient(135deg, #d9b26c, #b8893f); color: #fff; border-color: #b8893f; }
+.bag-count.is-empty { border-color: #e1cfa8; }
+.woocommerce-checkout #order_review, .product-assurance, .woocommerce-message, .woocommerce-info { background: var(--cream-2); }
+.contact { background-color: var(--cream-2); }
+.contact::before { background: rgba(251, 245, 234, .6); }
+
+/* Static homepage: one banner photo, no moving strip */
+.hero-show .hero-show__img { animation: none !important; opacity: 0; transform: none; }
+.hero-show .hero-show__img:first-of-type { opacity: 1; }
+.hero-show__shine, .marquee { display: none !important; }
