@@ -55,6 +55,7 @@
 		'.demo-pay p{margin:6px 0 0 28px;color:var(--muted);font-size:.9rem}',
 		'.demo-err{color:#a12626;font-size:.85rem;margin-top:4px}',
 		'.demo-note{font-size:.85rem;color:var(--muted);margin-top:12px}',
+		'.demo-note--sim{background:#f7efe2;border-left:3px solid #c79244;padding:10px 14px;color:#111;margin:0 0 18px}',
 		'.demo-thanks{background:var(--purple-soft,#f5eff8);border-left:3px solid var(--gold);padding:18px 20px;font-family:var(--font-serif);font-size:1.5rem;color:var(--purple-ink);margin-bottom:20px}',
 		'.demo-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:24px}',
 		'.demo-meta div{border:1px solid var(--purple-line);background:#fff;padding:12px}.demo-meta small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:.7rem}',
@@ -249,7 +250,7 @@
 		if (!b.length) { location.replace(P + '/bag/'); return; }
 		var t = totals(b);
 		var cities = ['Lahore', 'Karachi', 'Islamabad', 'Rawalpindi', 'Faisalabad', 'Multan', 'Peshawar', 'Quetta', 'Sialkot', 'Gujranwala', 'Hyderabad', 'Other'];
-		app.innerHTML = '<div class="demo-view"><h1 class="page-title">Checkout</h1><form class="demo-form demo-grid" novalidate><div>' +
+		app.innerHTML = '<div class="demo-view"><h1 class="page-title">Checkout</h1><p class="demo-note demo-note--sim" role="note"><strong>Demo checkout (simulated):</strong> no payment is taken and no real order is placed. The live WordPress store uses the WooCommerce checkout.</p><form class="demo-form demo-grid" novalidate><div>' +
 			'<h2>Delivery details</h2>' +
 			'<div class="f"><label for="d-name">Full name *</label><input id="d-name" name="name" autocomplete="name" required></div>' +
 			'<div class="two"><div class="f"><label for="d-phone">Phone *</label><input id="d-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="03XX XXXXXXX" required></div>' +
@@ -290,7 +291,7 @@
 		var o = load(ORDER, null);
 		if (!o) { location.replace(P + '/'); return; }
 		app.innerHTML = '<div class="demo-view"><h1 class="page-title">Order received</h1>' +
-			'<p class="demo-thanks">Thank you, ' + esc(o.name.split(' ')[0]) + '. Your order has been received.</p>' +
+			'<p class="demo-thanks">Thank you, ' + esc(o.name.split(' ')[0]) + '. Your demo order has been recorded.</p><p class="demo-note demo-note--sim">Simulated order: nothing is charged or shipped from this demo.</p>' +
 			'<div class="demo-meta"><div><small>Order number</small>' + esc(o.no) + '</div><div><small>Date</small>' + esc(o.date) + '</div><div><small>Total</small>' + money(o.totals.total) + '</div><div><small>Payment</small>Cash on Delivery</div></div>' +
 			'<div class="demo-summary"><h2>Order details</h2>' +
 			o.items.map(function (i) { return '<div class="demo-row"><span>' + esc(i.name) + (i.variant ? ' (' + esc(i.variant) + ')' : '') + ' × ' + i.qty + '</span><span>' + money(i.price * i.qty) + '</span></div>'; }).join('') +
