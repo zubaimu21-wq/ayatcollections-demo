@@ -14,30 +14,36 @@ $contact = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'
 ?>
 <main id="main" class="site-main home-main">
 
-	<!-- 1. Hero -->
-	<section class="hero-split">
-		<div class="wrap hero-split__grid">
-			<div class="hero-split__text">
-				<h1 class="hero-split__title"><?php echo esc_html( $h( 'hero_title' ) ); ?></h1>
+	<!-- 1. Full-width carousel (CSS animated) -->
+	<section class="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
+		<div class="carousel__slide" style="--i:0">
+			<img class="carousel__img" src="<?php echo esc_url( AYAT_URI . '/assets/images/demo/demo-bespoke-main.webp' ); ?>" alt="<?php esc_attr_e( 'Pakistani bride wearing gold kundan jewellery', 'ayatcollections' ); ?>" fetchpriority="high" data-demo-image="1">
+			<div class="wrap carousel__text">
+				<h1 class="carousel__title"><?php esc_html_e( 'Bridal Elegance', 'ayatcollections' ); ?></h1>
 				<?php echo ayat_ornament(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-				<p class="hero-split__lead"><?php echo esc_html( $h( 'hero_text' ) ); ?></p>
-				<a class="btn-gold" href="<?php echo esc_url( ayat_resolve_link( $h( 'hero_link' ) ) ); ?>"><?php echo esc_html( $h( 'hero_btn' ) ); ?></a>
-			</div>
-			<div class="hero-split__media hero-show" aria-label="<?php esc_attr_e( 'Featured jewellery', 'ayatcollections' ); ?>" role="img">
-				<?php echo ayat_home_img( 'hero_img', __( 'Gold ring with a crystal bar', 'ayatcollections' ), 'hero-show__img', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-				<?php
-				$ayat_show = array(
-					'demo-product-drop-earrings' => __( 'Gold-tone ribbed hoop earrings', 'ayatcollections' ),
-					'demo-product-choker'        => __( 'Gold-tone heart pendant with crystals', 'ayatcollections' ),
-					'demo-product-jhumka'        => __( 'Gold-tone jhumka earrings', 'ayatcollections' ),
-				);
-				foreach ( $ayat_show as $file => $alt ) {
-					printf( '<img class="hero-show__img" src="%1$s" width="1000" height="1000" alt="%2$s" loading="lazy" decoding="async" data-demo-image="1">', esc_url( AYAT_URI . '/assets/images/demo/' . $file . '.webp' ), esc_attr( $alt ) );
-				}
-				?>
-				<span class="hero-show__shine" aria-hidden="true"></span>
+				<p><?php esc_html_e( 'Kundan and polished gold sets for your big day.', 'ayatcollections' ); ?></p>
+				<a class="btn-gold" href="<?php echo esc_url( home_url( '/product-category/necklaces/' ) ); ?>"><?php esc_html_e( 'Shop Bridal', 'ayatcollections' ); ?></a>
 			</div>
 		</div>
+		<div class="carousel__slide" style="--i:1">
+			<img class="carousel__img" src="<?php echo esc_url( AYAT_URI . '/assets/images/demo/demo-about.webp' ); ?>" alt="<?php esc_attr_e( 'Bride in traditional gold jewellery and red dupatta', 'ayatcollections' ); ?>" loading="lazy" data-demo-image="1">
+			<div class="wrap carousel__text">
+				<h2 class="carousel__title"><?php esc_html_e( 'Royal Gold', 'ayatcollections' ); ?></h2>
+				<?php echo ayat_ornament(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<p><?php esc_html_e( 'Artificial jewellery designed in Pakistan, delivered with Cash on Delivery.', 'ayatcollections' ); ?></p>
+				<a class="btn-gold" href="<?php echo esc_url( home_url( '/shop/' ) ); ?>"><?php esc_html_e( 'Shop Now', 'ayatcollections' ); ?></a>
+			</div>
+		</div>
+		<div class="carousel__slide" style="--i:2">
+			<img class="carousel__img" src="<?php echo esc_url( AYAT_URI . '/assets/images/demo/demo-col-necklaces.webp' ); ?>" alt="<?php esc_attr_e( 'Gold necklace, earrings and ring set', 'ayatcollections' ); ?>" loading="lazy" data-demo-image="1">
+			<div class="wrap carousel__text">
+				<h2 class="carousel__title"><?php esc_html_e( 'Everyday Gold', 'ayatcollections' ); ?></h2>
+				<?php echo ayat_ornament(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<p><?php esc_html_e( 'Light, elegant pieces to wear every day.', 'ayatcollections' ); ?></p>
+				<a class="btn-gold" href="<?php echo esc_url( home_url( '/new-arrivals/' ) ); ?>"><?php esc_html_e( 'New Arrivals', 'ayatcollections' ); ?></a>
+			</div>
+		</div>
+		<div class="carousel__dots" aria-hidden="true"><span></span><span></span><span></span></div>
 	</section>
 
 	<?php
