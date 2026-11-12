@@ -13,10 +13,16 @@
    "description": "Bangles, karas and sparkling tennis bracelets."
   },
   {
+   "name": "Anja",
+   "slug": "anja",
+   "image": "demo-product-anja",
+   "description": "Hand chains (anja) that link a ring to the wrist, worn on the hand."
+  },
+  {
    "name": "Anklets",
    "slug": "anklets",
    "image": "demo-product-anklet",
-   "description": "Fine gold-tone anklets for everyday and festive wear."
+   "description": "Fine gold-tone anklets for the foot, for everyday and festive wear."
   },
   {
    "name": "Rings",
@@ -252,6 +258,18 @@
    "alt": "Gold-tone charm bracelet with pearls and shell charms (demo photo)",
    "short": "A chunky link bracelet with pearl and shell charms.",
    "description": "Zoya is a chunky link bracelet carrying pearls, shells and sea charms.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
+  },
+  {
+   "sku": "AYC-ANJ-001",
+   "name": "Noori Layered Anja Hand Chain",
+   "category": "anja",
+   "type": "simple",
+   "regular_price": "1750",
+   "stock": 25,
+   "image": "demo-product-anja",
+   "alt": "Layered gold-tone hand chain (anja) linking a finger ring to the wrist (demo photo)",
+   "short": "A layered hand chain from ring to wrist with tiny charms.",
+   "description": "Noori is a layered anja (hand chain) that links a finger ring to a wrist chain, finished with tiny moon and star charms.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
   }
  ]
 }

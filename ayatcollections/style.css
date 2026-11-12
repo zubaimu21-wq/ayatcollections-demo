@@ -1399,3 +1399,9 @@ body .site-footer__bottom { border-top-color: rgba(199,146,68,.3); color: #b9ab8
 .home-main .all-rounds ul.products li.product .button { width: 100%; max-width: 220px; }
 @media (max-width: 1024px) { .cat-rounds { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 767px) { .cat-rounds { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 10px; } .cat-rounds__img { width: min(96px, 26vw); } .cat-rounds__name { font-size: .92rem; } .home-main .all-rounds ul.products li.product a img { width: min(100%, 150px); } }
+
+/* Category circles: centre the last row */
+.cat-rounds { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px 0; }
+.cat-rounds > li { flex: 0 0 calc(100% / 6); padding: 0 8px; }
+@media (max-width: 1024px) { .cat-rounds > li { flex-basis: 25%; } }
+@media (max-width: 767px) { .cat-rounds { gap: 22px 0; } .cat-rounds > li { flex-basis: calc(100% / 3); padding: 0 4px; } }

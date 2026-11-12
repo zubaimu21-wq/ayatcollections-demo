@@ -285,5 +285,12 @@
     "url": "https://unsplash.com/photos/6udzUgtewa0",
     "license": "Unsplash License (free for commercial use)",
     "background": "original photo, cropped"
+  },
+  {
+    "file": "demo-product-anja.webp",
+    "photographer": "Muhseenah Adamo",
+    "url": "https://unsplash.com/photos/PNXK2IxpyUA",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "original photo, cropped and brightened"
   }
 ]
