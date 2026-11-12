@@ -243,5 +243,47 @@
     "url": "https://unsplash.com/photos/qgQkbMQBifw",
     "license": "Unsplash License (free for commercial use)",
     "background": "removed, transparent cut-out for the jewellery-box hero"
+  },
+  {
+    "file": "demo-product-anklet.webp",
+    "photographer": "Divaris Shirichena",
+    "url": "https://unsplash.com/photos/2Cdl_k2wXps",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
+  },
+  {
+    "file": "demo-product-charm.webp",
+    "photographer": "César O'neill",
+    "url": "https://unsplash.com/photos/Qoaw-2dyQGM",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
+  },
+  {
+    "file": "demo-product-permanent.webp",
+    "photographer": "Diego Castañeda",
+    "url": "https://unsplash.com/photos/uOPqXOOgu-8",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
+  },
+  {
+    "file": "demo-product-cuff.webp",
+    "photographer": "PRAHANT STUDIO",
+    "url": "https://unsplash.com/photos/F_VqA-n3EYo",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
+  },
+  {
+    "file": "demo-product-adjustable-cuff.webp",
+    "photographer": "Oscar Ramirez",
+    "url": "https://unsplash.com/photos/SAfrvrXLuY8",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "removed, placed on white"
+  },
+  {
+    "file": "demo-product-nose-ring.webp",
+    "photographer": "Samantha Peralta",
+    "url": "https://unsplash.com/photos/6udzUgtewa0",
+    "license": "Unsplash License (free for commercial use)",
+    "background": "original photo, cropped"
   }
 ]

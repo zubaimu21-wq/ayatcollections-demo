@@ -1,149 +1,257 @@
 {
-  "categories": [
-    {
-      "name": "Earrings",
-      "slug": "earrings",
-      "image": "demo-col-earrings",
-      "description": "Jhumkas, studs and drops — from bridal kundan to everyday pearls."
-    },
-    {
-      "name": "Necklaces",
-      "slug": "necklaces",
-      "image": "demo-col-necklaces",
-      "description": "Chokers, sets and fine layered chains."
-    },
-    {
-      "name": "Bracelets",
-      "slug": "bracelets",
-      "image": "demo-col-bracelets",
-      "description": "Bangles, karas and sparkling tennis bracelets."
-    },
-    {
-      "name": "Rings",
-      "slug": "rings",
-      "image": "demo-col-rings",
-      "description": "Cocktail rings and stackable bands."
-    }
-  ],
-  "products": [
-    {
-      "sku": "AYC-EAR-001",
-      "name": "Noor Kundan Jhumka Earrings",
-      "category": "earrings",
-      "type": "simple",
-      "regular_price": "3450",
-      "sale_price": "2950",
-      "stock": 18,
-      "featured": true,
-      "image": "demo-product-jhumka",
-      "alt": "Pair of gold-tone jhumka earrings with filigree domes (demo photo)",
-      "short": "Bell-shaped gold-tone jhumkas set with white kundan stones and a fringe of faux pearls.",
-      "description": "Our Noor jhumkas pair a floral kundan stud with a domed bell finished in fine gold-tone plating and edged with faux pearls. Lightweight enough for a full evening, they suit mehndi, Eid and wedding looks.\n\nMaterial: brass alloy with gold-tone plating, kundan glass stones, faux pearls.\nLength: approx. 5.5 cm. Push-back closure.\nCare: keep dry, avoid perfume, store in the Ayatcollections pouch."
-    },
-    {
-      "sku": "AYC-EAR-002",
-      "name": "Zara Textured Hoop Earrings",
-      "category": "earrings",
-      "type": "simple",
-      "regular_price": "1850",
-      "stock": 30,
-      "image": "demo-product-drop-earrings",
-      "alt": "Gold-tone ribbed hoop earrings on white (demo photo)",
-      "short": "Bold ribbed gold-tone hoops for everyday shine.",
-      "description": "Zara drops are shaped like an opening bloom in a warm rose-gold tone, hung on slim hook fittings. Pretty with western and eastern outfits alike.\n\nMaterial: alloy with rose-gold-tone plating.\nLength: approx. 3 cm. Hook closure.\nCare: wipe with a soft dry cloth after wearing."
-    },
-    {
-      "sku": "AYC-NEC-001",
-      "name": "Rania Pavé Heart Pendant",
-      "category": "necklaces",
-      "type": "simple",
-      "regular_price": "7950",
-      "stock": 8,
-      "featured": true,
-      "image": "demo-product-choker",
-      "alt": "Gold-tone heart pendant set with crystals on a fine chain (demo photo)",
-      "short": "A crystal-studded heart pendant on a delicate chain.",
-      "description": "Rania layers rows of gold-tone beads and petals with coloured stone accents for a classic festive look. Wear it with a matching pair of jhumkas for mehndi or Eid.\n\nMaterial: alloy with gold-tone plating, glass stones.\nFit: adjustable dori, 36–44 cm.\nCare: store flat in its box; avoid water and perfume."
-    },
-    {
-      "sku": "AYC-NEC-002",
-      "name": "Mehr Crystal Bar Set",
-      "category": "necklaces",
-      "type": "simple",
-      "regular_price": "2650",
-      "stock": 22,
-      "image": "demo-product-pendant",
-      "alt": "Gold-tone necklace, earrings and ring set with crystal bars (demo photo)",
-      "short": "Matching necklace, earrings and ring with sliding crystal bars.",
-      "description": "Mehr is a simple teardrop pendant in a polished gold tone on a fine cable chain — an easy everyday piece and a lovely gift.\n\nMaterial: alloy with gold-tone plating.\nLength: 45 cm with 5 cm extender. Lobster clasp.\nCare: fasten the clasp before storing."
-    },
-    {
-      "sku": "AYC-BRA-001",
-      "name": "Laila Gold Bangle Set",
-      "category": "bracelets",
-      "type": "variable",
-      "regular_price": "4200",
-      "image": "demo-product-bangles",
-      "alt": "Four polished gold-tone bangles stacked together (demo photo)",
-      "attribute": "Bangle size",
-      "options": [
-        "2.4",
-        "2.6",
-        "2.8"
-      ],
-      "variation_stock": [
-        6,
-        10,
-        6
-      ],
-      "short": "Four polished gold-tone bangles, sold as a set. Choose your bangle size.",
-      "description": "The Laila set is four engraved karas with a soft, hand-polished shine. Wear all four together or split them across both wrists.\n\nMaterial: alloy with gold-tone plating.\nSizes: 2.4 (small), 2.6 (medium), 2.8 (large) — the inner diameter in inches.\nCare: remove before washing hands; store in the pouch."
-    },
-    {
-      "sku": "AYC-BRA-002",
-      "name": "Sana Crystal Cuff Bangle",
-      "category": "bracelets",
-      "type": "simple",
-      "regular_price": "3250",
-      "stock": 14,
-      "image": "demo-product-stone-bangle",
-      "alt": "Gold-tone open cuff bangle set with clear crystals (demo photo)",
-      "short": "An open gold-tone cuff lined with sparkling crystals.",
-      "description": "Sana is a slim open cuff with a row of clear crystals that catch the light. It slips on easily and pairs well with a watch or other bangles.\n\nMaterial: alloy with gold-tone plating, cubic zirconia.\nFit: adjustable, fits most wrists.\nCare: clean gently with a soft dry cloth."
-    },
-    {
-      "sku": "AYC-RNG-001",
-      "name": "Hira Crystal Bar Ring",
-      "category": "rings",
-      "type": "variable",
-      "regular_price": "2450",
-      "image": "demo-product-halo-ring",
-      "alt": "Gold-tone ring with a crystal bar on white (demo photo)",
-      "attribute": "Ring size",
-      "options": [
-        "6",
-        "7",
-        "8"
-      ],
-      "variation_stock": [
-        5,
-        8,
-        5
-      ],
-      "short": "A slim gold-tone ring with a sparkling crystal bar. Choose your size.",
-      "description": "Hira sets a cushion-cut pink stone in a bright halo of small crystals on a rose-gold-tone band — a sweet statement ring for engagements and parties.\n\nMaterial: alloy with rose-gold-tone plating, glass stone, cubic zirconia.\nSizes: 6, 7, 8 (US).\nCare: remove before applying lotion or perfume."
-    },
-    {
-      "sku": "AYC-RNG-002",
-      "name": "Amal Chain Link Ring",
-      "category": "rings",
-      "type": "simple",
-      "regular_price": "1650",
-      "stock": 25,
-      "image": "demo-product-ring-set",
-      "alt": "Gold-tone chain link ring with crystals on white (demo photo)",
-      "short": "A modern chain-link ring with a crystal accent.",
-      "description": "Amal is a trio of slim stacking rings: a plain polished band, a pavé zircon band and a band set with a single purple stone. One size fits most (US 6–7).\n\nMaterial: alloy with gold-tone plating, cubic zirconia, glass stone.\nCare: store each ring separately to avoid scratches."
-    }
-  ]
+ "categories": [
+  {
+   "name": "Earrings",
+   "slug": "earrings",
+   "image": "demo-col-earrings",
+   "description": "Jhumkas, studs and drops — from bridal kundan to everyday pearls."
+  },
+  {
+   "name": "Bracelets",
+   "slug": "bracelets",
+   "image": "demo-col-bracelets",
+   "description": "Bangles, karas and sparkling tennis bracelets."
+  },
+  {
+   "name": "Anklets",
+   "slug": "anklets",
+   "image": "demo-product-anklet",
+   "description": "Fine gold-tone anklets for everyday and festive wear."
+  },
+  {
+   "name": "Rings",
+   "slug": "rings",
+   "image": "demo-col-rings",
+   "description": "Cocktail rings and stackable bands."
+  },
+  {
+   "name": "Hand Cuffs",
+   "slug": "hand-cuffs",
+   "image": "demo-product-cuff",
+   "description": "Bold cuffs and karas that sit neatly on the wrist."
+  },
+  {
+   "name": "Adjustable Hand Cuffs",
+   "slug": "adjustable-hand-cuffs",
+   "image": "demo-product-adjustable-cuff",
+   "description": "Open and knot cuffs that adjust to fit any wrist."
+  },
+  {
+   "name": "Nose Rings",
+   "slug": "nose-rings",
+   "image": "demo-product-nose-ring",
+   "description": "Hoops and studs for a delicate everyday look."
+  },
+  {
+   "name": "Necklaces",
+   "slug": "necklaces",
+   "image": "demo-col-necklaces",
+   "description": "Chokers, sets and fine layered chains."
+  },
+  {
+   "name": "Permanent Bracelets",
+   "slug": "permanent-bracelets",
+   "image": "demo-product-permanent",
+   "description": "Dainty chain bracelets made to stay on, day and night."
+  },
+  {
+   "name": "Charms",
+   "slug": "charms",
+   "image": "demo-product-charm",
+   "description": "Charm bracelets and add-on charms to make it yours."
+  }
+ ],
+ "products": [
+  {
+   "sku": "AYC-EAR-001",
+   "name": "Noor Kundan Jhumka Earrings",
+   "category": "earrings",
+   "type": "simple",
+   "regular_price": "3450",
+   "sale_price": "2950",
+   "stock": 18,
+   "featured": true,
+   "image": "demo-product-jhumka",
+   "alt": "Pair of gold-tone jhumka earrings with filigree domes (demo photo)",
+   "short": "Bell-shaped gold-tone jhumkas set with white kundan stones and a fringe of faux pearls.",
+   "description": "Our Noor jhumkas pair a floral kundan stud with a domed bell finished in fine gold-tone plating and edged with faux pearls. Lightweight enough for a full evening, they suit mehndi, Eid and wedding looks.\n\nMaterial: brass alloy with gold-tone plating, kundan glass stones, faux pearls.\nLength: approx. 5.5 cm. Push-back closure.\nCare: keep dry, avoid perfume, store in the Ayatcollections pouch."
+  },
+  {
+   "sku": "AYC-EAR-002",
+   "name": "Zara Textured Hoop Earrings",
+   "category": "earrings",
+   "type": "simple",
+   "regular_price": "1850",
+   "stock": 30,
+   "image": "demo-product-drop-earrings",
+   "alt": "Gold-tone ribbed hoop earrings on white (demo photo)",
+   "short": "Bold ribbed gold-tone hoops for everyday shine.",
+   "description": "Zara drops are shaped like an opening bloom in a warm rose-gold tone, hung on slim hook fittings. Pretty with western and eastern outfits alike.\n\nMaterial: alloy with rose-gold-tone plating.\nLength: approx. 3 cm. Hook closure.\nCare: wipe with a soft dry cloth after wearing."
+  },
+  {
+   "sku": "AYC-NEC-001",
+   "name": "Rania Pavé Heart Pendant",
+   "category": "necklaces",
+   "type": "simple",
+   "regular_price": "7950",
+   "stock": 8,
+   "featured": true,
+   "image": "demo-product-choker",
+   "alt": "Gold-tone heart pendant set with crystals on a fine chain (demo photo)",
+   "short": "A crystal-studded heart pendant on a delicate chain.",
+   "description": "Rania layers rows of gold-tone beads and petals with coloured stone accents for a classic festive look. Wear it with a matching pair of jhumkas for mehndi or Eid.\n\nMaterial: alloy with gold-tone plating, glass stones.\nFit: adjustable dori, 36–44 cm.\nCare: store flat in its box; avoid water and perfume."
+  },
+  {
+   "sku": "AYC-NEC-002",
+   "name": "Mehr Crystal Bar Set",
+   "category": "necklaces",
+   "type": "simple",
+   "regular_price": "2650",
+   "stock": 22,
+   "image": "demo-product-pendant",
+   "alt": "Gold-tone necklace, earrings and ring set with crystal bars (demo photo)",
+   "short": "Matching necklace, earrings and ring with sliding crystal bars.",
+   "description": "Mehr is a simple teardrop pendant in a polished gold tone on a fine cable chain — an easy everyday piece and a lovely gift.\n\nMaterial: alloy with gold-tone plating.\nLength: 45 cm with 5 cm extender. Lobster clasp.\nCare: fasten the clasp before storing."
+  },
+  {
+   "sku": "AYC-BRA-001",
+   "name": "Laila Gold Bangle Set",
+   "category": "bracelets",
+   "type": "variable",
+   "regular_price": "4200",
+   "image": "demo-product-bangles",
+   "alt": "Four polished gold-tone bangles stacked together (demo photo)",
+   "attribute": "Bangle size",
+   "options": [
+    "2.4",
+    "2.6",
+    "2.8"
+   ],
+   "variation_stock": [
+    6,
+    10,
+    6
+   ],
+   "short": "Four polished gold-tone bangles, sold as a set. Choose your bangle size.",
+   "description": "The Laila set is four engraved karas with a soft, hand-polished shine. Wear all four together or split them across both wrists.\n\nMaterial: alloy with gold-tone plating.\nSizes: 2.4 (small), 2.6 (medium), 2.8 (large) — the inner diameter in inches.\nCare: remove before washing hands; store in the pouch."
+  },
+  {
+   "sku": "AYC-BRA-002",
+   "name": "Sana Crystal Cuff Bangle",
+   "category": "bracelets",
+   "type": "simple",
+   "regular_price": "3250",
+   "stock": 14,
+   "image": "demo-product-stone-bangle",
+   "alt": "Gold-tone open cuff bangle set with clear crystals (demo photo)",
+   "short": "An open gold-tone cuff lined with sparkling crystals.",
+   "description": "Sana is a slim open cuff with a row of clear crystals that catch the light. It slips on easily and pairs well with a watch or other bangles.\n\nMaterial: alloy with gold-tone plating, cubic zirconia.\nFit: adjustable, fits most wrists.\nCare: clean gently with a soft dry cloth."
+  },
+  {
+   "sku": "AYC-RNG-001",
+   "name": "Hira Crystal Bar Ring",
+   "category": "rings",
+   "type": "variable",
+   "regular_price": "2450",
+   "image": "demo-product-halo-ring",
+   "alt": "Gold-tone ring with a crystal bar on white (demo photo)",
+   "attribute": "Ring size",
+   "options": [
+    "6",
+    "7",
+    "8"
+   ],
+   "variation_stock": [
+    5,
+    8,
+    5
+   ],
+   "short": "A slim gold-tone ring with a sparkling crystal bar. Choose your size.",
+   "description": "Hira sets a cushion-cut pink stone in a bright halo of small crystals on a rose-gold-tone band — a sweet statement ring for engagements and parties.\n\nMaterial: alloy with rose-gold-tone plating, glass stone, cubic zirconia.\nSizes: 6, 7, 8 (US).\nCare: remove before applying lotion or perfume."
+  },
+  {
+   "sku": "AYC-RNG-002",
+   "name": "Amal Chain Link Ring",
+   "category": "rings",
+   "type": "simple",
+   "regular_price": "1650",
+   "stock": 25,
+   "image": "demo-product-ring-set",
+   "alt": "Gold-tone chain link ring with crystals on white (demo photo)",
+   "short": "A modern chain-link ring with a crystal accent.",
+   "description": "Amal is a trio of slim stacking rings: a plain polished band, a pavé zircon band and a band set with a single purple stone. One size fits most (US 6–7).\n\nMaterial: alloy with gold-tone plating, cubic zirconia, glass stone.\nCare: store each ring separately to avoid scratches."
+  },
+  {
+   "sku": "AYC-ANK-001",
+   "name": "Mahi Gold-Tone Anklet",
+   "category": "anklets",
+   "type": "simple",
+   "regular_price": "1450",
+   "stock": 25,
+   "image": "demo-product-anklet",
+   "alt": "Gold-tone stainless steel anklet with a fine curb chain (demo photo)",
+   "short": "A fine curb-chain anklet that stays bright in water.",
+   "description": "Mahi is a slim gold-tone chain anklet with an extender, light enough to wear every day.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
+  },
+  {
+   "sku": "AYC-CUF-001",
+   "name": "Aira Pave Hand Cuff",
+   "category": "hand-cuffs",
+   "type": "simple",
+   "regular_price": "3850",
+   "stock": 25,
+   "image": "demo-product-cuff",
+   "alt": "Rose-gold-tone hand cuff with crystal panels on white (demo photo)",
+   "short": "A statement hinged cuff with crystal panels.",
+   "description": "Aira is a hinged hand cuff with two crystal panels and a clean polished finish.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
+  },
+  {
+   "sku": "AYC-ADJ-001",
+   "name": "Sara Adjustable Knot Cuff",
+   "category": "adjustable-hand-cuffs",
+   "type": "simple",
+   "regular_price": "2250",
+   "stock": 25,
+   "image": "demo-product-adjustable-cuff",
+   "alt": "Gold-tone adjustable knot cuff on a wrist (demo photo)",
+   "short": "An open knot cuff that adjusts to fit.",
+   "description": "Sara is an open cuff with a love-knot front. Gently press to adjust the fit.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
+  },
+  {
+   "sku": "AYC-NOS-001",
+   "name": "Mehak Twin Nose Ring",
+   "category": "nose-rings",
+   "type": "simple",
+   "regular_price": "950",
+   "stock": 25,
+   "image": "demo-product-nose-ring",
+   "alt": "Fine gold-tone nose hoops (demo photo)",
+   "short": "A pair of slim hoops for a delicate look.",
+   "description": "Mehak is a set of two seamless hoops in fine gold-tone steel.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
+  },
+  {
+   "sku": "AYC-PER-001",
+   "name": "Hana Permanent Chain Bracelet",
+   "category": "permanent-bracelets",
+   "type": "simple",
+   "regular_price": "1950",
+   "stock": 25,
+   "image": "demo-product-permanent",
+   "alt": "Dainty gold-tone chain bracelets with tiny charms on white (demo photo)",
+   "short": "A dainty chain made to stay on, day and night.",
+   "description": "Hana is a fine satellite chain with tiny charms, made to be worn without taking off.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
+  },
+  {
+   "sku": "AYC-CHM-001",
+   "name": "Zoya Charm Bracelet",
+   "category": "charms",
+   "type": "simple",
+   "regular_price": "2950",
+   "stock": 25,
+   "image": "demo-product-charm",
+   "alt": "Gold-tone charm bracelet with pearls and shell charms (demo photo)",
+   "short": "A chunky link bracelet with pearl and shell charms.",
+   "description": "Zoya is a chunky link bracelet carrying pearls, shells and sea charms.\n\nMaterial: 316L stainless steel with gold-tone PVD plating. Anti-tarnish, waterproof and safe for everyday wear.\nCare: rinse, pat dry and store in the SHAYA pouch."
+  }
+ ]
 }

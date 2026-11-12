@@ -13,16 +13,10 @@ get_header();
 $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
 $arrivals = get_page_by_path( 'new-arrivals' );
 
-// Collections in a fixed order, falling back to any collections.
-$terms = array();
-foreach ( array( 'earrings', 'necklaces', 'rings', 'bracelets' ) as $slug ) {
-	$t = get_term_by( 'slug', $slug, 'product_cat' );
-	if ( $t && ! is_wp_error( $t ) ) {
-		$terms[] = $t;
-	}
-}
-if ( count( $terms ) < 2 ) {
-	$terms = ayat_get_collections( 4 );
+// Every collection (category) with products, in the order set in Products → Categories.
+$terms = ayat_get_collections();
+if ( ! $terms ) {
+	$terms = array();
 }
 
 // Shop the look products.
@@ -74,7 +68,19 @@ if ( function_exists( 'wc_get_product' ) ) {
 				<h2 id="col-title"><?php echo esc_html( ayat_home( 'col_title' ) ); ?></h2>
 				<a class="link-gold" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'View all', 'ayatcollections' ); ?></a>
 			</div>
-			<div data-reveal><?php ayat_render_collection_cards( $terms, 'h3' ); ?></div>
+			<ul class="cat-rounds" role="list">
+				<?php foreach ( $terms as $term ) : ?>
+					<?php $img = ayat_collection_image_id( $term ); ?>
+					<li>
+						<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="cat-rounds__link">
+							<span class="cat-rounds__img"><?php echo $img ? wp_get_attachment_image( $img, 'woocommerce_thumbnail', false, array( 'alt' => '', 'loading' => 'lazy' ) ) : '<span class="cat-rounds__initial" aria-hidden="true">' . esc_html( mb_substr( $term->name, 0, 1 ) ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+							<span class="cat-rounds__name"><?php echo esc_html( $term->name ); ?></span>
+							<?php /* translators: %d: number of products */ ?>
+							<span class="cat-rounds__count"><?php echo esc_html( sprintf( _n( '%d piece', '%d pieces', (int) $term->count, 'ayatcollections' ), (int) $term->count ) ); ?></span>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
 		</div>
 	</section>
 
@@ -83,9 +89,9 @@ if ( function_exists( 'wc_get_product' ) ) {
 			<div class="wrap">
 				<div class="sec-head" data-reveal>
 					<h2 id="new-title"><?php echo esc_html( ayat_home( 'new_title' ) ); ?></h2>
-					<a class="link-gold" href="<?php echo esc_url( $arrivals ? get_permalink( $arrivals ) : add_query_arg( 'orderby', 'date', $shop_url ) ); ?>"><?php esc_html_e( 'View all', 'ayatcollections' ); ?></a>
+					<a class="link-gold" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Shop all', 'ayatcollections' ); ?></a>
 				</div>
-				<div data-reveal><?php echo do_shortcode( '[products limit="8" columns="4" orderby="date" order="DESC" visibility="visible"]' ); ?></div>
+				<div class="all-rounds"><?php echo do_shortcode( '[products limit="-1" columns="4" orderby="menu_order title" order="ASC" visibility="visible"]' ); ?></div>
 			</div>
 		</section>
 	<?php endif; ?>

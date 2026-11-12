@@ -27,8 +27,8 @@ function ayat_home_fields() {
 		'hero_link'       => array( 'hero', 'link', __( 'Button link', 'ayatcollections' ), '/shop/' ),
 		'hero_img'        => array( 'hero', 'image', __( 'Jewellery inside the box (transparent PNG/WebP works best)', 'ayatcollections' ), 'demo-box-reveal-steel' ),
 		// 2. Collections, new arrivals, shop the look.
-		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Shop by Collection', 'ayatcollections' ) ),
-		'new_title'       => array( 'collections', 'text', __( 'New arrivals heading', 'ayatcollections' ), __( 'New Arrivals', 'ayatcollections' ) ),
+		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Shop by Category', 'ayatcollections' ) ),
+		'new_title'       => array( 'collections', 'text', __( 'All products heading', 'ayatcollections' ), __( 'All Products', 'ayatcollections' ) ),
 		'look_title'      => array( 'collections', 'text', __( 'Shop the look heading', 'ayatcollections' ), __( 'The Mehr Layered Look', 'ayatcollections' ) ),
 		'look_text'       => array( 'collections', 'text', __( 'Shop the look text', 'ayatcollections' ), __( 'A fine bar pendant, a crystal ring and a slim band, styled together for everyday shine.', 'ayatcollections' ) ),
 		'look_img'        => array( 'collections', 'image', __( 'Shop the look photo', 'ayatcollections' ), 'demo-newsletter' ),
