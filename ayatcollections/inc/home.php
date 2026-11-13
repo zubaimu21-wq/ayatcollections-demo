@@ -25,7 +25,7 @@ function ayat_home_fields() {
 		'hero_text'       => array( 'hero', 'text', __( 'Text', 'ayatcollections' ), __( 'Gold-tone stainless steel jewellery that is anti-tarnish and waterproof, made to shine every day. Gift-boxed and delivered across Pakistan with Cash on Delivery.', 'ayatcollections' ) ),
 		'hero_btn'        => array( 'hero', 'text', __( 'Button label', 'ayatcollections' ), __( 'Shop Collection', 'ayatcollections' ) ),
 		'hero_link'       => array( 'hero', 'link', __( 'Button link', 'ayatcollections' ), '/shop/' ),
-		'hero_img'        => array( 'hero', 'image', __( 'Jewellery inside the box (transparent PNG/WebP works best)', 'ayatcollections' ), 'demo-box-reveal-steel' ),
+		'hero_img'        => array( 'hero', 'image', __( 'Jewellery inside the box (transparent PNG/WebP works best)', 'ayatcollections' ), 'demo-box-reveal-cuffs' ),
 		// 2. Collections, new arrivals, shop the look.
 		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Shop by Category', 'ayatcollections' ) ),
 		'new_title'       => array( 'collections', 'text', __( 'All products heading', 'ayatcollections' ), __( 'All Products', 'ayatcollections' ) ),

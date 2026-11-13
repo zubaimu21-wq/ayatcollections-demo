@@ -292,5 +292,12 @@
     "url": "https://unsplash.com/photos/PNXK2IxpyUA",
     "license": "Unsplash License (free for commercial use)",
     "background": "original photo, cropped and brightened"
+  },
+  {
+    "file": "demo-box-reveal-cuffs.webp",
+    "photographer": "Ayat Collections (own product photo)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "cropped, edges faded into the black box"
   }
 ]

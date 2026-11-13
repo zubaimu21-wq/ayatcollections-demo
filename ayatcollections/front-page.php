@@ -48,12 +48,12 @@ if ( function_exists( 'wc_get_product' ) ) {
 				<div class="jbox is-play" data-jbox>
 					<div class="jbox__tray">
 						<div class="jbox__cushion">
-							<img class="jbox__jewel" src="<?php echo esc_url( ayat_home_img_url( 'hero_img' ) ); ?>" width="720" height="236" alt="<?php esc_attr_e( 'Gold-tone stainless steel rings resting in a black velvet jewellery box', 'ayatcollections' ); ?>" fetchpriority="high" decoding="async">
+							<img class="jbox__jewel" src="<?php echo esc_url( ayat_home_img_url( 'hero_img' ) ); ?>" width="900" height="692" alt="<?php esc_attr_e( 'Five gold-tone stainless steel cuff bangles with crystals, shown in a black velvet jewellery box', 'ayatcollections' ); ?>" fetchpriority="high" decoding="async">
 							<span class="jbox__glint" aria-hidden="true"></span>
 						</div>
 						<div class="jbox__lid" aria-hidden="true">
 							<span class="jbox__lid-out"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt=""></span>
-							<span class="jbox__lid-in"></span>
+							<span class="jbox__lid-in"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt=""></span>
 						</div>
 					</div>
 				</div>
