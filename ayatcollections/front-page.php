@@ -55,7 +55,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 								</div>
 								<div class="jbox__lid" aria-hidden="true">
 									<span class="jbox__lid-out"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt=""></span>
-									<span class="jbox__lid-in"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt=""></span>
+									<span class="jbox__lid-in"></span>
 								</div>
 							</div>
 						</div>
@@ -69,7 +69,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 				$s_url  = $s_term && ! is_wp_error( $s_term ) ? get_term_link( $s_term ) : $shop_url;
 				?>
 				<div class="ayat-slide" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( ( $s + 1 ) . ' / 4' ); ?>">
-					<?php echo ayat_home_img( 'slide' . $s . '_img', '', 'ayat-slide__img' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo str_replace( 'loading="lazy"', 'loading="eager"', ayat_home_img( 'slide' . $s . '_img', '', 'ayat-slide__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<div class="wrap ayat-slide__copy">
 						<p class="eyebrow"><?php esc_html_e( 'SHAYA by Aayat Collections', 'ayatcollections' ); ?></p>
 						<h2 class="ayat-slide__title"><?php echo esc_html( ayat_home( 'slide' . $s . '_title' ) ); ?></h2>

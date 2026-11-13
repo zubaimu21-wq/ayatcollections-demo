@@ -1671,3 +1671,8 @@ body .site-footer__credit-logo img { height: 24px; width: auto; display: block; 
 	.ayat-slide--box .hero-box__text { display: none; }
 	.ayat-slide--box .hero-box__actions { justify-content: center; gap: 16px; }
 }
+
+/* ===== 1.9.7: lid logo centred, plain inner lid ===== */
+.jbox__lid-out { display: flex; align-items: center; justify-content: center; }
+.jbox .jbox__lid-out img { width: 36%; height: auto; max-height: 72%; object-fit: contain; margin: 0; }
+.jbox__lid-in img { display: none; }
