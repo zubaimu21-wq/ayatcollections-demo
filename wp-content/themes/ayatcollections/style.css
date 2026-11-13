@@ -1676,3 +1676,52 @@ body .site-footer__credit-logo img { height: 24px; width: auto; display: block; 
 .jbox__lid-out { display: flex; align-items: center; justify-content: center; }
 .jbox .jbox__lid-out img { width: 36%; height: auto; max-height: 72%; object-fit: contain; margin: 0; }
 .jbox__lid-in img { display: none; }
+
+/* ===== 1.9.8: slide photos fit the slide height on desktop (no heavy crop on wide screens) ===== */
+@media (min-width: 768px) {
+	.ayat-slide:not(.ayat-slide--box) { background: linear-gradient(90deg, #f6e4bf 0%, #f2dbad 100%); }
+	.ayat-slide:last-child { background: linear-gradient(90deg, #f0d6a2 0%, #e8c588 100%); }
+	.ayat-slide .ayat-slide__img { left: auto; right: 0; width: auto; max-width: 68%; height: 100%; object-fit: cover; object-position: 72% top; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%); mask-image: linear-gradient(90deg, transparent 0, #000 22%); }
+	.ayat-slide:last-child .ayat-slide__img { object-position: 70% center; }
+}
+
+/* ===== 1.9.9: full-width header (logo at the far left) + category strip ===== */
+body .site-header .site-header__inner--full { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%; max-width: none; margin: 0; padding-inline: clamp(16px, 2.6vw, 44px); }
+.site-header__inner--full .site-branding { justify-self: start; }
+.site-header__inner--full .primary-nav { justify-self: center; }
+.site-header__inner--full .header-actions { justify-self: end; margin-left: 0; }
+
+.cat-strip { background: #f8efdf; border-top: 1px solid rgba(199,146,68,.5); box-shadow: inset 0 -1px 0 rgba(199,146,68,.25); }
+.cat-strip__list { display: flex; justify-content: center; gap: 6px; margin: 0; padding: 8px clamp(16px, 2.6vw, 44px); list-style: none; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; }
+.cat-strip__list::-webkit-scrollbar { display: none; }
+.cat-strip__list li { flex: none; scroll-snap-align: start; }
+.cat-strip__link { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 4px 14px 4px 4px; border: 1px solid rgba(199,146,68,.35); border-radius: 999px; background: #fff; color: #111; font: 500 12.5px/1 var(--font-sans, Montserrat, sans-serif); letter-spacing: .03em; text-decoration: none; white-space: nowrap; transition: background .2s, border-color .2s, color .2s, box-shadow .2s; }
+.cat-strip__link:hover, .cat-strip__link:focus-visible { border-color: #c79244; box-shadow: 0 4px 12px rgba(120,84,30,.14); outline: none; }
+.cat-strip__link.is-current { background: #111; color: #f3d9a4; border-color: #111; }
+.cat-strip__thumb, .cat-strip__dot { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #f3e6cc; color: #8a6420; font-size: 13px; flex: none; }
+.cat-strip__thumb img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.cat-strip__link--all { padding-left: 4px; }
+.cat-strip__dot { background: linear-gradient(135deg, #e8c785, #c79244); color: #111; }
+@media (max-width: 1279px) { .cat-strip__list { justify-content: flex-start; } }
+@media (max-width: 1023px) {
+	body .site-header .site-header__inner--full { grid-template-columns: auto 1fr auto; }
+	.cat-strip__list { gap: 6px; padding-block: 7px; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
+	.cat-strip__link { min-height: 36px; font-size: 12px; padding-right: 12px; }
+	.cat-strip__thumb, .cat-strip__dot { width: 28px; height: 28px; }
+}
+.cat-strip__list { justify-content: flex-start; }
+.cat-strip__list li:first-child { margin-left: auto; }
+.cat-strip__list li:last-child { margin-right: auto; }
+@media (min-width: 1024px) {
+	.cat-strip__list { gap: 4px; }
+	.cat-strip__link { min-height: 36px; padding-right: 11px; font-size: 12px; gap: 7px; }
+	.cat-strip__thumb, .cat-strip__dot { width: 28px; height: 28px; }
+}
+@media (min-width: 1024px) {
+	.cat-strip__list { gap: 3px; padding-inline: 20px; }
+	.cat-strip__link { padding-right: 10px; font-size: 11.5px; letter-spacing: .02em; gap: 6px; }
+	.cat-strip__thumb, .cat-strip__dot { width: 26px; height: 26px; }
+}
+@media (min-width: 1024px) and (max-width: 1439px) { .cat-strip__list { -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent); mask-image: linear-gradient(90deg, #000 92%, transparent); } }
+/* The header category strip replaces the in-page category chips. */
+.shop-toolbar__filter { display: none; }
