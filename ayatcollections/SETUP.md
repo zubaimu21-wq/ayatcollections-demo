@@ -62,3 +62,16 @@ Go to **WooCommerce → Order alerts**:
 3. **"Confirm order on WhatsApp" button:** shown to the customer after ordering; it opens WhatsApp with their order details ready to send to your store number.
 4. **Phone app:** install the free **WooCommerce** app (Android / iPhone) and log in with your website for a sound + notification on every order.
 All orders are also listed in **WooCommerce → Orders** (the menu shows how many new orders are waiting).
+
+## 9. Real customer reviews (product pages)
+
+- Customers press **Write a review** on any product page: stars, name, city, title, review and up to 3 photos.
+- Every review arrives as **Pending** in **WP Admin -> Customer Reviews** (the menu shows a count, and you get an email). Open it and press **Publish** to show it, or move it to the Bin.
+- **Verified buyer** is added automatically when the phone/email they enter matches a Processing or Completed order for that product.
+- Product pages show the average, the 5-to-1 star bars, sorting and photos; shop cards show the stars and review count.
+- Delete the reviews marked "sample" before launch.
+
+## 10. Order tracking
+
+- The **Track order** link in the header opens the Track Order page (created automatically). Customers enter the order number and the phone or email they ordered with.
+- In **WooCommerce -> Orders**, open an order and fill **SHAYA order tracking**: stage, courier (TCS, Leopards, M&P, PostEx...) and tracking number. Leave the stage on "Automatic" to follow the order status.
