@@ -1496,3 +1496,18 @@ body .site-footer__brand .site-footer__logo { display: inline-block; align-self:
 	body .site-footer__grid { gap: 26px 20px; }
 }
 @media (max-width: 380px) { body .site-footer__grid { grid-template-columns: 1fr 1fr; } }
+
+/* Hero: branding on top, centred; client cuffs photo inside the box */
+.hero-box__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 22px; }
+.hero-box__copy { max-width: 640px; }
+.hero-box__text { margin-left: auto; margin-right: auto; }
+.hero-box__actions { justify-content: center; }
+.hero-box { background: radial-gradient(60% 70% at 50% 72%, #f6ecdc 0%, #fff 72%); }
+.jbox { width: min(460px, 100%); }
+.jbox .jbox__jewel { inset: 3%; width: 94%; height: 94%; object-fit: contain; filter: none; border-radius: 6px; }
+.jbox__lid-in { display: grid; place-items: center; }
+.jbox__lid-in img { width: auto; height: 46%; opacity: .9; filter: drop-shadow(0 1px 0 rgba(255,255,255,.5)); }
+@media (max-width: 767px) { .jbox { width: min(330px, 88vw); } .hero-box__inner { gap: 8px; } }
+.jbox__lid-in img { opacity: 1; filter: none; }
+.hero-box__stage { margin-top: 10px; }
+@media (max-width: 767px) { .hero-box__stage { margin-top: 26px; } .jbox { padding-top: 28%; } }
