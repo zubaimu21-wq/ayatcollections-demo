@@ -1552,3 +1552,8 @@ body .site-footer__brand .site-footer__logo { display: inline-block; align-self:
 	.reviews-grid { grid-template-columns: 1fr; gap: 14px; }
 	.review-card { padding: 22px 18px 18px; }
 }
+
+/* Developer credit (small) */
+body .site-footer__credit { margin: 0 auto; padding-block: 0 14px; text-align: center; font-size: 11px; line-height: 1.6; color: #8f8370; letter-spacing: .02em; }
+body .site-footer__credit a { color: #c9a868; text-decoration: none; white-space: nowrap; }
+body .site-footer__credit a:hover { color: #e2b866; text-decoration: underline; }

@@ -70,6 +70,11 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'All rights reserved.', 'ayatcollections' ); ?></p>
 			<p><?php esc_html_e( 'SHAYA by Aayat Collections', 'ayatcollections' ); ?></p>
 		</div>
+		<p class="wrap site-footer__credit">
+			<?php esc_html_e( 'Website created by Optix Technologies', 'ayatcollections' ); ?> &middot;
+			<?php esc_html_e( 'Need a website?', 'ayatcollections' ); ?>
+			<a href="https://wa.me/923392281890" rel="noopener"><?php esc_html_e( 'WhatsApp +92 339 2281890', 'ayatcollections' ); ?></a>
+		</p>
 	</div>
 </footer>
 <?php wp_footer(); ?>
