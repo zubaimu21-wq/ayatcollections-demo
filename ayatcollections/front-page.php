@@ -60,6 +60,18 @@ if ( function_exists( 'wc_get_product' ) ) {
 				<button class="jbox__replay" type="button" data-jbox-toggle aria-pressed="false" data-pause="<?php esc_attr_e( 'Pause', 'ayatcollections' ); ?>" data-play="<?php esc_attr_e( 'Play', 'ayatcollections' ); ?>"><span aria-hidden="true">&#10074;&#10074;</span> <span data-label><?php esc_html_e( 'Pause', 'ayatcollections' ); ?></span></button>
 			</div>
 		</div>
+		<div class="hero-sides">
+			<?php
+			foreach ( array( array( 'hero_side1', 'hero_side1_label', 'hero_side1_cat', 'hero-side--left' ), array( 'hero_side2', 'hero_side2_label', 'hero_side2_cat', 'hero-side--right' ) ) as $side ) :
+				$cat_term = get_term_by( 'slug', ayat_home( $side[2] ), 'product_cat' );
+				$side_url = $cat_term && ! is_wp_error( $cat_term ) ? get_term_link( $cat_term ) : $shop_url;
+				?>
+				<a class="hero-side <?php echo esc_attr( $side[3] ); ?>" href="<?php echo esc_url( $side_url ); ?>">
+					<?php echo ayat_home_img( $side[0], ayat_home( $side[1] ), 'hero-side__img', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<span class="hero-side__label"><?php echo esc_html( ayat_home( $side[1] ) ); ?> <span aria-hidden="true">&rarr;</span></span>
+				</a>
+			<?php endforeach; ?>
+		</div>
 	</section>
 
 	<section class="home-sec" id="collections" aria-labelledby="col-title">
