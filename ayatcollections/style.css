@@ -1557,3 +1557,5 @@ body .site-footer__brand .site-footer__logo { display: inline-block; align-self:
 body .site-footer__credit { margin: 0 auto; padding-block: 0 14px; text-align: center; font-size: 11px; line-height: 1.6; color: #8f8370; letter-spacing: .02em; }
 body .site-footer__credit a { color: #c9a868; text-decoration: none; white-space: nowrap; }
 body .site-footer__credit a:hover { color: #e2b866; text-decoration: underline; }
+body .site-footer__credit-logo { display: inline-flex; vertical-align: middle; margin-right: 6px; }
+body .site-footer__credit-logo img { height: 24px; width: auto; display: block; }
