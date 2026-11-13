@@ -96,6 +96,29 @@ if ( function_exists( 'wc_get_product' ) ) {
 		</div>
 	</section>
 
+	<section class="home-sec models" aria-labelledby="models-title">
+		<div class="wrap">
+			<div class="sec-head sec-head--center">
+				<p class="eyebrow"><?php esc_html_e( 'Lookbook', 'ayatcollections' ); ?></p>
+				<h2 id="models-title"><?php echo esc_html( ayat_home( 'models_title' ) ); ?></h2>
+			</div>
+			<ul class="models__list" role="list">
+				<?php for ( $m = 1; $m <= 3; $m++ ) : ?>
+					<?php
+					$m_term = get_term_by( 'slug', ayat_home( 'model' . $m . '_cat' ), 'product_cat' );
+					$m_url  = $m_term && ! is_wp_error( $m_term ) ? get_term_link( $m_term ) : $shop_url;
+					?>
+					<li>
+						<a class="models__card" href="<?php echo esc_url( $m_url ); ?>">
+							<?php echo ayat_home_img( 'model' . $m . '_img', ayat_home( 'model' . $m . '_label' ), 'models__img' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<span class="models__label"><?php echo esc_html( ayat_home( 'model' . $m . '_label' ) ); ?> <span aria-hidden="true">&rarr;</span></span>
+						</a>
+					</li>
+				<?php endfor; ?>
+			</ul>
+		</div>
+	</section>
+
 	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 		<section class="home-sec home-sec--tint" aria-labelledby="new-title">
 			<div class="wrap">

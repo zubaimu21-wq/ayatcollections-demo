@@ -77,6 +77,15 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 		</p>
 	</div>
 </footer>
+<?php
+$float_wa = function_exists( 'ayat_store_whatsapp' ) ? ayat_store_whatsapp() : preg_replace( '/^0/', '92', preg_replace( '/[^0-9]/', '', (string) get_theme_mod( 'ayat_phone', '0311 0290489' ) ) );
+if ( $float_wa ) :
+	?>
+	<a class="ayat-wa-float" href="<?php echo esc_attr( 'https://wa.me/' . $float_wa . '?text=' . rawurlencode( __( 'Assalam o Alaikum! I would like to order from SHAYA by Aayat Collections.', 'ayatcollections' ) ) ); ?>" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Chat with us on WhatsApp (opens in a new tab)', 'ayatcollections' ); ?>">
+		<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 17.8c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg>
+		<span class="ayat-wa-float__tip"><?php esc_html_e( 'Chat with us', 'ayatcollections' ); ?></span>
+	</a>
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 </html>

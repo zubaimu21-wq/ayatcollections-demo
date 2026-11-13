@@ -313,5 +313,26 @@
     "url": "https://unsplash.com/photos/5EfVgcZYi3s",
     "license": "Unsplash License (free for commercial use)",
     "background": "original photo, cropped"
+  },
+  {
+    "file": "demo-model-earrings.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-model-necklace.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-model-cuffs.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
   }
 ]
