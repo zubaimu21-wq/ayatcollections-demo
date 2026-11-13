@@ -48,3 +48,9 @@ To replace them:
 4. **Settings → Reading** → untick **"Discourage search engines"**.
 
 Credits: the layout follows the section order of the Weblium "Jewelry" template; the design, code and text are original. Demo photos: Unsplash (see `credits.json`).
+
+## 7. Customer reviews (Instagram, Facebook, TikTok, WhatsApp, Google)
+- **Add by hand:** WP Admin → **Customer Reviews → Add customer review**. Type the customer's name as the title and their words in the box, then pick the stars, where it was posted, the product (optional) and the link to the original post. A screenshot can go in Featured image. Reviews show on the homepage ("What Our Customers Say") and on the product's page.
+- **Auto-sync:** install a reviews plugin that connects to your accounts (for example a Google / Facebook reviews widget plugin), copy its shortcode and paste it in **Appearance → Customize → Homepage → Reviews widget shortcode**. It appears under your reviews. Instagram comments, TikTok comments and WhatsApp chats cannot be pulled in automatically by the theme; add the best ones by hand.
+- **Before launch:** delete the reviews marked "sample" in Customer Reviews. Only publish reviews real customers actually gave.
+- Customers can also leave star reviews on each product (WooCommerce → Settings → Products → "Enable product reviews").

@@ -122,6 +122,29 @@ if ( function_exists( 'wc_get_product' ) ) {
 		</section>
 	<?php endif; ?>
 
+	<?php
+	$reviews   = function_exists( 'ayat_get_reviews' ) ? ayat_get_reviews( 0, 6 ) : array();
+	$rev_short = trim( (string) ayat_home( 'rev_shortcode' ) );
+	?>
+	<?php if ( $reviews || $rev_short ) : ?>
+		<section class="home-sec reviews" aria-labelledby="rev-title">
+			<div class="wrap">
+				<div class="sec-head sec-head--center">
+					<h2 id="rev-title"><?php echo esc_html( ayat_home( 'rev_title' ) ); ?></h2>
+					<p><?php echo esc_html( ayat_home( 'rev_text' ) ); ?></p>
+				</div>
+				<?php
+				if ( $reviews ) {
+					ayat_render_reviews( $reviews );
+				}
+				if ( $rev_short ) {
+					echo '<div class="reviews__widget">' . do_shortcode( $rev_short ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				}
+				?>
+			</div>
+		</section>
+	<?php endif; ?>
+
 	<section class="perks" aria-label="<?php esc_attr_e( 'Why shop with us', 'ayatcollections' ); ?>">
 		<ul class="wrap perks__list" role="list">
 			<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7M5.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM17.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg><span><strong><?php esc_html_e( 'Cash on Delivery', 'ayatcollections' ); ?></strong><?php esc_html_e( 'Across Pakistan', 'ayatcollections' ); ?></span></li>

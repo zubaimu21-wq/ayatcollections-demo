@@ -33,6 +33,9 @@ function ayat_home_fields() {
 		'look_text'       => array( 'collections', 'text', __( 'Shop the look text', 'ayatcollections' ), __( 'A fine bar pendant, a crystal ring and a slim band, styled together for everyday shine.', 'ayatcollections' ) ),
 		'look_img'        => array( 'collections', 'image', __( 'Shop the look photo', 'ayatcollections' ), 'demo-newsletter' ),
 		'look_products'   => array( 'collections', 'text', __( 'Shop the look product slugs (comma separated)', 'ayatcollections' ), 'mehr-crystal-bar-set, hira-crystal-bar-ring, amal-chain-link-ring' ),
+		'rev_title'       => array( 'collections', 'text', __( 'Customer reviews heading', 'ayatcollections' ), __( 'What Our Customers Say', 'ayatcollections' ) ),
+		'rev_text'        => array( 'collections', 'text', __( 'Customer reviews intro', 'ayatcollections' ), __( 'Reviews shared with us on Instagram, Facebook, TikTok and WhatsApp.', 'ayatcollections' ) ),
+		'rev_shortcode'   => array( 'collections', 'text', __( 'Reviews widget shortcode (auto-sync plugin, optional)', 'ayatcollections' ), '' ),
 		// 3. Bridal / bespoke gallery.
 		'bes_title'       => array( 'bespoke', 'text', __( 'Heading', 'ayatcollections' ), __( 'Bridal Jewellery', 'ayatcollections' ) ),
 		'bes_img'         => array( 'bespoke', 'image', __( 'Large photo', 'ayatcollections' ), 'demo-bespoke-main' ),

@@ -466,3 +466,46 @@ function ayat_setup_page() {
 	</div>
 	<?php
 }
+
+
+/**
+ * Sample customer reviews for the demo only. Each one is titled and marked as a
+ * sample (shown with a "Sample review (demo)" label) so it is never mistaken for
+ * a real customer. Delete them in Customer Reviews before launch.
+ *
+ * @return int Number created.
+ */
+function ayat_import_sample_reviews() {
+	if ( ! post_type_exists( 'ayat_review' ) || get_posts( array( 'post_type' => 'ayat_review', 'meta_key' => '_ayat_sample', 'numberposts' => 1, 'post_status' => 'any' ) ) ) { // phpcs:ignore WordPress.DB.SlowDBQuery
+		return 0;
+	}
+	$items = array(
+		array( 'Sample customer, Lahore', 'Instagram', 5, 'AYC-CUF-001', 'Sample text: the cuff looks exactly like the photos and the gold tone has not faded after weeks of daily wear.' ),
+		array( 'Sample customer, Karachi', 'WhatsApp', 5, 'AYC-ANJ-001', 'Sample text: ordered on WhatsApp, got photos before confirming and the hand chain arrived gift-boxed.' ),
+		array( 'Sample customer, Islamabad', 'TikTok', 4, 'AYC-ADJ-001', 'Sample text: lovely adjustable cuff, fits well and is comfortable to wear all day.' ),
+		array( 'Sample customer, Faisalabad', 'Facebook', 5, 'AYC-PER-001', 'Sample text: wore the chain bracelet in the shower every day and it still shines.' ),
+		array( 'Sample customer, Multan', 'Google', 5, 'AYC-ANK-001', 'Sample text: cash on delivery was easy and the anklet is light and pretty.' ),
+		array( 'Sample customer, Rawalpindi', 'Instagram', 4, 'AYC-CHM-001', 'Sample text: the charm bracelet is a statement piece and the packing was beautiful.' ),
+	);
+	$n = 0;
+	foreach ( $items as $it ) {
+		$id = wp_insert_post(
+			array(
+				'post_type'    => 'ayat_review',
+				'post_status'  => 'publish',
+				'post_title'   => $it[0],
+				'post_content' => $it[4],
+			)
+		);
+		if ( ! $id || is_wp_error( $id ) ) {
+			continue;
+		}
+		$pid = function_exists( 'wc_get_product_id_by_sku' ) ? (int) wc_get_product_id_by_sku( $it[3] ) : 0;
+		update_post_meta( $id, '_ayat_source', $it[1] );
+		update_post_meta( $id, '_ayat_rating', $it[2] );
+		update_post_meta( $id, '_ayat_product', $pid );
+		update_post_meta( $id, '_ayat_sample', 1 );
+		$n++;
+	}
+	return $n;
+}

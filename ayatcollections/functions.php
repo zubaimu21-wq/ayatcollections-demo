@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AYAT_VERSION', '1.5.1' );
+define( 'AYAT_VERSION', '1.6.0' );
 define( 'AYAT_DIR', get_template_directory() );
 define( 'AYAT_URI', get_template_directory_uri() );
 
@@ -16,6 +16,7 @@ require AYAT_DIR . '/inc/customizer.php';
 require AYAT_DIR . '/inc/collections.php';
 require AYAT_DIR . '/inc/seo.php';
 require AYAT_DIR . '/inc/home.php';
+require AYAT_DIR . '/inc/reviews.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require AYAT_DIR . '/inc/woocommerce.php';
