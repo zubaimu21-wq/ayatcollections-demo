@@ -35,7 +35,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 
 	<section class="ayat-slider" data-slider aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
 		<div class="ayat-slider__track" data-slider-track>
-			<div class="ayat-slide ayat-slide--box" role="group" aria-roledescription="slide" aria-label="1 / 4">
+			<div class="ayat-slide ayat-slide--box" data-duration="12500" role="group" aria-roledescription="slide" aria-label="1 / 4">
 				<div class="wrap hero-box__inner">
 					<div class="hero-box__copy">
 						<p class="eyebrow"><?php echo esc_html( ayat_home( 'hero_eyebrow' ) ); ?></p>

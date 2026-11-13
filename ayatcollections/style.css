@@ -1832,3 +1832,12 @@ body .site-header--v3 .primary-nav a { display: block; padding: 14px 0; color: #
 	#collections .cat-rounds__name { font-size: .85rem; }
 	#collections .cat-rounds__count { font-size: 10px; }
 }
+
+/* ===== 2.0.3: the jewellery box animates on every device (gentle 6s loop) with a visible Pause button ===== */
+body .jbox.is-play .jbox__lid { animation: jbox-loop-lid 6s ease-in-out .2s infinite both; }
+body .jbox.is-play .jbox__jewel { animation: jbox-loop-jewel 6s ease-in-out .2s infinite both; }
+body .jbox.is-play .jbox__glint { animation: jbox-loop-glint 6s ease-in-out .2s infinite both; }
+body .jbox.is-paused .jbox__lid, body .jbox.is-paused .jbox__jewel, body .jbox.is-paused .jbox__glint { animation-play-state: paused; }
+body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border-radius: 999px; background: rgba(255,255,255,.7); border-color: rgba(199,146,68,.45); font-size: 11px; }
+@media (prefers-reduced-motion: reduce) { body .jbox.is-play .jbox__lid, body .jbox.is-play .jbox__jewel { animation-duration: 8s; } body .jbox.is-play .jbox__glint { animation: none; } }
+@media (max-width: 767px) { .ayat-slide--box .jbox__replay { margin-top: 6px; min-height: 32px; } }

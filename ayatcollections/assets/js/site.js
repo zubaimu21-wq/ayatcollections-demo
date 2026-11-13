@@ -135,8 +135,9 @@
 	for (var d = 0; d < dots.length; d++) {
 		dots[d].addEventListener('click', (function (n) { return function () { go(n); }; })(d));
 	}
-	function start() { stop(); timer = setInterval(function () { if (!paused && !document.hidden) go(index + 1); }, 5000); }
-	function stop() { if (timer) clearInterval(timer); }
+	function wait() { return parseInt(slides[index].getAttribute('data-duration'), 10) || 5000; }
+	function start() { stop(); timer = setTimeout(function tick() { if (!paused && !document.hidden) { go(index + 1); } timer = setTimeout(tick, wait()); }, wait()); }
+	function stop() { if (timer) clearTimeout(timer); }
 	root.addEventListener('mouseenter', function () { paused = true; });
 	root.addEventListener('mouseleave', function () { paused = false; });
 	root.addEventListener('focusin', function () { paused = true; });
