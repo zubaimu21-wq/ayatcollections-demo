@@ -1559,3 +1559,9 @@ body .site-footer__credit a { color: #c9a868; text-decoration: none; white-space
 body .site-footer__credit a:hover { color: #e2b866; text-decoration: underline; }
 body .site-footer__credit-logo { display: inline-flex; vertical-align: middle; margin-right: 6px; }
 body .site-footer__credit-logo img { height: 24px; width: auto; display: block; }
+
+/* Order received: confirm on WhatsApp */
+.ayat-wa-confirm { margin: 0 0 28px; padding: 18px 20px; border: 1px solid #c79244; border-radius: 6px; background: #faf4ea; text-align: center; }
+.ayat-wa-confirm p { margin: 0 0 12px; color: #111; }
+.ayat-wa-confirm__btn { background: #1f8f4e; border-color: #1f8f4e; }
+.ayat-wa-confirm__btn:hover { background: #16703c; border-color: #16703c; color: #fff; }

@@ -54,3 +54,11 @@ Credits: the layout follows the section order of the Weblium "Jewelry" template;
 - **Auto-sync:** install a reviews plugin that connects to your accounts (for example a Google / Facebook reviews widget plugin), copy its shortcode and paste it in **Appearance → Customize → Homepage → Reviews widget shortcode**. It appears under your reviews. Instagram comments, TikTok comments and WhatsApp chats cannot be pulled in automatically by the theme; add the best ones by hand.
 - **Before launch:** delete the reviews marked "sample" in Customer Reviews. Only publish reviews real customers actually gave.
 - Customers can also leave star reviews on each product (WooCommerce → Settings → Products → "Enable product reviews").
+
+## 8. Know the moment an order comes in
+Go to **WooCommerce → Order alerts**:
+1. **Email:** type the email(s) that should get a "New order" email for every order. If emails don't arrive, install the free **WP Mail SMTP** plugin and connect your Gmail.
+2. **WhatsApp alert to your phone:** save +34 644 66 32 62 (CallMeBot) in your contacts and send it the message "I allow callmebot to send me messages". Paste the API key it replies with, enter your WhatsApp number, tick **On** and press **Save and send test WhatsApp**. Every new order then arrives on WhatsApp with the customer name, phone, city, items and total.
+3. **"Confirm order on WhatsApp" button:** shown to the customer after ordering; it opens WhatsApp with their order details ready to send to your store number.
+4. **Phone app:** install the free **WooCommerce** app (Android / iPhone) and log in with your website for a sound + notification on every order.
+All orders are also listed in **WooCommerce → Orders** (the menu shows how many new orders are waiting).

@@ -71,7 +71,6 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 			<p><?php esc_html_e( 'SHAYA by Aayat Collections', 'ayatcollections' ); ?></p>
 		</div>
 		<p class="wrap site-footer__credit">
-			<a class="site-footer__credit-logo" href="https://optixtechnologies.pk/" rel="noopener"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/optix-logo.webp' ); ?>" width="70" height="24" alt="Optix Technologies" loading="lazy"></a>
 			<?php esc_html_e( 'Website created by', 'ayatcollections' ); ?> <a href="https://optixtechnologies.pk/" rel="noopener">Optix Technologies</a> &middot;
 			<?php esc_html_e( 'Need a website?', 'ayatcollections' ); ?>
 			<a href="https://wa.me/923392281890" rel="noopener"><?php esc_html_e( 'WhatsApp +92 339 2281890', 'ayatcollections' ); ?></a>
