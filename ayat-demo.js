@@ -56,6 +56,7 @@
 		'.demo-err{color:#a12626;font-size:.85rem;margin-top:4px}',
 		'.demo-note{font-size:.85rem;color:var(--muted);margin-top:12px}',
 		'.demo-note--sim{background:#f7efe2;border-left:3px solid #c79244;padding:10px 14px;color:#111;margin:0 0 18px}',
+		'.demo-wa{margin:24px 0 0;padding:18px 20px;border:1px solid #c79244;border-radius:6px;background:#faf4ea;text-align:center}.demo-wa p{margin:0 0 12px;color:#111}.demo-wa__btn{background:#1f8f4e!important;border-color:#1f8f4e!important;color:#fff!important}',
 		'.demo-thanks{background:var(--purple-soft,#f5eff8);border-left:3px solid var(--gold);padding:18px 20px;font-family:var(--font-serif);font-size:1.5rem;color:var(--purple-ink);margin-bottom:20px}',
 		'.demo-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:24px}',
 		'.demo-meta div{border:1px solid var(--purple-line);background:#fff;padding:12px}.demo-meta small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:.7rem}',
@@ -296,6 +297,7 @@
 			'<div class="demo-summary"><h2>Order details</h2>' +
 			o.items.map(function (i) { return '<div class="demo-row"><span>' + esc(i.name) + (i.variant ? ' (' + esc(i.variant) + ')' : '') + ' × ' + i.qty + '</span><span>' + money(i.price * i.qty) + '</span></div>'; }).join('') +
 			summaryRows(o.totals) + '<p class="demo-note">Delivery to ' + esc(o.city) + ' in 3–5 working days. Please keep the exact amount ready.</p></div>' +
+			'<div class="demo-wa"><p>Want a faster confirmation? Send your order to us on WhatsApp.</p><a class="btn demo-wa__btn" href="https://wa.me/923110290489?text=' + encodeURIComponent('Assalam o Alaikum! I just placed an order (demo).\nOrder #' + o.no + ' – Rs ' + o.totals.total.toLocaleString('en-PK') + '\n' + o.items.map(function (i) { return '• ' + i.name + ' × ' + i.qty; }).join('\n')) + '" rel="noopener">Confirm order on WhatsApp</a></div>' +
 			'<p style="margin-top:24px"><a class="btn" href="' + P + '/shop/">Continue shopping</a></p></div>';
 	}
 
