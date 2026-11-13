@@ -78,10 +78,10 @@ function ayat_customize_register( $wp_customize ) {
 		'ayat_phone'        => array( __( 'WhatsApp / phone (e.g. 0300 1234567)', 'ayatcollections' ), '', 'sanitize_text_field' ),
 		'ayat_email'        => array( __( 'Support email', 'ayatcollections' ), '', 'sanitize_email' ),
 		'ayat_address'      => array( __( 'Boutique address', 'ayatcollections' ), '', 'sanitize_text_field' ),
-		'ayat_instagram'    => array( __( 'Instagram URL', 'ayatcollections' ), '', 'esc_url_raw' ),
-		'ayat_facebook'     => array( __( 'Facebook URL', 'ayatcollections' ), '', 'esc_url_raw' ),
-		'ayat_tiktok'       => array( __( 'TikTok URL', 'ayatcollections' ), '', 'esc_url_raw' ),
-		'ayat_youtube'      => array( __( 'YouTube URL', 'ayatcollections' ), '', 'esc_url_raw' ),
+		'ayat_instagram'    => array( __( 'Instagram URL', 'ayatcollections' ), 'https://www.instagram.com/aayatcollections38/', 'esc_url_raw' ),
+		'ayat_facebook'     => array( __( 'Facebook URL', 'ayatcollections' ), 'https://www.facebook.com/share/1GpbKWSSMf/', 'esc_url_raw' ),
+		'ayat_tiktok'       => array( __( 'TikTok URL', 'ayatcollections' ), 'https://www.tiktok.com/@aayat.collections', 'esc_url_raw' ),
+		'ayat_youtube'      => array( __( 'YouTube URL', 'ayatcollections' ), 'https://www.youtube.com/@aayatcollection38', 'esc_url_raw' ),
 	);
 	foreach ( $store as $key => $f ) {
 		$wp_customize->add_setting( $key, array( 'default' => $f[1], 'sanitize_callback' => $f[2] ) );

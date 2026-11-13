@@ -54,7 +54,7 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php\nrequire '/wordpress/wp-load.php';\nrequire_once get_template_directory() . '/inc/sample-import.php';\nayat_run_setup( array( 'products' => true, 'pages' => true, 'store' => true, 'permalinks' => true, 'noindex' => true ) );\nfor ( $i = 0; $i < 20; $i++ ) { ayat_import_product( $i ); }\nupdate_option( 'woocommerce_hold_stock_minutes', '' );\nset_theme_mod( 'ayat_instagram', 'https://www.instagram.com/' );\nset_theme_mod( 'ayat_facebook', 'https://www.facebook.com/' );\nset_theme_mod( 'ayat_youtube', 'https://www.youtube.com/' );\nset_theme_mod( 'ayat_tiktok', 'https://www.tiktok.com/' );\nif ( function_exists( 'ayat_import_sample_reviews' ) ) { ayat_import_sample_reviews(); }\nflush_rewrite_rules();\n"
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\nrequire_once get_template_directory() . '/inc/sample-import.php';\nayat_run_setup( array( 'products' => true, 'pages' => true, 'store' => true, 'permalinks' => true, 'noindex' => true ) );\nfor ( $i = 0; $i < 20; $i++ ) { ayat_import_product( $i ); }\nupdate_option( 'woocommerce_hold_stock_minutes', '' );\nset_theme_mod( 'ayat_instagram', 'https://www.instagram.com/aayatcollections38/' );\nset_theme_mod( 'ayat_facebook', 'https://www.facebook.com/share/1GpbKWSSMf/' );\nset_theme_mod( 'ayat_youtube', 'https://www.youtube.com/@aayatcollection38' );\nset_theme_mod( 'ayat_tiktok', 'https://www.tiktok.com/@aayat.collections' );\nif ( function_exists( 'ayat_import_sample_reviews' ) ) { ayat_import_sample_reviews(); }\nflush_rewrite_rules();\n"
     }
   ]
 }

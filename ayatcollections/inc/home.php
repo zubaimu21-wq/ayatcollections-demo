@@ -203,10 +203,10 @@ function ayat_social_links() {
 	}
 	return array_filter(
 		array(
-			'Facebook'  => get_theme_mod( 'ayat_facebook', '' ),
-			'Instagram' => get_theme_mod( 'ayat_instagram', '' ),
-			'TikTok'    => get_theme_mod( 'ayat_tiktok', '' ),
-			'YouTube'   => get_theme_mod( 'ayat_youtube', '' ),
+			'Facebook'  => get_theme_mod( 'ayat_facebook', 'https://www.facebook.com/share/1GpbKWSSMf/' ),
+			'Instagram' => get_theme_mod( 'ayat_instagram', 'https://www.instagram.com/aayatcollections38/' ),
+			'TikTok'    => get_theme_mod( 'ayat_tiktok', 'https://www.tiktok.com/@aayat.collections' ),
+			'YouTube'   => get_theme_mod( 'ayat_youtube', 'https://www.youtube.com/@aayatcollection38' ),
 			'WhatsApp'  => $phone ? 'https://wa.me/' . $phone : '',
 		)
 	);
