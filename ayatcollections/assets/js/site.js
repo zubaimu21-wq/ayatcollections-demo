@@ -145,3 +145,13 @@
 	track.addEventListener('touchend', function () { setTimeout(function () { paused = false; }, 4000); }, { passive: true });
 	start();
 })();
+
+/* Category strip: bring the current category into view. */
+(function () {
+	var cur = document.querySelector('.cat-strip__link.is-current');
+	if (!cur) return;
+	var list = cur.closest('.cat-strip__list');
+	if (list && list.scrollWidth > list.clientWidth) {
+		list.scrollLeft = cur.parentElement.offsetLeft - (list.clientWidth - cur.offsetWidth) / 2;
+	}
+})();
