@@ -1607,3 +1607,9 @@ body .site-footer__credit-logo img { height: 24px; width: auto; display: block; 
 .ayat-wa-float:hover .ayat-wa-float__tip, .ayat-wa-float:focus-visible .ayat-wa-float__tip { opacity: 1; }
 @media (max-width: 767px) { .ayat-wa-float { right: 14px; bottom: 14px; width: 54px; height: 54px; } .ayat-wa-float__tip { display: none; } }
 @media (prefers-reduced-motion: reduce) { .ayat-wa-float::before { animation: none; display: none; } }
+
+/* Lookbook: smaller cards, 4:5, heads fully visible */
+.models__list { max-width: 900px; margin: 0 auto; gap: 18px; }
+.models__img { aspect-ratio: 4 / 5; object-position: center top; }
+.models__label { font-size: 1.15rem; left: 14px; bottom: 12px; }
+@media (max-width: 767px) { .models__list { grid-auto-columns: 62%; max-width: none; } }
