@@ -1920,3 +1920,13 @@ body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-he
 	.rv__tools { justify-content: space-between; }
 }
 .single-product div.product > .rv { grid-column: 1 / -1; width: 100%; }
+
+/* ===== 2.1.1: category chips in theme colours ===== */
+.cat-strip .cat-strip__link { background: linear-gradient(180deg, #fffaf0 0%, #f4e4c4 100%); border-color: rgba(199,146,68,.55); color: #3a2a12; box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 1px 2px rgba(120,84,30,.08); }
+.cat-strip .cat-strip__thumb { background: linear-gradient(135deg, #e8c785, #c79244); color: #1b1408; }
+.cat-strip .cat-strip__link:hover, .cat-strip .cat-strip__link:focus-visible { background: linear-gradient(135deg, #1b1b1b 0%, #2f2513 100%); border-color: #c79244; color: #f3d9a4; box-shadow: 0 6px 16px rgba(60,40,10,.25); transform: translateY(-1px); }
+.cat-strip .cat-strip__link:hover .cat-strip__thumb, .cat-strip .cat-strip__link:focus-visible .cat-strip__thumb { background: #111; color: #e8c785; box-shadow: 0 0 0 1px #c79244; }
+.cat-strip .cat-strip__link.is-current { background: linear-gradient(135deg, #e8c785 0%, #c79244 100%); border-color: #b07d32; color: #111; font-weight: 600; }
+.cat-strip .cat-strip__link.is-current .cat-strip__thumb { background: #111; color: #e8c785; }
+.cat-strip__link { transition: background .25s, color .25s, border-color .25s, box-shadow .25s, transform .25s; }
+@media (prefers-reduced-motion: reduce) { .cat-strip .cat-strip__link:hover { transform: none; } }
