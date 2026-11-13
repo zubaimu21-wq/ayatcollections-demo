@@ -204,6 +204,7 @@
 		if (view === 'checkout') { renderCheckout(); }
 		if (view === 'order') { renderOrder(); }
 		if (view === 'search') { renderSearch(); }
+		if (view === 'track-order') { renderTrack(); }
 	}
 
 	function totals(b) {
@@ -278,6 +279,7 @@
 				no: 'AYC-' + Math.floor(100000 + Math.random() * 900000),
 				date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
 				name: form.elements.name.value.trim(),
+				phone: form.elements.phone.value.trim(),
 				city: form.elements.city.value,
 				items: b,
 				totals: totals(b)
@@ -299,6 +301,35 @@
 			summaryRows(o.totals) + '<p class="demo-note">Delivery to ' + esc(o.city) + ' in 3–5 working days. Please keep the exact amount ready.</p></div>' +
 			'<div class="demo-wa"><p>Want a faster confirmation? Send your order to us on WhatsApp.</p><a class="btn demo-wa__btn" href="https://wa.me/923110290489?text=' + encodeURIComponent('Assalam o Alaikum! I just placed an order (demo).\nOrder #' + o.no + ' – Rs ' + o.totals.total.toLocaleString('en-PK') + '\n' + o.items.map(function (i) { return '• ' + i.name + ' × ' + i.qty; }).join('\n')) + '" rel="noopener">Confirm order on WhatsApp</a></div>' +
 			'<p style="margin-top:24px"><a class="btn" href="' + P + '/shop/">Continue shopping</a></p></div>';
+	}
+
+	/* Track order (simulated): the live WordPress store looks up real orders. */
+	function renderTrack() {
+		var steps = ['Order placed', 'Confirmed', 'Gift-boxed & packed', 'With the courier', 'Delivered'];
+		var sample = { no: '1001', phone: '03001234567', name: 'Sample customer', city: 'Lahore', date: '10 November 2026', at: 3, courier: 'TCS', tno: 'SAMPLE-778201', items: [{ name: 'Noori Layered Anja Hand Chain', qty: 1, price: 1750 }], total: 1750 };
+		var mine = load(ORDER, null);
+		function key(p) { return String(p || '').replace(/\D/g, '').slice(-10); }
+		function digits(n) { return String(n || '').replace(/\D/g, ''); }
+		app.innerHTML = '<div class="demo-view"><h1 class="page-title">Track Order</h1>' +
+			'<p class="demo-note demo-note--sim" role="note"><strong>Demo tracking (simulated):</strong> on the live WordPress store customers see the real status of their order. Try the sample order <strong>1001</strong> with phone <strong>0300 1234567</strong>' + (mine ? ', or your demo order <strong>' + esc(mine.no) + '</strong>' : '') + '.</p>' +
+			'<div class="ayat-track"><form class="ayat-track__form" novalidate><p class="ayat-track__field"><label for="t-no">Order number</label><input id="t-no" name="no" autocomplete="off" placeholder="e.g. 1001" required></p>' +
+			'<p class="ayat-track__field"><label for="t-ph">Phone or email</label><input id="t-ph" name="ph" autocomplete="tel" placeholder="03XX XXXXXXX" required></p>' +
+			'<button type="submit" class="btn-ink">Track my order</button></form><div id="t-out" aria-live="polite"></div></div></div>';
+		var form = $('form', app), out = $('#t-out', app);
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			var no = digits(form.elements.no.value), ph = key(form.elements.ph.value), o = null;
+			if (no === sample.no && ph === key(sample.phone)) { o = sample; }
+			else if (mine && no && no === digits(mine.no) && ph.length === 10 && ph === key(mine.phone)) {
+				o = { no: mine.no, name: mine.name, city: mine.city, date: mine.date, at: 0, items: mine.items, total: mine.totals.total };
+			}
+			if (!o) { out.innerHTML = '<p class="ayat-track__error" role="alert">We could not find an order with those details. Check the order number and phone number.</p>'; return; }
+			out.innerHTML = '<section class="ayat-track__result"><header class="ayat-track__head"><div><small>Order</small><strong>#' + esc(o.no) + '</strong></div><div><small>Placed on</small><strong>' + esc(o.date) + '</strong></div><div><small>Total</small><strong>' + money(o.total) + '</strong></div><div><small>City</small><strong>' + esc(o.city) + '</strong></div></header>' +
+				'<ol class="ayat-journey" role="list">' + steps.map(function (s, i) { var st = i < o.at ? 'done' : (i === o.at ? 'now' : 'next'); return '<li class="ayat-journey__step is-' + st + '"' + (st === 'now' ? ' aria-current="step"' : '') + '><span class="ayat-journey__gem" aria-hidden="true"></span><span class="ayat-journey__label">' + s + '</span>' + (st === 'now' ? '<span class="ayat-journey__now">Current step</span>' : '') + '</li>'; }).join('') + '</ol>' +
+				(o.courier ? '<div class="ayat-track__courier"><p><small>Courier</small>' + esc(o.courier) + '</p><p><small>Tracking number</small><span class="ayat-track__tno">' + esc(o.tno) + '</span></p></div>' : '') +
+				'<ul class="ayat-track__items" role="list">' + o.items.map(function (i) { return '<li><span>' + esc(i.name) + ' × ' + i.qty + '</span><span>' + money(i.price * i.qty) + '</span></li>'; }).join('') + '</ul>' +
+				'<p class="ayat-track__help">Questions about your delivery? <a href="https://wa.me/923110290489?text=' + encodeURIComponent('Assalam o Alaikum! I would like an update on order #' + o.no + '.') + '" target="_blank" rel="noopener">Ask us on WhatsApp</a></p></section>';
+		});
 	}
 
 	function renderSearch() {

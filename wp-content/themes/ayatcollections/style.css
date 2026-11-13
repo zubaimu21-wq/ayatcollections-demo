@@ -1725,3 +1725,89 @@ body .site-header .site-header__inner--full { display: grid; grid-template-colum
 @media (min-width: 1024px) and (max-width: 1439px) { .cat-strip__list { -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent); mask-image: linear-gradient(90deg, #000 92%, transparent); } }
 /* The header category strip replaces the in-page category chips. */
 .shop-toolbar__filter { display: none; }
+
+/* ===== 2.0.0: header v3 (utility links | centred logo | search bar), icon chips, order tracking ===== */
+body .site-header--v3 .site-header__inner--full { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; min-height: 88px; }
+.site-header--v3 .header-left { display: flex; align-items: center; gap: 4px; justify-self: start; min-width: 0; }
+.site-header--v3 .site-branding { justify-self: center; }
+.site-header--v3 .header-actions { display: flex; align-items: center; gap: 4px; justify-self: end; margin: 0; }
+.site-header--v3 .header-icon { color: #f3e3c3; }
+.site-header--v3 .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+.header-util { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #f3e3c3; font: 500 13px/1 var(--font-sans, Montserrat, sans-serif); letter-spacing: .04em; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+.header-util:hover, .header-util:focus-visible { background: rgba(199,146,68,.16); color: #fff; outline: none; }
+.header-util svg { color: #d8a95a; flex: none; }
+.header-searchbar { display: flex; align-items: center; width: clamp(220px, 22vw, 320px); height: 44px; margin-right: 6px; border: 1px solid rgba(199,146,68,.55); border-radius: 999px; background: rgba(255,255,255,.06); transition: border-color .2s, background .2s; }
+.header-searchbar:focus-within { border-color: #e2b66b; background: rgba(255,255,255,.12); }
+.header-searchbar input[type="search"] { flex: 1; min-width: 0; height: 100%; padding: 0 4px 0 18px; border: 0; background: transparent; color: #fff; font: 400 14px/1 var(--font-sans, Montserrat, sans-serif); outline: none; -webkit-appearance: none; }
+.header-searchbar input::placeholder { color: rgba(243,227,195,.6); }
+.header-searchbar button { display: grid; place-items: center; width: 44px; height: 42px; border: 0; background: none; color: #e2b66b; cursor: pointer; }
+.header-searchbar button svg { width: 20px; height: 20px; }
+.site-header--v3 .search-toggle { display: none; }
+/* The menu opens as a panel under the header on every screen size. */
+body .site-header--v3 .primary-nav { display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 5; background: #0d0d0d; border-top: 1px solid rgba(199,146,68,.4); padding: 8px clamp(16px, 2.6vw, 44px) 18px; box-shadow: 0 18px 30px rgba(0,0,0,.25); }
+body .site-header--v3.menu-open .primary-nav { display: block; }
+body .site-header--v3 .primary-nav ul { display: flex; flex-direction: column; gap: 0; max-width: 520px; }
+body .site-header--v3 .primary-nav a { display: block; padding: 14px 0; color: #f3e3c3; border-bottom: 1px solid rgba(199,146,68,.2); font-size: 15px; }
+.primary-nav__extra { max-width: 520px; margin: 0; }
+/* Icon chips */
+.cat-strip__thumb { background: radial-gradient(circle at 35% 30%, #fff6e3, #f0dcb2); color: #9a6b22; }
+.cat-strip__thumb .cat-icon { width: 17px; height: 17px; }
+.cat-strip__link:hover .cat-strip__thumb, .cat-strip__link:focus-visible .cat-strip__thumb, .cat-strip__link.is-current .cat-strip__thumb { background: linear-gradient(135deg, #e8c785, #c79244); color: #111; }
+@media (max-width: 1100px) { .header-util--wa .header-util__text { display: none; } }
+@media (max-width: 900px) {
+	.header-searchbar { display: none; }
+	.site-header--v3 .search-toggle { display: inline-flex; align-items: center; justify-content: center; }
+	.header-util .header-util__text { display: none; }
+	.header-util { padding: 0 10px; }
+}
+@media (max-width: 767px) {
+	body .site-header--v3 .site-header__inner--full { min-height: 66px; gap: 4px; padding-inline: 8px; }
+	.site-header--v3 .header-left, .site-header--v3 .header-actions { gap: 0; }
+	.site-header--v3 .header-util--wa { display: none; }
+	.site-header--v3 .header-util { padding: 0 8px; }
+}
+@media (max-width: 400px) { .site-header--v3 .header-account { display: none; } }
+
+/* Track order page */
+.ayat-track { max-width: 760px; margin: 0 auto; }
+.ayat-track__intro p:last-child { color: #4a4034; line-height: 1.6; }
+.ayat-track__form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; margin: 22px 0 8px; padding: 20px; background: #fbf5ea; border: 1px solid rgba(199,146,68,.35); border-radius: 12px; }
+.ayat-track__field { margin: 0; }
+.ayat-track__field label { display: block; margin-bottom: 6px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #6b5a40; }
+.ayat-track__field input { width: 100%; min-height: 48px; padding: 0 14px; border: 1px solid rgba(199,146,68,.5); border-radius: 8px; background: #fff; font-size: 16px; }
+.ayat-track__form .btn-ink { min-height: 48px; white-space: nowrap; }
+.ayat-track__error { margin: 14px 0; padding: 12px 16px; border-left: 3px solid #b3261e; background: #fbeceb; color: #5c1410; }
+.ayat-track__note { margin: 14px 0; padding: 12px 16px; border-left: 3px solid #c79244; background: #f7efe2; color: #111; }
+.ayat-track__result { margin-top: 26px; padding: 24px; border: 1px solid rgba(199,146,68,.35); border-radius: 14px; background: #fff; box-shadow: 0 10px 30px rgba(120,84,30,.08); }
+.ayat-track__head { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding-bottom: 18px; border-bottom: 1px solid rgba(199,146,68,.25); }
+.ayat-track__head small, .ayat-track__courier small { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #8a7553; }
+.ayat-track__head strong { font-size: 15px; }
+.ayat-journey { display: grid; grid-template-columns: repeat(5, 1fr); margin: 26px 0 8px; padding: 0; list-style: none; }
+.ayat-journey__step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; font-size: 13px; color: #9b8b70; }
+.ayat-journey__step::before { content: ""; position: absolute; top: 11px; left: -50%; width: 100%; height: 2px; background: #eadfca; z-index: 0; }
+.ayat-journey__step:first-child::before { content: none; }
+.ayat-journey__step.is-done::before, .ayat-journey__step.is-now::before { background: linear-gradient(90deg, #c79244, #e2b66b); }
+.ayat-journey__gem { position: relative; z-index: 1; width: 22px; height: 22px; transform: rotate(45deg); border: 2px solid #eadfca; background: #fff; border-radius: 4px; }
+.ayat-journey__step.is-done .ayat-journey__gem { background: #c79244; border-color: #c79244; }
+.ayat-journey__step.is-now .ayat-journey__gem { background: #111; border-color: #c79244; box-shadow: 0 0 0 5px rgba(199,146,68,.22); }
+.ayat-journey__step.is-done, .ayat-journey__step.is-now { color: #111; font-weight: 500; }
+.ayat-journey__now { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #a56f1f; }
+.ayat-track__courier { display: flex; flex-wrap: wrap; gap: 28px; margin: 18px 0 0; padding: 14px 16px; border-radius: 10px; background: #fbf5ea; }
+.ayat-track__courier p { margin: 0; }
+.ayat-track__tno { font-family: ui-monospace, Menlo, Consolas, monospace; letter-spacing: .04em; }
+.ayat-track__items { margin: 18px 0 0; padding: 0; list-style: none; }
+.ayat-track__items li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed rgba(199,146,68,.3); }
+.ayat-track__help { margin: 18px 0 0; }
+.ayat-track__help a, .ayat-track-link a { color: #1f8f4e; font-weight: 600; }
+@media (max-width: 767px) {
+	.ayat-track__form { grid-template-columns: 1fr; padding: 16px; }
+	.ayat-track__head { grid-template-columns: 1fr 1fr; }
+	.ayat-track__result { padding: 18px; }
+	.ayat-journey { grid-template-columns: 1fr; gap: 0; margin-left: 4px; }
+	.ayat-journey__step { flex-direction: row; align-items: center; gap: 14px; text-align: left; min-height: 46px; }
+	.ayat-journey__step::before { top: -23px; left: 10px; width: 2px; height: 46px; }
+	.ayat-journey__now { margin-left: auto; }
+}
+.site-header--v3 .site-header__inner--full > .header-left { order: 0; grid-column: 1; }
+.site-header--v3 .site-header__inner--full > .site-branding { order: 0; grid-column: 2; }
+.site-header--v3 .site-header__inner--full > .header-actions { order: 0; grid-column: 3; }
