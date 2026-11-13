@@ -197,3 +197,23 @@
 		more.addEventListener('click', function () { limit(true); more.hidden = true; });
 	}
 })();
+
+/* Sale bar countdown: hides the bar when the sale ends. */
+(function () {
+	var bar = document.querySelector('.sale-bar[data-sale-end]');
+	if (!bar) return;
+	var end = parseInt(bar.getAttribute('data-sale-end'), 10);
+	if (!end) return;
+	var el = { d: bar.querySelector('[data-d]'), h: bar.querySelector('[data-h]'), m: bar.querySelector('[data-m]'), s: bar.querySelector('[data-s]') };
+	function pad(n) { return (n < 10 ? '0' : '') + n; }
+	function tick() {
+		var left = Math.max(0, Math.floor((end - Date.now()) / 1000));
+		if (!left) { bar.classList.add('is-ended'); clearInterval(t); return; }
+		if (el.d) el.d.textContent = pad(Math.floor(left / 86400));
+		if (el.h) el.h.textContent = pad(Math.floor(left % 86400 / 3600));
+		if (el.m) el.m.textContent = pad(Math.floor(left % 3600 / 60));
+		if (el.s) el.s.textContent = pad(left % 60);
+	}
+	var t = setInterval(tick, 1000);
+	tick();
+})();
