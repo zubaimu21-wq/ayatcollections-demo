@@ -89,18 +89,6 @@ if ( function_exists( 'wc_get_product' ) ) {
 	</section>
 
 
-	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-		<section class="home-sec home-sec--gold home-products" id="shop-now" aria-labelledby="new-title">
-			<div class="wrap">
-				<div class="sec-head" data-reveal>
-					<h2 id="new-title"><?php echo esc_html( ayat_home( 'new_title' ) ); ?></h2>
-					<a class="link-gold" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Shop all', 'ayatcollections' ); ?></a>
-				</div>
-				<div class="all-rounds"><?php echo do_shortcode( '[products limit="-1" columns="4" orderby="menu_order title" order="ASC" visibility="visible"]' ); ?></div>
-			</div>
-		</section>
-	<?php endif; ?>
-
 	<section class="home-sec" id="collections" aria-labelledby="col-title">
 		<div class="wrap">
 			<div class="sec-head" data-reveal>
@@ -122,6 +110,18 @@ if ( function_exists( 'wc_get_product' ) ) {
 			</ul>
 		</div>
 	</section>
+
+	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+		<section class="home-sec home-sec--gold home-products" id="shop-now" aria-labelledby="new-title">
+			<div class="wrap">
+				<div class="sec-head" data-reveal>
+					<h2 id="new-title"><?php echo esc_html( ayat_home( 'new_title' ) ); ?></h2>
+					<a class="link-gold" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Shop all', 'ayatcollections' ); ?></a>
+				</div>
+				<div class="all-rounds"><?php echo do_shortcode( '[products limit="-1" columns="4" orderby="menu_order title" order="ASC" visibility="visible"]' ); ?></div>
+			</div>
+		</section>
+	<?php endif; ?>
 
 	<section class="home-sec models" aria-labelledby="models-title">
 		<div class="wrap">
