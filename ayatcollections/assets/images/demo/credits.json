@@ -301,27 +301,6 @@
     "background": "cropped, edges faded into the black box"
   },
   {
-    "file": "demo-model-earrings-v3.webp",
-    "photographer": "AI-generated (Figma AI image generation)",
-    "url": "",
-    "license": "Generated for this store",
-    "background": "AI model image, not a real person"
-  },
-  {
-    "file": "demo-model-necklace-v3.webp",
-    "photographer": "AI-generated (Figma AI image generation)",
-    "url": "",
-    "license": "Generated for this store",
-    "background": "AI model image, not a real person"
-  },
-  {
-    "file": "demo-model-cuffs-v3.webp",
-    "photographer": "AI-generated (Figma AI image generation)",
-    "url": "",
-    "license": "Generated for this store",
-    "background": "AI model image, not a real person"
-  },
-  {
     "file": "demo-slide-earrings-ai.webp",
     "photographer": "AI-generated (Figma AI image generation)",
     "url": "",
@@ -337,6 +316,27 @@
   },
   {
     "file": "demo-slide-cuffs-ai.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-model-earrings-v4.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-model-necklace-v4.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-model-rings-v4.webp",
     "photographer": "AI-generated (Figma AI image generation)",
     "url": "",
     "license": "Generated for this store",
