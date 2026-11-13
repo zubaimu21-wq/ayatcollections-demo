@@ -197,7 +197,7 @@ function ayat_ornament() {
  * @return array label => url
  */
 function ayat_social_links() {
-	$phone = preg_replace( '/[^0-9]/', '', (string) get_theme_mod( 'ayat_phone', '' ) );
+	$phone = preg_replace( '/[^0-9]/', '', (string) get_theme_mod( 'ayat_phone', '0311 0290489' ) );
 	if ( $phone && 0 === strpos( $phone, '0' ) ) {
 		$phone = '92' . substr( $phone, 1 );
 	}

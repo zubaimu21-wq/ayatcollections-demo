@@ -56,7 +56,7 @@ function ayat_alert_phone( $phone ) {
  */
 function ayat_store_whatsapp() {
 	$s = ayat_alert_settings();
-	return ayat_alert_phone( $s['store_wa'] ? $s['store_wa'] : get_theme_mod( 'ayat_phone', '' ) );
+	return ayat_alert_phone( $s['store_wa'] ? $s['store_wa'] : get_theme_mod( 'ayat_phone', '0311 0290489' ) );
 }
 
 /**

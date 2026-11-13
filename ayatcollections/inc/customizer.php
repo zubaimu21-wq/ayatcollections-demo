@@ -75,7 +75,7 @@ function ayat_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'ayat_store', array( 'title' => __( 'Store details', 'ayatcollections' ), 'priority' => 26 ) );
 	$store = array(
 		'ayat_announcement' => array( __( 'Announcement bar (leave empty to hide)', 'ayatcollections' ), __( 'Cash on Delivery across Pakistan', 'ayatcollections' ), 'sanitize_text_field' ),
-		'ayat_phone'        => array( __( 'WhatsApp / phone (e.g. 0300 1234567)', 'ayatcollections' ), '', 'sanitize_text_field' ),
+		'ayat_phone'        => array( __( 'WhatsApp / phone (e.g. 0300 1234567)', 'ayatcollections' ), '0311 0290489', 'sanitize_text_field' ),
 		'ayat_email'        => array( __( 'Support email', 'ayatcollections' ), '', 'sanitize_email' ),
 		'ayat_address'      => array( __( 'Boutique address', 'ayatcollections' ), '', 'sanitize_text_field' ),
 		'ayat_instagram'    => array( __( 'Instagram URL', 'ayatcollections' ), 'https://www.instagram.com/aayatcollections38/', 'esc_url_raw' ),

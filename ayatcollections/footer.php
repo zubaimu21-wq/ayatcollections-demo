@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 $socials  = ayat_social_links();
-$phone    = get_theme_mod( 'ayat_phone', '' );
+$phone    = get_theme_mod( 'ayat_phone', '0311 0290489' );
 $email    = get_theme_mod( 'ayat_email', '' );
 $address  = get_theme_mod( 'ayat_address', '' );
 $whatsapp = isset( $socials['WhatsApp'] ) ? $socials['WhatsApp'] : '';
