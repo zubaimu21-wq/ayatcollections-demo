@@ -100,3 +100,41 @@
 		setup();
 	}
 })();
+
+/* Homepage carousel: arrows, dots, autoplay (pauses on hover/focus or when hidden). */
+(function () {
+	var root = document.querySelector('[data-slider]');
+	if (!root) return;
+	var track = root.querySelector('[data-slider-track]');
+	var slides = track.children;
+	var dots = root.querySelectorAll('[data-slider-dots] button');
+	var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	var index = 0, timer = null, paused = false;
+	function go(i) {
+		index = (i + slides.length) % slides.length;
+		track.scrollTo({ left: slides[index].offsetLeft, behavior: reduce ? 'instant' : 'smooth' });
+	}
+	function mark() {
+		var i = Math.round(track.scrollLeft / track.clientWidth);
+		index = i;
+		for (var d = 0; d < dots.length; d++) {
+			if (d === i) dots[d].setAttribute('aria-current', 'true'); else dots[d].removeAttribute('aria-current');
+		}
+	}
+	var t;
+	track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(mark, 60); }, { passive: true });
+	root.querySelector('[data-slider-prev]').addEventListener('click', function () { go(index - 1); });
+	root.querySelector('[data-slider-next]').addEventListener('click', function () { go(index + 1); });
+	for (var d = 0; d < dots.length; d++) {
+		dots[d].addEventListener('click', (function (n) { return function () { go(n); }; })(d));
+	}
+	function start() { stop(); timer = setInterval(function () { if (!paused && !document.hidden) go(index + 1); }, 5000); }
+	function stop() { if (timer) clearInterval(timer); }
+	root.addEventListener('mouseenter', function () { paused = true; });
+	root.addEventListener('mouseleave', function () { paused = false; });
+	root.addEventListener('focusin', function () { paused = true; });
+	root.addEventListener('focusout', function () { paused = false; });
+	track.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+	track.addEventListener('touchend', function () { setTimeout(function () { paused = false; }, 4000); }, { passive: true });
+	start();
+})();

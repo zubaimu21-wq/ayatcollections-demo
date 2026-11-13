@@ -33,6 +33,33 @@ if ( function_exists( 'wc_get_product' ) ) {
 ?>
 <main id="main" class="site-main home-main">
 
+	<section class="ayat-slider" data-slider aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
+		<div class="ayat-slider__track" data-slider-track>
+			<?php for ( $s = 1; $s <= 3; $s++ ) : ?>
+				<?php
+				$s_term = get_term_by( 'slug', ayat_home( 'slide' . $s . '_cat' ), 'product_cat' );
+				$s_url  = $s_term && ! is_wp_error( $s_term ) ? get_term_link( $s_term ) : $shop_url;
+				?>
+				<div class="ayat-slide" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( $s . ' / 3' ); ?>">
+					<?php echo ayat_home_img( 'slide' . $s . '_img', '', 'ayat-slide__img', 1 === $s ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<div class="wrap ayat-slide__copy">
+						<p class="eyebrow"><?php esc_html_e( 'SHAYA by Aayat Collections', 'ayatcollections' ); ?></p>
+						<h2 class="ayat-slide__title"><?php echo esc_html( ayat_home( 'slide' . $s . '_title' ) ); ?></h2>
+						<p class="ayat-slide__text"><?php echo esc_html( ayat_home( 'slide' . $s . '_text' ) ); ?></p>
+						<a class="btn-ink" href="<?php echo esc_url( $s_url ); ?>"><?php esc_html_e( 'Shop now', 'ayatcollections' ); ?></a>
+					</div>
+				</div>
+			<?php endfor; ?>
+		</div>
+		<button class="ayat-slider__nav ayat-slider__nav--prev" type="button" data-slider-prev aria-label="<?php esc_attr_e( 'Previous slide', 'ayatcollections' ); ?>">&#8249;</button>
+		<button class="ayat-slider__nav ayat-slider__nav--next" type="button" data-slider-next aria-label="<?php esc_attr_e( 'Next slide', 'ayatcollections' ); ?>">&#8250;</button>
+		<div class="ayat-slider__dots" data-slider-dots>
+			<?php for ( $s = 1; $s <= 3; $s++ ) : ?>
+				<button type="button" aria-label="<?php echo esc_attr( sprintf( /* translators: %d: slide number */ __( 'Go to slide %d', 'ayatcollections' ), $s ) ); ?>"<?php echo 1 === $s ? ' aria-current="true"' : ''; ?>></button>
+			<?php endfor; ?>
+		</div>
+	</section>
+
 	<section class="hero-box" aria-labelledby="hero-title">
 		<div class="wrap hero-box__inner">
 			<div class="hero-box__copy">
@@ -60,19 +87,19 @@ if ( function_exists( 'wc_get_product' ) ) {
 				<button class="jbox__replay" type="button" data-jbox-toggle aria-pressed="false" data-pause="<?php esc_attr_e( 'Pause', 'ayatcollections' ); ?>" data-play="<?php esc_attr_e( 'Play', 'ayatcollections' ); ?>"><span aria-hidden="true">&#10074;&#10074;</span> <span data-label><?php esc_html_e( 'Pause', 'ayatcollections' ); ?></span></button>
 			</div>
 		</div>
-		<div class="hero-sides">
-			<?php
-			foreach ( array( array( 'hero_side1', 'hero_side1_label', 'hero_side1_cat', 'hero-side--left' ), array( 'hero_side2', 'hero_side2_label', 'hero_side2_cat', 'hero-side--right' ) ) as $side ) :
-				$cat_term = get_term_by( 'slug', ayat_home( $side[2] ), 'product_cat' );
-				$side_url = $cat_term && ! is_wp_error( $cat_term ) ? get_term_link( $cat_term ) : $shop_url;
-				?>
-				<a class="hero-side <?php echo esc_attr( $side[3] ); ?>" href="<?php echo esc_url( $side_url ); ?>">
-					<?php echo ayat_home_img( $side[0], ayat_home( $side[1] ), 'hero-side__img', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					<span class="hero-side__label"><?php echo esc_html( ayat_home( $side[1] ) ); ?> <span aria-hidden="true">&rarr;</span></span>
-				</a>
-			<?php endforeach; ?>
-		</div>
 	</section>
+
+	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+		<section class="home-sec home-sec--gold home-products" id="shop-now" aria-labelledby="new-title">
+			<div class="wrap">
+				<div class="sec-head" data-reveal>
+					<h2 id="new-title"><?php echo esc_html( ayat_home( 'new_title' ) ); ?></h2>
+					<a class="link-gold" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Shop all', 'ayatcollections' ); ?></a>
+				</div>
+				<div class="all-rounds"><?php echo do_shortcode( '[products limit="-1" columns="4" orderby="menu_order title" order="ASC" visibility="visible"]' ); ?></div>
+			</div>
+		</section>
+	<?php endif; ?>
 
 	<section class="home-sec" id="collections" aria-labelledby="col-title">
 		<div class="wrap">
@@ -118,18 +145,6 @@ if ( function_exists( 'wc_get_product' ) ) {
 			</ul>
 		</div>
 	</section>
-
-	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-		<section class="home-sec home-sec--tint" aria-labelledby="new-title">
-			<div class="wrap">
-				<div class="sec-head" data-reveal>
-					<h2 id="new-title"><?php echo esc_html( ayat_home( 'new_title' ) ); ?></h2>
-					<a class="link-gold" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Shop all', 'ayatcollections' ); ?></a>
-				</div>
-				<div class="all-rounds"><?php echo do_shortcode( '[products limit="-1" columns="4" orderby="menu_order title" order="ASC" visibility="visible"]' ); ?></div>
-			</div>
-		</section>
-	<?php endif; ?>
 
 	<?php if ( $look ) : ?>
 		<section class="home-sec look" aria-labelledby="look-title">
