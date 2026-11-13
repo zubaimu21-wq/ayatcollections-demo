@@ -130,6 +130,17 @@
 			return;
 		}
 
+		if (f.matches('.rv-form')) {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			if (!f.checkValidity()) { f.reportValidity(); return; }
+			f.reset();
+			f.hidden = true;
+			var wb = $('.rv__write'); if (wb) { wb.setAttribute('aria-expanded', 'false'); }
+			toast('<span>Thank you! On the live store your review is sent to us for approval. (Demo store: reviews are not saved.)</span>');
+			return;
+		}
+
 		if (f.matches('.woocommerce-ordering')) { e.preventDefault(); e.stopImmediatePropagation(); sortProducts($('select.orderby', f).value); return; }
 
 		if (f.matches('.ayat-search, .woocommerce-product-search, .search-form')) {
