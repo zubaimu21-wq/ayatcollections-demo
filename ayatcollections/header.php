@@ -7,7 +7,6 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-$announcement = get_theme_mod( 'ayat_announcement', __( 'Cash on Delivery across Pakistan', 'ayatcollections' ) );
 $track_url    = function_exists( 'ayat_track_url' ) ? ayat_track_url() : '';
 $head_wa      = function_exists( 'ayat_store_whatsapp' ) ? ayat_store_whatsapp() : preg_replace( '/^0/', '92', preg_replace( '/[^0-9]/', '', (string) get_theme_mod( 'ayat_phone', '0311 0290489' ) ) );
 ?><!doctype html>
@@ -21,9 +20,7 @@ $head_wa      = function_exists( 'ayat_store_whatsapp' ) ? ayat_store_whatsapp()
 <?php wp_body_open(); ?>
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'ayatcollections' ); ?></a>
 
-<?php if ( $announcement ) : ?>
-	<div class="announcement"><p><?php echo esc_html( $announcement ); ?></p></div>
-<?php endif; ?>
+<?php if ( function_exists( 'ayat_sale_bar' ) ) { ayat_sale_bar(); } ?>
 
 <header class="site-header site-header--v3" id="site-header">
 	<div class="site-header__inner site-header__inner--full">

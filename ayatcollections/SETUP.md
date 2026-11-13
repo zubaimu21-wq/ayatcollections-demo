@@ -75,3 +75,10 @@ All orders are also listed in **WooCommerce → Orders** (the menu shows how man
 
 - The **Track order** link in the header opens the Track Order page (created automatically). Customers enter the order number and the phone or email they ordered with.
 - In **WooCommerce -> Orders**, open an order and fill **SHAYA order tracking**: stage, courier (TCS, Leopards, M&P, PostEx...) and tracking number. Leave the stage on "Automatic" to follow the order status.
+
+## 11. Running a sale (11.11, Eid, Black Friday)
+
+1. Put sale prices on the products: **Products -> Edit -> Sale price** (the "Schedule" link sets start/end dates), or select several products and use **Bulk edit -> Sale price** (for example "decrease by 20%").
+2. Turn the banner on: **Appearance -> Customize -> Sale banner** - tick "Show the sale banner", write the text (e.g. "11.11 Sale - Up to 30% off"), an optional promo code, and the end date like `2026-11-11 23:59`.
+3. While the sale runs the site shows: a red-and-gold bar with a live countdown at the top of every page, a **-20%** badge and crossed-out old price on discounted products, and a **Sale picks** row on the homepage. The bar hides itself when the countdown ends.
+4. For a promo code, create it in **Marketing -> Coupons** with the same name.

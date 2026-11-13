@@ -89,6 +89,8 @@ if ( function_exists( 'wc_get_product' ) ) {
 	</section>
 
 
+	<?php if ( function_exists( 'ayat_sale_section' ) ) { ayat_sale_section(); } ?>
+
 	<section class="home-sec" id="collections" aria-labelledby="col-title">
 		<div class="wrap">
 			<div class="sec-head" data-reveal>

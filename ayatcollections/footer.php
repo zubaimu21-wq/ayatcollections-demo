@@ -15,6 +15,10 @@ $cats     = function_exists( 'ayat_get_collections' ) ? array_slice( ayat_get_co
 $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
 ?>
 <footer class="site-footer">
+	<?php $announcement = get_theme_mod( 'ayat_announcement', __( 'Cash on Delivery across Pakistan', 'ayatcollections' ) ); ?>
+	<?php if ( $announcement ) : ?>
+		<div class="footer-strip"><p><?php echo esc_html( $announcement ); ?></p></div>
+	<?php endif; ?>
 	<div class="wrap site-footer__grid">
 		<div class="site-footer__brand">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__logo"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" loading="lazy"></a>
