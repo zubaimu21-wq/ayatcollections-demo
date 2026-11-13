@@ -1650,3 +1650,24 @@ body .site-footer__credit-logo img { height: 24px; width: auto; display: block; 
 	.ayat-slider__nav--next { right: 10px; }
 	.ayat-slider__dots { bottom: 14px; }
 }
+
+/* ===== 1.9.6: jewellery box is slide 1 of the carousel; slide photos keep headroom ===== */
+.ayat-slide__img { object-position: right top; }
+.ayat-slide:last-child .ayat-slide__img { object-position: right center; }
+.ayat-slide--box { background: radial-gradient(60% 90% at 72% 50%, #fffaf1 0%, #f6ead3 55%, #ecd9b4 100%); }
+.ayat-slide--box .hero-box__inner { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; justify-items: start; text-align: left; gap: clamp(24px, 4vw, 64px); }
+.ayat-slide--box .hero-box__copy { max-width: 480px; }
+.ayat-slide--box .hero-box__title { font-size: clamp(34px, 3.8vw, 54px); line-height: 1.08; margin: 6px 0 14px; }
+.ayat-slide--box .hero-box__text { font-size: 15px; line-height: 1.65; margin: 0 0 22px; }
+.ayat-slide--box .hero-box__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; justify-content: flex-start; margin: 0; }
+.ayat-slide--box .hero-box__stage { width: auto; margin: 0; justify-self: center; }
+.ayat-slide--box .jbox { width: 300px; max-width: 100%; padding-top: 92px; }
+.ayat-slide--box .jbox__replay { margin-top: 10px; }
+@media (max-width: 767px) {
+	.ayat-slide--box .hero-box__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 14px; padding-top: 20px; padding-bottom: 52px; }
+	.ayat-slide--box .hero-box__stage { order: -1; }
+	.ayat-slide--box .jbox { width: 220px; padding-top: 70px; }
+	.ayat-slide--box .hero-box__title { font-size: 30px; }
+	.ayat-slide--box .hero-box__text { display: none; }
+	.ayat-slide--box .hero-box__actions { justify-content: center; gap: 16px; }
+}
