@@ -1511,3 +1511,17 @@ body .site-footer__brand .site-footer__logo { display: inline-block; align-self:
 .jbox__lid-in img { opacity: 1; filter: none; }
 .hero-box__stage { margin-top: 10px; }
 @media (max-width: 767px) { .hero-box__stage { margin-top: 26px; } .jbox { padding-top: 28%; } }
+/* Keep the box a real width inside the centred hero */
+.hero-box__stage { width: 100%; }
+.jbox { width: 460px; max-width: 100%; }
+@media (max-width: 767px) { .jbox { width: 330px; max-width: 88vw; } }
+@media (min-width: 768px) {
+	.hero-box { padding: 26px 0 36px; }
+	.hero-box__inner { gap: 6px; }
+	.hero-box__title { font-size: clamp(2rem, 3.4vw, 3rem); margin-bottom: 10px; }
+	.hero-box__text { margin-bottom: 16px; }
+	.jbox { width: 400px; padding-top: 22%; }
+	.hero-box__stage { margin-top: 4px; }
+}
+@media (min-width: 768px) { .jbox { padding-top: 124px; } }
+@media (max-width: 767px) { .jbox { padding-top: 104px; } }
