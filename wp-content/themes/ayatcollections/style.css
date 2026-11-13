@@ -1811,3 +1811,4 @@ body .site-header--v3 .primary-nav a { display: block; padding: 14px 0; color: #
 .site-header--v3 .site-header__inner--full > .header-left { order: 0; grid-column: 1; }
 .site-header--v3 .site-header__inner--full > .site-branding { order: 0; grid-column: 2; }
 .site-header--v3 .site-header__inner--full > .header-actions { order: 0; grid-column: 3; }
+.ayat-track__items li span:last-child { white-space: nowrap; }
