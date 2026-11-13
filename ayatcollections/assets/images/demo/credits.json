@@ -301,20 +301,6 @@
     "background": "cropped, edges faded into the black box"
   },
   {
-    "file": "demo-hero-side-left.webp",
-    "photographer": "faizan khan",
-    "url": "https://unsplash.com/photos/mhjWvVTA_qY",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "original photo, cropped"
-  },
-  {
-    "file": "demo-hero-side-right.webp",
-    "photographer": "Sujeeth Potla",
-    "url": "https://unsplash.com/photos/5EfVgcZYi3s",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "original photo, cropped"
-  },
-  {
     "file": "demo-model-earrings-v2.webp",
     "photographer": "AI-generated (Figma AI image generation)",
     "url": "",
@@ -330,6 +316,20 @@
   },
   {
     "file": "demo-model-cuffs-v2.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-hero-side-left-ai.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-hero-side-right-ai.webp",
     "photographer": "AI-generated (Figma AI image generation)",
     "url": "",
     "license": "Generated for this store",

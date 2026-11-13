@@ -26,10 +26,10 @@ function ayat_home_fields() {
 		'hero_btn'        => array( 'hero', 'text', __( 'Button label', 'ayatcollections' ), __( 'Shop Collection', 'ayatcollections' ) ),
 		'hero_link'       => array( 'hero', 'link', __( 'Button link', 'ayatcollections' ), '/shop/' ),
 		'hero_img'        => array( 'hero', 'image', __( 'Jewellery inside the box (transparent PNG/WebP works best)', 'ayatcollections' ), 'demo-box-reveal-cuffs' ),
-		'hero_side1'       => array( 'hero', 'image', __( 'Left side photo', 'ayatcollections' ), 'demo-hero-side-left' ),
+		'hero_side1'       => array( 'hero', 'image', __( 'Left side photo', 'ayatcollections' ), 'demo-hero-side-left-ai' ),
 		'hero_side1_label' => array( 'hero', 'text', __( 'Left side label', 'ayatcollections' ), __( 'Bridal & Necklaces', 'ayatcollections' ) ),
 		'hero_side1_cat'   => array( 'hero', 'text', __( 'Left side category slug', 'ayatcollections' ), 'necklaces' ),
-		'hero_side2'       => array( 'hero', 'image', __( 'Right side photo', 'ayatcollections' ), 'demo-hero-side-right' ),
+		'hero_side2'       => array( 'hero', 'image', __( 'Right side photo', 'ayatcollections' ), 'demo-hero-side-right-ai' ),
 		'hero_side2_label' => array( 'hero', 'text', __( 'Right side label', 'ayatcollections' ), __( 'Bangles & Cuffs', 'ayatcollections' ) ),
 		'hero_side2_cat'   => array( 'hero', 'text', __( 'Right side category slug', 'ayatcollections' ), 'hand-cuffs' ),
 		// 2. Collections, new arrivals, shop the look.
