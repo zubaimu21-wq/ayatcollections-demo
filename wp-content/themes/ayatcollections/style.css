@@ -1525,3 +1525,30 @@ body .site-footer__brand .site-footer__logo { display: inline-block; align-self:
 }
 @media (min-width: 768px) { .jbox { padding-top: 124px; } }
 @media (max-width: 767px) { .jbox { padding-top: 104px; } }
+
+/* =====================================================================
+   Customer reviews (homepage + product page)
+   ===================================================================== */
+.sec-head--center { flex-direction: column; align-items: center; text-align: center; border-bottom: 0; gap: 6px; }
+.sec-head--center p { margin: 0; color: var(--ink-soft); }
+.reviews-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.review-card { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 24px 22px 20px; background: #fff; border: 1px solid #eee3d0; border-radius: 6px; box-shadow: 0 10px 24px -18px rgba(0,0,0,.25); }
+.review-card__stars { margin: 0; color: #c79244; font-size: 18px; letter-spacing: 3px; }
+.review-card__text { margin: 0; font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.6; color: var(--ink); }
+.review-card__text p { margin: 0; }
+.review-card__shot img { width: 100%; height: auto; border-radius: 4px; }
+.review-card__foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 12px; border-top: 1px solid #f1e8d8; }
+.review-card__name { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+.review-card__source { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border-radius: 16px; background: #faf4ea; color: var(--gold-text); font-size: 12px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.review-card__source svg { width: 15px; height: 15px; fill: currentColor; }
+.review-card__product { font-size: 12.5px; letter-spacing: .06em; color: var(--gold-text); text-decoration: none; }
+.review-card__product:hover { text-decoration: underline; }
+.review-card__sample { position: absolute; top: 12px; right: 12px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #8a6424; background: #f7efe2; border: 1px dashed #c79244; border-radius: 3px; padding: 2px 6px; }
+.reviews__widget { margin-top: 28px; }
+.product-social-reviews { clear: both; padding: 40px 0 8px; }
+.product-social-reviews h2 { font-family: var(--font-serif); font-weight: 400; font-size: 1.7rem; margin: 0 0 20px; }
+@media (max-width: 1024px) { .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) {
+	.reviews-grid { grid-template-columns: 1fr; gap: 14px; }
+	.review-card { padding: 22px 18px 18px; }
+}
