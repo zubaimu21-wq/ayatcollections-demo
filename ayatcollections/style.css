@@ -1405,3 +1405,8 @@ body .site-footer__bottom { border-top-color: rgba(199,146,68,.3); color: #b9ab8
 .cat-rounds > li { flex: 0 0 calc(100% / 6); padding: 0 8px; }
 @media (max-width: 1024px) { .cat-rounds > li { flex-basis: 25%; } }
 @media (max-width: 767px) { .cat-rounds { gap: 22px 0; } .cat-rounds > li { flex-basis: calc(100% / 3); padding: 0 4px; } }
+
+/* All products: square photos instead of circles */
+.home-main .all-rounds ul.products li.product a img { width: 100%; max-width: 260px; border-radius: 4px; padding: 6%; box-shadow: none; border: 1px solid rgba(199,146,68,.55); object-fit: contain; background: #fff; }
+.home-main .all-rounds ul.products li.product .badge { top: 10px; }
+@media (max-width: 767px) { .home-main .all-rounds ul.products li.product a img { max-width: 100%; } }
