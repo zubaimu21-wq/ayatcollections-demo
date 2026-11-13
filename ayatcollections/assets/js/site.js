@@ -110,16 +110,23 @@
 	var dots = root.querySelectorAll('[data-slider-dots] button');
 	var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	var index = 0, timer = null, paused = false;
+	function paint() {
+		for (var d = 0; d < dots.length; d++) {
+			if (d === index) dots[d].setAttribute('aria-current', 'true'); else dots[d].removeAttribute('aria-current');
+		}
+	}
+	var moving = false;
 	function go(i) {
 		index = (i + slides.length) % slides.length;
+		paint();
+		moving = true;
+		setTimeout(function () { moving = false; }, 700);
 		track.scrollTo({ left: slides[index].offsetLeft, behavior: reduce ? 'instant' : 'smooth' });
 	}
 	function mark() {
-		var i = Math.round(track.scrollLeft / track.clientWidth);
-		index = i;
-		for (var d = 0; d < dots.length; d++) {
-			if (d === i) dots[d].setAttribute('aria-current', 'true'); else dots[d].removeAttribute('aria-current');
-		}
+		if (moving || !track.clientWidth) return;
+		index = Math.round(track.scrollLeft / track.clientWidth);
+		paint();
 	}
 	var t;
 	track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(mark, 60); }, { passive: true });
