@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AYAT_VERSION', '2.0.3' );
+define( 'AYAT_VERSION', '2.1.0' );
 define( 'AYAT_DIR', get_template_directory() );
 define( 'AYAT_URI', get_template_directory_uri() );
 
@@ -22,6 +22,7 @@ require AYAT_DIR . '/inc/track-order.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require AYAT_DIR . '/inc/woocommerce.php';
 	require AYAT_DIR . '/inc/order-alerts.php';
+	require AYAT_DIR . '/inc/reviews-pro.php';
 }
 
 if ( is_admin() ) {

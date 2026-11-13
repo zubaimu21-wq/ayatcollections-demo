@@ -156,3 +156,44 @@
 		list.scrollLeft = cur.parentElement.offsetLeft - (list.clientWidth - cur.offsetWidth) / 2;
 	}
 })();
+
+/* Product reviews: open the form, sort, show more. */
+(function () {
+	var box = document.querySelector('.rv');
+	if (!box) return;
+	var btn = box.querySelector('.rv__write');
+	var form = document.getElementById('rv-form');
+	if (btn && form) {
+		btn.addEventListener('click', function () {
+			var open = btn.getAttribute('aria-expanded') === 'true';
+			btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+			form.hidden = open;
+			if (!open) { var first = form.querySelector('input[type=radio]'); if (first) first.focus(); }
+		});
+	}
+	var list = box.querySelector('[data-rv-list]');
+	var sort = box.querySelector('[data-rv-sort]');
+	var more = box.querySelector('[data-rv-more]');
+	function limit(all) {
+		var cards = list.children;
+		for (var i = 0; i < cards.length; i++) { cards[i].hidden = !all && i >= 5; }
+	}
+	if (list && sort) {
+		sort.addEventListener('change', function () {
+			var cards = Array.prototype.slice.call(list.children);
+			var by = sort.value;
+			cards.sort(function (a, b) {
+				var ra = +a.dataset.rating, rb = +b.dataset.rating, ta = +a.dataset.time, tb = +b.dataset.time;
+				if (by === 'high') return rb - ra || tb - ta;
+				if (by === 'low') return ra - rb || tb - ta;
+				if (by === 'photos') return (+b.dataset.photos) - (+a.dataset.photos) || tb - ta;
+				return tb - ta;
+			});
+			cards.forEach(function (c) { list.appendChild(c); });
+			limit(!more || more.hidden);
+		});
+	}
+	if (more && list) {
+		more.addEventListener('click', function () { limit(true); more.hidden = true; });
+	}
+})();
