@@ -82,3 +82,8 @@ All orders are also listed in **WooCommerce → Orders** (the menu shows how man
 2. Turn the banner on: **Appearance -> Customize -> Sale banner** - tick "Show the sale banner", write the text (e.g. "11.11 Sale - Up to 30% off"), an optional promo code, and the end date like `2026-11-11 23:59`.
 3. While the sale runs the site shows: a red-and-gold bar with a live countdown at the top of every page, a **-20%** badge and crossed-out old price on discounted products, and a **Sale picks** row on the homepage. The bar hides itself when the countdown ends.
 4. For a promo code, create it in **Marketing -> Coupons** with the same name.
+
+## 12. Homepage banners (top carousel)
+
+- **Appearance -> Customize -> Homepage -> Hero**: four banners. For each, upload a wide image (about **2000 x 800 px**, text on the left like the SHAYA banners), write a short description and a link (a category slug such as `earrings`, or a URL such as `/shop/`).
+- Banners change by themselves every 5 seconds with a soft zoom, pause when the mouse is over them, and can be swiped on phones.

@@ -33,57 +33,50 @@ if ( function_exists( 'wc_get_product' ) ) {
 ?>
 <main id="main" class="site-main home-main">
 
-	<section class="ayat-slider" data-slider aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
+	<h1 class="screen-reader-text"><?php echo esc_html( get_bloginfo( 'name' ) . ' – ' . __( 'gold-tone stainless steel jewellery', 'ayatcollections' ) ); ?></h1>
+
+	<section class="ayat-slider ayat-slider--banners" data-slider aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
 		<div class="ayat-slider__track" data-slider-track>
-			<div class="ayat-slide ayat-slide--box" data-duration="12500" role="group" aria-roledescription="slide" aria-label="1 / 4">
-				<div class="wrap hero-box__inner">
-					<div class="hero-box__copy">
-						<p class="eyebrow"><?php echo esc_html( ayat_home( 'hero_eyebrow' ) ); ?></p>
-						<h1 id="hero-title" class="hero-box__title"><?php echo esc_html( ayat_home( 'hero_title' ) ); ?> <em><?php echo esc_html( ayat_home( 'hero_script' ) ); ?></em></h1>
-						<p class="hero-box__text"><?php echo esc_html( ayat_home( 'hero_text' ) ); ?></p>
-						<p class="hero-box__actions">
-							<a class="btn-ink" href="<?php echo esc_url( ayat_resolve_link( ayat_home( 'hero_link' ) ) ); ?>"><?php echo esc_html( ayat_home( 'hero_btn' ) ); ?></a>
-							<a class="link-gold" href="#collections"><?php esc_html_e( 'Browse collections', 'ayatcollections' ); ?></a>
-						</p>
-					</div>
-					<div class="hero-box__stage">
-						<div class="jbox is-play" data-jbox>
-							<div class="jbox__tray">
-								<div class="jbox__cushion">
-									<img class="jbox__jewel" src="<?php echo esc_url( ayat_home_img_url( 'hero_img' ) ); ?>" width="900" height="692" alt="<?php esc_attr_e( 'Five gold-tone stainless steel cuff bangles with crystals, shown in a black velvet jewellery box', 'ayatcollections' ); ?>" fetchpriority="high" decoding="async">
-									<span class="jbox__glint" aria-hidden="true"></span>
-								</div>
-								<div class="jbox__lid" aria-hidden="true">
-									<span class="jbox__lid-out"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt=""></span>
-									<span class="jbox__lid-in"></span>
-								</div>
-							</div>
-						</div>
-						<button class="jbox__replay" type="button" data-jbox-toggle aria-pressed="false" data-pause="<?php esc_attr_e( 'Pause', 'ayatcollections' ); ?>" data-play="<?php esc_attr_e( 'Play', 'ayatcollections' ); ?>"><span aria-hidden="true">&#10074;&#10074;</span> <span data-label><?php esc_html_e( 'Pause', 'ayatcollections' ); ?></span></button>
-					</div>
-				</div>
-			</div>
-			<?php for ( $s = 1; $s <= 3; $s++ ) : ?>
+			<?php for ( $s = 1; $s <= 4; $s++ ) : ?>
 				<?php
-				$s_term = get_term_by( 'slug', ayat_home( 'slide' . $s . '_cat' ), 'product_cat' );
-				$s_url  = $s_term && ! is_wp_error( $s_term ) ? get_term_link( $s_term ) : $shop_url;
+				$b_link = trim( (string) ayat_home( 'banner' . $s . '_link' ) );
+				$b_term = ( $b_link && false === strpos( $b_link, '/' ) ) ? get_term_by( 'slug', $b_link, 'product_cat' ) : false;
+				if ( $b_term && ! is_wp_error( $b_term ) ) {
+					$b_url = get_term_link( $b_term );
+				} elseif ( $b_link && function_exists( 'ayat_resolve_link' ) ) {
+					$b_url = ayat_resolve_link( $b_link );
+				} else {
+					$b_url = $shop_url;
+				}
+				$b_alt  = (string) ayat_home( 'banner' . $s . '_alt' );
+				$b_id   = absint( get_theme_mod( 'ayat_home_banner' . $s . '_img_id', 0 ) );
+				$b_load = 1 === $s ? array( 'loading' => 'eager', 'fetchpriority' => 'high' ) : array( 'loading' => 'eager' );
 				?>
-				<div class="ayat-slide" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( ( $s + 1 ) . ' / 4' ); ?>">
-					<?php echo str_replace( 'loading="lazy"', 'loading="eager"', ayat_home_img( 'slide' . $s . '_img', '', 'ayat-slide__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					<div class="wrap ayat-slide__copy">
-						<p class="eyebrow"><?php esc_html_e( 'SHAYA by Aayat Collections', 'ayatcollections' ); ?></p>
-						<h2 class="ayat-slide__title"><?php echo esc_html( ayat_home( 'slide' . $s . '_title' ) ); ?></h2>
-						<p class="ayat-slide__text"><?php echo esc_html( ayat_home( 'slide' . $s . '_text' ) ); ?></p>
-						<a class="btn-ink" href="<?php echo esc_url( $s_url ); ?>"><?php esc_html_e( 'Shop now', 'ayatcollections' ); ?></a>
-					</div>
+				<div class="ayat-slide ayat-slide--banner" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( $s . ' / 4' ); ?>">
+					<a class="ayat-banner" href="<?php echo esc_url( $b_url ); ?>">
+						<?php
+						if ( $b_id ) {
+							echo wp_get_attachment_image( $b_id, 'full', false, array_merge( $b_load, array( 'class' => 'ayat-banner__img', 'alt' => $b_alt, 'sizes' => '100vw' ) ) );
+						} else {
+							$b_file = ayat_home( 'banner' . $s . '_img' );
+							$b_base = AYAT_URI . '/assets/images/demo/' . $b_file;
+							printf(
+								'<img class="ayat-banner__img" src="%1$s.webp" srcset="%1$s-m.webp 1000w, %1$s.webp 1983w" sizes="100vw" width="1983" height="793" alt="%2$s" loading="eager"%3$s decoding="async">',
+								esc_url( $b_base ),
+								esc_attr( $b_alt ),
+								1 === $s ? ' fetchpriority="high"' : ''
+							);
+						}
+						?>
+					</a>
 				</div>
 			<?php endfor; ?>
 		</div>
-		<button class="ayat-slider__nav ayat-slider__nav--prev" type="button" data-slider-prev aria-label="<?php esc_attr_e( 'Previous slide', 'ayatcollections' ); ?>">&#8249;</button>
-		<button class="ayat-slider__nav ayat-slider__nav--next" type="button" data-slider-next aria-label="<?php esc_attr_e( 'Next slide', 'ayatcollections' ); ?>">&#8250;</button>
+		<button class="ayat-slider__nav ayat-slider__nav--prev" type="button" data-slider-prev aria-label="<?php esc_attr_e( 'Previous banner', 'ayatcollections' ); ?>">&#8249;</button>
+		<button class="ayat-slider__nav ayat-slider__nav--next" type="button" data-slider-next aria-label="<?php esc_attr_e( 'Next banner', 'ayatcollections' ); ?>">&#8250;</button>
 		<div class="ayat-slider__dots" data-slider-dots>
 			<?php for ( $s = 1; $s <= 4; $s++ ) : ?>
-				<button type="button" aria-label="<?php echo esc_attr( sprintf( /* translators: %d: slide number */ __( 'Go to slide %d', 'ayatcollections' ), $s ) ); ?>"<?php echo 1 === $s ? ' aria-current="true"' : ''; ?>></button>
+				<button type="button" aria-label="<?php echo esc_attr( sprintf( /* translators: %d: banner number */ __( 'Go to banner %d', 'ayatcollections' ), $s ) ); ?>"<?php echo 1 === $s ? ' aria-current="true"' : ''; ?>></button>
 			<?php endfor; ?>
 		</div>
 	</section>

@@ -341,5 +341,33 @@
     "url": "",
     "license": "Generated for this store",
     "background": "AI model image, not a real person"
+  },
+  {
+    "file": "demo-banner-gift.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-anklet.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-colour.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-hoops.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
   }
 ]

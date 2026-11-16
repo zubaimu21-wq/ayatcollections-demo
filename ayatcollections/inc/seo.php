@@ -19,7 +19,7 @@ function ayat_preload_hero() {
 	printf( '<link rel="preload" as="image" href="%s" fetchpriority="high">' . "
 ", esc_url( ayat_home_img_url( 'hero_img' ) ) );
 }
-add_action( 'wp_head', 'ayat_preload_hero', 2 );
+// The first banner image is loaded with fetchpriority=high and a srcset instead.
 
 /**
  * Browser-tab and home-screen icon from the brand pack, used until a Site Icon
