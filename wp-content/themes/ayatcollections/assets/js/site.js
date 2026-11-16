@@ -111,6 +111,7 @@
 	var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	var index = 0, timer = null, paused = false;
 	function paint() {
+		for (var k = 0; k < slides.length; k++) { slides[k].classList.toggle('is-active', k === index); }
 		for (var d = 0; d < dots.length; d++) {
 			if (d === index) dots[d].setAttribute('aria-current', 'true'); else dots[d].removeAttribute('aria-current');
 		}
@@ -144,6 +145,7 @@
 	root.addEventListener('focusout', function () { paused = false; });
 	track.addEventListener('touchstart', function () { paused = true; }, { passive: true });
 	track.addEventListener('touchend', function () { setTimeout(function () { paused = false; }, 4000); }, { passive: true });
+	paint();
 	start();
 })();
 
