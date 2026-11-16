@@ -37,7 +37,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 
 	<section class="ayat-slider ayat-slider--banners" data-slider aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
 		<div class="ayat-slider__track" data-slider-track>
-			<?php for ( $s = 1; $s <= 4; $s++ ) : ?>
+			<?php for ( $s = 1; $s <= 6; $s++ ) : ?>
 				<?php
 				$b_link = trim( (string) ayat_home( 'banner' . $s . '_link' ) );
 				$b_term = ( $b_link && false === strpos( $b_link, '/' ) ) ? get_term_by( 'slug', $b_link, 'product_cat' ) : false;
@@ -52,7 +52,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 				$b_id   = absint( get_theme_mod( 'ayat_home_banner' . $s . '_img_id', 0 ) );
 				$b_load = 1 === $s ? array( 'loading' => 'eager', 'fetchpriority' => 'high' ) : array( 'loading' => 'eager' );
 				?>
-				<div class="ayat-slide ayat-slide--banner" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( $s . ' / 4' ); ?>">
+				<div class="ayat-slide ayat-slide--banner" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( $s . ' / 6' ); ?>">
 					<a class="ayat-banner" href="<?php echo esc_url( $b_url ); ?>">
 						<?php
 						if ( $b_id ) {
@@ -75,7 +75,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 		<button class="ayat-slider__nav ayat-slider__nav--prev" type="button" data-slider-prev aria-label="<?php esc_attr_e( 'Previous banner', 'ayatcollections' ); ?>">&#8249;</button>
 		<button class="ayat-slider__nav ayat-slider__nav--next" type="button" data-slider-next aria-label="<?php esc_attr_e( 'Next banner', 'ayatcollections' ); ?>">&#8250;</button>
 		<div class="ayat-slider__dots" data-slider-dots>
-			<?php for ( $s = 1; $s <= 4; $s++ ) : ?>
+			<?php for ( $s = 1; $s <= 6; $s++ ) : ?>
 				<button type="button" aria-label="<?php echo esc_attr( sprintf( /* translators: %d: banner number */ __( 'Go to banner %d', 'ayatcollections' ), $s ) ); ?>"<?php echo 1 === $s ? ' aria-current="true"' : ''; ?>></button>
 			<?php endfor; ?>
 		</div>

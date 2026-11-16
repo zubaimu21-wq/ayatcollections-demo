@@ -85,5 +85,5 @@ All orders are also listed in **WooCommerce → Orders** (the menu shows how man
 
 ## 12. Homepage banners (top carousel)
 
-- **Appearance -> Customize -> Homepage -> Hero**: four banners. For each, upload a wide image (about **2000 x 800 px**, text on the left like the SHAYA banners), write a short description and a link (a category slug such as `earrings`, or a URL such as `/shop/`).
+- **Appearance -> Customize -> Homepage -> Hero**: six banners. For each, upload a wide image (about **2000 x 800 px**, text on the left like the SHAYA banners), write a short description and a link (a category slug such as `earrings`, or a URL such as `/shop/`).
 - Banners change by themselves every 5 seconds with a soft zoom, pause when the mouse is over them, and can be swiped on phones.

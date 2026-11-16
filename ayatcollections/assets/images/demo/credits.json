@@ -350,13 +350,6 @@
     "background": "Brand banner"
   },
   {
-    "file": "demo-banner-anklet.webp",
-    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
-    "url": "",
-    "license": "Owned by the store",
-    "background": "Brand banner"
-  },
-  {
     "file": "demo-banner-colour.webp",
     "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
     "url": "",
@@ -365,6 +358,27 @@
   },
   {
     "file": "demo-banner-hoops.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-details.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-shine.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-move.webp",
     "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
     "url": "",
     "license": "Owned by the store",
