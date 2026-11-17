@@ -146,6 +146,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 			<div class="wrap look__inner">
 				<figure class="look__media" data-reveal>
 					<?php echo ayat_home_img( 'look_img', ayat_home( 'look_title' ), 'look__img' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<figcaption class="look__badge"><span><?php echo esc_html( count( $look ) ); ?></span><?php esc_html_e( 'pieces', 'ayatcollections' ); ?></figcaption>
 				</figure>
 				<div class="look__copy" data-reveal>
 					<p class="eyebrow"><?php esc_html_e( 'Shop the Look', 'ayatcollections' ); ?></p>
@@ -158,10 +159,21 @@ if ( function_exists( 'wc_get_product' ) ) {
 									<?php echo $prod->get_image( 'woocommerce_thumbnail', array( 'loading' => 'lazy', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 									<span class="look__name"><?php echo esc_html( $prod->get_name() ); ?></span>
 									<span class="look__price"><?php echo wp_kses_post( $prod->get_price_html() ); ?></span>
+									<span class="look__go" aria-hidden="true">&rarr;</span>
 								</a>
 							</li>
 						<?php endforeach; ?>
 					</ol>
+					<?php
+					$look_total = 0;
+					foreach ( $look as $prod ) {
+						$look_total += (float) wc_get_price_to_display( $prod );
+					}
+					?>
+					<div class="look__foot">
+						<p class="look__total"><span><?php esc_html_e( 'Complete the look', 'ayatcollections' ); ?></span><strong><?php echo wp_kses_post( wc_price( $look_total ) ); ?></strong></p>
+						<a class="btn btn--gold look__btn" href="<?php echo esc_url( $look[0]->get_permalink() ); ?>"><?php esc_html_e( 'Shop the set', 'ayatcollections' ); ?></a>
+					</div>
 				</div>
 			</div>
 		</section>
