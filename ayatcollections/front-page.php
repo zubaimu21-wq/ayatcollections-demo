@@ -210,6 +210,7 @@ if ( function_exists( 'wc_get_product' ) ) {
 					<h2 id="rev-title"><?php echo esc_html( ayat_home( 'rev_title' ) ); ?></h2>
 					<p><?php echo esc_html( ayat_home( 'rev_text' ) ); ?></p>
 				</div>
+				<?php echo function_exists( 'ayat_rr_banner' ) ? ayat_rr_banner( 'home' ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<?php
 				if ( $reviews ) {
 					ayat_render_reviews( $reviews );

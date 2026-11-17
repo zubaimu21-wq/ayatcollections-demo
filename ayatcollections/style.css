@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.2.8
+Version: 3.3.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2268,3 +2268,13 @@ body .site-footer .site-footer__social { justify-content: center; gap: 12px; mar
 	.site-header--v3 .header-util:not(.header-util--wa):active { transform: scale(.97); }
 }
 @media (max-width: 340px) { .site-header--v3 .header-util:not(.header-util--wa) .header-util__text { font-size: 10px; } .site-header--v3 .header-util:not(.header-util--wa) { padding: 0 8px 0 6px; } }
+
+/* ===== 3.3.0: "Review & save" offer ===== */
+.rr-offer { display: flex; align-items: center; gap: 14px; margin: 0 0 16px; padding: 14px 16px; border: 1px dashed #c79244; border-radius: 10px; background: linear-gradient(135deg, #fffaf0 0%, #f8ecd4 100%); text-align: left; }
+.rr-offer p { margin: 0; font-size: 13.5px; line-height: 1.5; color: #4a3a22; }
+.rr-offer p strong { display: block; margin-bottom: 2px; font-family: var(--font-serif); font-weight: 500; font-size: 1.15rem; color: #8a5f22; }
+.rr-offer__badge { flex: none; display: grid; place-items: center; align-content: center; width: 62px; height: 62px; border-radius: 50%; background: linear-gradient(135deg, #e9c987, #c79244 55%, #9c6b26); color: #fff; font: 600 19px/1 var(--font-sans); box-shadow: 0 8px 18px -10px rgba(110,70,15,.7), inset 0 0 0 2px rgba(255,255,255,.35); }
+.rr-offer__badge small { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-top: 2px; }
+.rr-offer--home { max-width: 640px; margin: 4px auto 26px; }
+.rv__cta .rr-offer { width: 100%; }
+@media (max-width: 480px) { .rr-offer { padding: 12px; gap: 10px; } .rr-offer__badge { width: 52px; height: 52px; font-size: 16px; } .rr-offer p { font-size: 12.5px; } }

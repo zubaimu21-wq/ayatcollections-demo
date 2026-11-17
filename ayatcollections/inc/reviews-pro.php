@@ -291,6 +291,7 @@ function ayat_rv_product_block() {
 				</ul>
 			<?php endif; ?>
 			<div class="rv__cta">
+				<?php echo function_exists( 'ayat_rr_banner' ) ? ayat_rr_banner( 'product' ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<button type="button" class="btn-ink rv__write" aria-expanded="<?php echo in_array( $notice, array( 'missing', 'expired', 'error' ), true ) ? 'true' : 'false'; ?>" aria-controls="rv-form"><?php esc_html_e( 'Write a review', 'ayatcollections' ); ?></button>
 				<p class="rv__promise"><?php esc_html_e( 'Every review is from a real customer and checked by our team.', 'ayatcollections' ); ?></p>
 			</div>
