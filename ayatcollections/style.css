@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.1.0
+Version: 3.2.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2189,3 +2189,36 @@ body .site-header--v3.is-scrolled .site-branding .site-logo img.site-logo__mark 
 .header-util .ayat-brand { flex: none; display: block; }
 .site-header--v3 .header-util:hover .ayat-brand { transform: scale(1.08); }
 .header-util .ayat-brand { transition: transform .2s ease; }
+
+/* ===== 3.2.0: light ivory & gold header and footer ===== */
+/* Header */
+body .site-header--v3 { background: linear-gradient(180deg, #fffdf8 0%, #fbf3e3 100%); border-bottom: 1px solid #e6d3ad; box-shadow: none; }
+body .site-header--v3.is-scrolled { box-shadow: 0 10px 24px -16px rgba(90,60,15,.45); }
+.site-header--v3 .header-icon, .site-header--v3 .menu-toggle { color: #3b2a12; }
+.site-header--v3 .header-icon:hover, .site-header--v3 .header-icon:focus-visible { background: #f6ead2; color: #8a5f22; }
+.site-header--v3 .header-util { color: #3b2a12; border: 1px solid #e6d3ad; background: #fff; box-shadow: 0 2px 6px -4px rgba(90,60,15,.3); }
+.site-header--v3 .header-util:hover, .site-header--v3 .header-util:focus-visible { color: #3b2a12; border-color: #c79244; background: #fdf6e8; }
+.site-header--v3 .header-account::before { background: #e6d3ad; }
+.site-header--v3 .header-searchbar { background: #fff; border: 1px solid #e6d3ad; box-shadow: inset 0 1px 2px rgba(90,60,15,.06); }
+.site-header--v3 .header-searchbar:focus-within { border-color: #c79244; box-shadow: 0 0 0 3px rgba(199,146,68,.18); }
+.site-header--v3 .header-searchbar input[type="search"] { color: #2a2016; }
+.site-header--v3 .header-searchbar input::placeholder { color: #9b8b70; }
+.site-header--v3 .header-searchbar button { color: #8a5f22; }
+body .site-header--v3 .primary-nav { background: #fffdf8; border-top: 1px solid #e6d3ad; box-shadow: 0 18px 30px -20px rgba(90,60,15,.4); }
+body .site-header--v3 .primary-nav a { color: #3b2a12; border-bottom-color: #efe3cb; }
+body .site-header--v3 .primary-nav a:hover { color: #8a5f22; }
+.site-header--v3 .header-search { background: #fffdf8; }
+/* Footer */
+body .site-footer { background: linear-gradient(180deg, #f9f2e4 0%, #f1e3c8 100%); border-top: 1px solid #e6d3ad; color: #5b4a32; }
+body .site-footer a { color: #3b2a12; }
+body .site-footer a:hover, body .site-footer a:focus-visible { color: #8a5f22; }
+body .site-footer .site-footer__title { color: #8a5f22; }
+body .site-footer .site-footer__about-l1 { color: #3b2a12; }
+body .site-footer .site-footer__about-l2 { color: #a77a35; }
+body .site-footer__bottom { border-top: 1px solid #e3cfa6; color: #6b5a40; background: rgba(255,255,255,.35); }
+body .site-footer__bottom a { color: #6b5a40; }
+body .site-footer .site-footer__contact, body .site-footer .site-footer__contact * { color: #5b4a32; }
+body .site-footer .site-footer__contact a { color: #3b2a12; }
+.site-footer .site-footer__social a, .site-footer .site-footer__social a[aria-label], .site-footer .site-footer__social a[aria-label]:hover { background: #fff; border: 1px solid #e3cfa6; box-shadow: 0 6px 14px -10px rgba(90,60,15,.5); }
+.site-footer .site-footer__social a:hover, .site-footer .site-footer__social a:focus-visible { border-color: #c79244; box-shadow: 0 10px 20px -12px rgba(90,60,15,.6), 0 0 0 3px rgba(199,146,68,.2); }
+body .site-footer .site-footer__credit { color: #7a6a52; } body .site-footer .site-footer__credit a { color: #8a5f22; } body .site-footer .site-footer__credit a:hover { color: #5b3e12; }
