@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.2.0
+Version: 3.2.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2222,3 +2222,6 @@ body .site-footer .site-footer__contact a { color: #3b2a12; }
 .site-footer .site-footer__social a, .site-footer .site-footer__social a[aria-label], .site-footer .site-footer__social a[aria-label]:hover { background: #fff; border: 1px solid #e3cfa6; box-shadow: 0 6px 14px -10px rgba(90,60,15,.5); }
 .site-footer .site-footer__social a:hover, .site-footer .site-footer__social a:focus-visible { border-color: #c79244; box-shadow: 0 10px 20px -12px rgba(90,60,15,.6), 0 0 0 3px rgba(199,146,68,.2); }
 body .site-footer .site-footer__credit { color: #7a6a52; } body .site-footer .site-footer__credit a { color: #8a5f22; } body .site-footer .site-footer__credit a:hover { color: #5b3e12; }
+body .site-header--v3 .header-icon, body .site-header--v3 .menu-toggle { color: #3b2a12; }
+body .site-header--v3 .header-icon:hover, body .site-header--v3 .header-icon:focus-visible { color: #8a5f22; background: #f6ead2; }
+body .site-header--v3 .header-util { color: #3b2a12; }
