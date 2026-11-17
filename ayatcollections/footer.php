@@ -28,7 +28,7 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 	<div class="wrap site-footer__grid">
 		<div class="site-footer__brand">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__logo"><img src="<?php echo esc_url( AYAT_URI . '/assets/images/logo-shaya.webp' ); ?>" width="277" height="360" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" loading="lazy"></a>
-			<p class="site-footer__about"><?php esc_html_e( 'Gold-tone stainless steel jewellery: anti-tarnish, waterproof and made for every day.', 'ayatcollections' ); ?></p>
+			<p class="site-footer__about"><span class="site-footer__about-l1"><?php esc_html_e( 'Crafted to shine, every single day.', 'ayatcollections' ); ?></span><span class="site-footer__about-l2"><?php esc_html_e( 'Waterproof · Tarnish-free · Gold-tone steel', 'ayatcollections' ); ?></span></p>
 			<?php if ( $socials ) : ?>
 				<ul class="site-footer__social" role="list">
 					<?php foreach ( $socials as $label => $url ) : ?>
