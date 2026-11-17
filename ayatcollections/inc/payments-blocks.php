@@ -1,6 +1,6 @@
 <?php
 /**
- * Easypaisa / JazzCash in the WooCommerce block checkout.
+ * Easypaisa in the WooCommerce block checkout.
  *
  * @package Ayatcollections
  */
@@ -59,7 +59,7 @@ final class Ayat_Wallet_Blocks extends AbstractPaymentMethodType {
 	 * @return array
 	 */
 	public function get_payment_method_data() {
-		$brand = 'ayat_jazzcash' === $this->name ? 'JazzCash' : 'Easypaisa';
+		$brand = 'Easypaisa';
 		return array(
 			'title'         => $this->settings['title'] ?? $brand,
 			'description'   => $this->settings['description'] ?? '',

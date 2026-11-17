@@ -1,14 +1,14 @@
 <?php
 /**
- * Easypaisa and JazzCash (manual mobile-wallet payment).
+ * Easypaisa (manual mobile-wallet payment).
  *
- * The customer chooses Easypaisa or JazzCash at checkout, places the order,
+ * The customer chooses Easypaisa at checkout, places the order,
  * sends the amount to the store's wallet number and shares the screenshot on
  * WhatsApp. The order waits as "On hold" until the store confirms the money
  * arrived and changes it to "Processing".
  *
- * WooCommerce → Settings → Payments → Easypaisa / JazzCash: enter the account
- * title and number, then switch it on. A method stays hidden until it has a number.
+ * WooCommerce → Settings → Payments → Easypaisa: enter the account
+ * title and number, then switch it on. It stays hidden until it has a number.
  *
  * @package Ayatcollections
  */
@@ -185,16 +185,6 @@ class Ayat_Gateway_Easypaisa extends Ayat_Wallet_Gateway {
 	}
 }
 
-/** JazzCash. */
-class Ayat_Gateway_Jazzcash extends Ayat_Wallet_Gateway {
-	/** Set up. */
-	public function __construct() {
-		$this->id    = 'ayat_jazzcash';
-		$this->brand = 'JazzCash';
-		parent::__construct();
-	}
-}
-
 /**
  * Register the gateways.
  *
@@ -203,7 +193,6 @@ class Ayat_Gateway_Jazzcash extends Ayat_Wallet_Gateway {
  */
 function ayat_add_wallet_gateways( $gateways ) {
 	$gateways[] = 'Ayat_Gateway_Easypaisa';
-	$gateways[] = 'Ayat_Gateway_Jazzcash';
 	return $gateways;
 }
 add_filter( 'woocommerce_payment_gateways', 'ayat_add_wallet_gateways' );
@@ -219,6 +208,5 @@ add_action(
 		}
 		require_once __DIR__ . '/payments-blocks.php';
 		$registry->register( new Ayat_Wallet_Blocks( 'ayat_easypaisa' ) );
-		$registry->register( new Ayat_Wallet_Blocks( 'ayat_jazzcash' ) );
 	}
 );

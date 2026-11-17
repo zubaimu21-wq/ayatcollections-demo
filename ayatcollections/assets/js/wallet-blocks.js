@@ -1,11 +1,11 @@
-/* Easypaisa / JazzCash options for the WooCommerce block checkout. */
+/* Easypaisa option for the WooCommerce block checkout. */
 (function () {
 	var wc = window.wc || {};
 	if (!wc.wcBlocksRegistry || !wc.wcSettings || !window.wp || !window.wp.element) return;
 	var h = window.wp.element.createElement;
 	var decode = (window.wp.htmlEntities && window.wp.htmlEntities.decodeEntities) || function (s) { return s; };
 
-	['ayat_easypaisa', 'ayat_jazzcash'].forEach(function (id) {
+	['ayat_easypaisa'].forEach(function (id) {
 		var s = wc.wcSettings.getSetting(id + '_data', null);
 		if (!s || !s.accountNumber) return;
 		var title = decode(s.title || s.brand);
@@ -20,7 +20,7 @@
 			);
 		};
 		var Label = function () {
-			return h('span', { className: 'ayat-pay-label ayat-pay-label--' + id.replace('ayat_', '') }, h('i', { 'aria-hidden': 'true' }), title);
+			return h('span', { className: 'ayat-pay-label ayat-pay-label--' + id.replace('ayat_', '') }, h('b', { className: 'ayat-pay-mark', 'aria-hidden': 'true' }, 'easypaisa'), h('span', { className: 'screen-reader-text' }, title));
 		};
 		wc.wcBlocksRegistry.registerPaymentMethod({
 			name: id,
