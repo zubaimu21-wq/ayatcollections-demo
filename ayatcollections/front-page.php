@@ -145,8 +145,19 @@ if ( function_exists( 'wc_get_product' ) ) {
 		<section class="home-sec look" aria-labelledby="look-title">
 			<div class="wrap look__inner">
 				<figure class="look__media" data-reveal>
-					<?php echo ayat_home_img( 'look_img', ayat_home( 'look_title' ), 'look__img' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					<figcaption class="look__badge"><span><?php echo esc_html( count( $look ) ); ?></span><?php esc_html_e( 'pieces', 'ayatcollections' ); ?></figcaption>
+					<div class="look__slides" data-look-slides tabindex="0" aria-label="<?php esc_attr_e( 'Photos of this look', 'ayatcollections' ); ?>">
+						<div class="look__slide"><?php echo ayat_home_img( 'look_img', ayat_home( 'look_title' ), 'look__img' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+						<?php foreach ( $look as $prod ) : ?>
+							<?php if ( $prod->get_image_id() ) : ?>
+								<a class="look__slide look__slide--product" href="<?php echo esc_url( $prod->get_permalink() ); ?>">
+									<?php echo wp_get_attachment_image( $prod->get_image_id(), 'large', false, array( 'class' => 'look__img', 'loading' => 'eager', 'alt' => $prod->get_name() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<span class="look__slide-name"><?php echo esc_html( $prod->get_name() ); ?></span>
+								</a>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
+					<div class="look__dots" data-look-dots aria-hidden="true"></div>
+					<figcaption class="look__badge"><span class="look__badge-n"><?php echo esc_html( count( $look ) ); ?></span><span class="look__badge-t"><?php esc_html_e( 'pieces', 'ayatcollections' ); ?></span></figcaption>
 				</figure>
 				<div class="look__copy" data-reveal>
 					<p class="eyebrow"><?php esc_html_e( 'Shop the Look', 'ayatcollections' ); ?></p>
