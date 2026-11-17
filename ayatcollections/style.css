@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.2.5
+Version: 3.2.6
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2258,3 +2258,13 @@ body .site-footer .site-footer__social { justify-content: center; gap: 12px; mar
 	.ayat-wa-float { width: 44px; height: 44px; right: 12px; bottom: 12px; }
 	.ayat-wa-float svg { width: 24px; height: 24px; }
 }
+
+/* ===== 3.2.6: mobile "Track order" pill ===== */
+@media (max-width: 1180px) and (min-width: 768px) { .site-header--v3 .header-util:not(.header-util--wa) .header-util__text { display: inline; } .site-header--v3 .header-util:not(.header-util--wa) { width: auto; padding: 0 14px; } }
+@media (max-width: 767px) {
+	.site-header--v3 .header-util:not(.header-util--wa) { width: auto; height: 36px; min-height: 36px; padding: 0 12px 0 8px; gap: 6px; margin-right: 4px; border: 1px solid #e3cfa6; border-radius: 999px; background: linear-gradient(180deg, #fff 0%, #fbf3e3 100%); box-shadow: 0 3px 8px -5px rgba(90,60,15,.45); }
+	.site-header--v3 .header-util:not(.header-util--wa) .ayat-brand { width: 20px; height: 20px; }
+	.site-header--v3 .header-util:not(.header-util--wa) .header-util__text { display: inline; font: 600 11px/1 var(--font-sans, Montserrat, sans-serif); letter-spacing: .04em; color: #3b2a12; white-space: nowrap; }
+	.site-header--v3 .header-util:not(.header-util--wa):active { transform: scale(.97); }
+}
+@media (max-width: 340px) { .site-header--v3 .header-util:not(.header-util--wa) .header-util__text { font-size: 10px; } .site-header--v3 .header-util:not(.header-util--wa) { padding: 0 8px 0 6px; } }
