@@ -19,9 +19,9 @@ defined( 'ABSPATH' ) || exit;
 function ayat_home_fields() {
 	return array(
 		// 1. Hero.
-		'banner1_img'  => array( 'hero', 'image', __( 'Banner 1 image (wide, about 2000 × 800 px)', 'ayatcollections' ), 'demo-banner-gift' ),
-		'banner1_alt'  => array( 'hero', 'text', __( 'Banner 1 text (for Google and screen readers)', 'ayatcollections' ), __( 'SHAYA by Aayat Collections – A little box. A lot of joy.', 'ayatcollections' ) ),
-		'banner1_link' => array( 'hero', 'text', __( 'Banner 1 link (category slug or URL)', 'ayatcollections' ), '/shop/' ),
+		'banner1_img'  => array( 'hero', 'image', __( 'Banner 1 image (wide, about 2000 × 800 px)', 'ayatcollections' ), 'demo-banner-move' ),
+		'banner1_alt'  => array( 'hero', 'text', __( 'Banner 1 text (for Google and screen readers)', 'ayatcollections' ), __( 'SHAYA by Aayat Collections – Made to move with you.', 'ayatcollections' ) ),
+		'banner1_link' => array( 'hero', 'text', __( 'Banner 1 link (category slug or URL)', 'ayatcollections' ), 'hand-cuffs' ),
 		'banner2_img'  => array( 'hero', 'image', __( 'Banner 2 image (wide, about 2000 × 800 px)', 'ayatcollections' ), 'demo-banner-details' ),
 		'banner2_alt'  => array( 'hero', 'text', __( 'Banner 2 text (for Google and screen readers)', 'ayatcollections' ), __( 'SHAYA by Aayat Collections – Little details. Big personality.', 'ayatcollections' ) ),
 		'banner2_link' => array( 'hero', 'text', __( 'Banner 2 link (category slug or URL)', 'ayatcollections' ), 'rings' ),
@@ -34,9 +34,9 @@ function ayat_home_fields() {
 		'banner5_img'  => array( 'hero', 'image', __( 'Banner 5 image (wide, about 2000 × 800 px)', 'ayatcollections' ), 'demo-banner-hoops' ),
 		'banner5_alt'  => array( 'hero', 'text', __( 'Banner 5 text (for Google and screen readers)', 'ayatcollections' ), __( 'SHAYA by Aayat Collections – Your everyday statement.', 'ayatcollections' ) ),
 		'banner5_link' => array( 'hero', 'text', __( 'Banner 5 link (category slug or URL)', 'ayatcollections' ), 'earrings' ),
-		'banner6_img'  => array( 'hero', 'image', __( 'Banner 6 image (wide, about 2000 × 800 px)', 'ayatcollections' ), 'demo-banner-move' ),
-		'banner6_alt'  => array( 'hero', 'text', __( 'Banner 6 text (for Google and screen readers)', 'ayatcollections' ), __( 'SHAYA by Aayat Collections – Made to move with you.', 'ayatcollections' ) ),
-		'banner6_link' => array( 'hero', 'text', __( 'Banner 6 link (category slug or URL)', 'ayatcollections' ), 'hand-cuffs' ),
+		'banner6_img'  => array( 'hero', 'image', __( 'Banner 6 image (wide, about 2000 × 800 px)', 'ayatcollections' ), '' ),
+		'banner6_alt'  => array( 'hero', 'text', __( 'Banner 6 text (for Google and screen readers)', 'ayatcollections' ), '' ),
+		'banner6_link' => array( 'hero', 'text', __( 'Banner 6 link (category slug or URL)', 'ayatcollections' ), '' ),
 		// 2. Collections, new arrivals, shop the look.
 		'col_title'       => array( 'collections', 'text', __( 'Collections heading', 'ayatcollections' ), __( 'Shop by Category', 'ayatcollections' ) ),
 		'new_title'       => array( 'collections', 'text', __( 'All products heading', 'ayatcollections' ), __( 'All Products', 'ayatcollections' ) ),

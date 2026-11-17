@@ -37,8 +37,20 @@ if ( function_exists( 'wc_get_product' ) ) {
 
 	<section class="ayat-slider ayat-slider--banners" data-slider aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'ayatcollections' ); ?>">
 		<div class="ayat-slider__track" data-slider-track>
-			<?php for ( $s = 1; $s <= 6; $s++ ) : ?>
+			<?php
+			$ayat_banners = array();
+			for ( $s = 1; $s <= 6; $s++ ) {
+				$b_id   = absint( get_theme_mod( 'ayat_home_banner' . $s . '_img_id', 0 ) );
+				$b_file = (string) ayat_home( 'banner' . $s . '_img' );
+				if ( $b_id || '' !== $b_file ) {
+					$ayat_banners[] = array( 'n' => $s, 'id' => $b_id, 'file' => $b_file );
+				}
+			}
+			$ayat_bcount = count( $ayat_banners );
+			?>
+			<?php foreach ( $ayat_banners as $b_pos => $ayat_b ) : ?>
 				<?php
+				$s      = $ayat_b['n'];
 				$b_link = trim( (string) ayat_home( 'banner' . $s . '_link' ) );
 				$b_term = ( $b_link && false === strpos( $b_link, '/' ) ) ? get_term_by( 'slug', $b_link, 'product_cat' ) : false;
 				if ( $b_term && ! is_wp_error( $b_term ) ) {
@@ -49,33 +61,33 @@ if ( function_exists( 'wc_get_product' ) ) {
 					$b_url = $shop_url;
 				}
 				$b_alt  = (string) ayat_home( 'banner' . $s . '_alt' );
-				$b_id   = absint( get_theme_mod( 'ayat_home_banner' . $s . '_img_id', 0 ) );
-				$b_load = 1 === $s ? array( 'loading' => 'eager', 'fetchpriority' => 'high' ) : array( 'loading' => 'eager' );
+				$b_id   = $ayat_b['id'];
+				$b_load = 0 === $b_pos ? array( 'loading' => 'eager', 'fetchpriority' => 'high' ) : array( 'loading' => 'eager' );
 				?>
-				<div class="ayat-slide ayat-slide--banner" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( $s . ' / 6' ); ?>">
+				<div class="ayat-slide ayat-slide--banner" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( ( $b_pos + 1 ) . ' / ' . $ayat_bcount ); ?>">
 					<a class="ayat-banner" href="<?php echo esc_url( $b_url ); ?>">
 						<?php
 						if ( $b_id ) {
 							echo wp_get_attachment_image( $b_id, 'full', false, array_merge( $b_load, array( 'class' => 'ayat-banner__img', 'alt' => $b_alt, 'sizes' => '100vw' ) ) );
 						} else {
-							$b_file = ayat_home( 'banner' . $s . '_img' );
-							$b_base = AYAT_URI . '/assets/images/demo/' . $b_file;
+							$b_base = AYAT_URI . '/assets/images/demo/' . $ayat_b['file'];
 							printf(
 								'<img class="ayat-banner__img" src="%1$s.webp" srcset="%1$s-m.webp 1000w, %1$s.webp 1983w" sizes="100vw" width="1983" height="793" alt="%2$s" loading="eager"%3$s decoding="async">',
 								esc_url( $b_base ),
 								esc_attr( $b_alt ),
-								1 === $s ? ' fetchpriority="high"' : ''
+								0 === $b_pos ? ' fetchpriority="high"' : ''
 							);
 						}
 						?>
+						<span class="ayat-banner__shine" aria-hidden="true"></span>
 					</a>
 				</div>
-			<?php endfor; ?>
+			<?php endforeach; ?>
 		</div>
 		<button class="ayat-slider__nav ayat-slider__nav--prev" type="button" data-slider-prev aria-label="<?php esc_attr_e( 'Previous banner', 'ayatcollections' ); ?>">&#8249;</button>
 		<button class="ayat-slider__nav ayat-slider__nav--next" type="button" data-slider-next aria-label="<?php esc_attr_e( 'Next banner', 'ayatcollections' ); ?>">&#8250;</button>
 		<div class="ayat-slider__dots" data-slider-dots>
-			<?php for ( $s = 1; $s <= 6; $s++ ) : ?>
+			<?php for ( $s = 1; $s <= $ayat_bcount; $s++ ) : ?>
 				<button type="button" aria-label="<?php echo esc_attr( sprintf( /* translators: %d: banner number */ __( 'Go to banner %d', 'ayatcollections' ), $s ) ); ?>"<?php echo 1 === $s ? ' aria-current="true"' : ''; ?>></button>
 			<?php endfor; ?>
 		</div>
