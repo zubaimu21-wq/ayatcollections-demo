@@ -90,6 +90,13 @@ if ( $float_wa ) :
 		<span class="ayat-wa-float__tip"><?php esc_html_e( 'Chat with us', 'ayatcollections' ); ?></span>
 	</a>
 <?php endif; ?>
+<a class="ayat-home-fab" href="<?php echo esc_url( home_url( '/' ) ); ?>" data-home-fab<?php echo is_front_page() ? ' data-is-home="1"' : ''; ?> aria-label="<?php echo esc_attr( is_front_page() ? __( 'Back to top', 'ayatcollections' ) : __( 'Back to the home page', 'ayatcollections' ) ); ?>">
+	<span class="ayat-home-fab__ring" aria-hidden="true"></span>
+	<span class="ayat-home-fab__core" aria-hidden="true">
+		<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h4.5v-5.5h3V20H18V9.5"/></svg>
+		<span class="ayat-home-fab__txt"><?php esc_html_e( 'Home', 'ayatcollections' ); ?></span>
+	</span>
+</a>
 <?php wp_footer(); ?>
 </body>
 </html>

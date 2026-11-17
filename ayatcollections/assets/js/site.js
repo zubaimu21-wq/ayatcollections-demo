@@ -219,3 +219,59 @@
 	var t = setInterval(tick, 1000);
 	tick();
 })();
+
+/* Floating Home button: tap = home page (or back to top on home), drag = move it; it snaps to the nearest side and remembers the spot. */
+(function () {
+	var fab = document.querySelector('[data-home-fab]');
+	if (!fab) return;
+	var KEY = 'ayatHomeFab', M = 12, start = null, moved = false;
+	function size() { return fab.offsetWidth || 60; }
+	function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+	function place(x, y) { fab.style.left = x + 'px'; fab.style.top = y + 'px'; fab.style.bottom = 'auto'; fab.style.right = 'auto'; }
+	function snap(save) {
+		var s = size(), r = fab.getBoundingClientRect(), W = innerWidth, H = innerHeight;
+		var side = (r.left + s / 2) < W / 2 ? 'l' : 'r';
+		var y = clamp(r.top, M + 60, H - s - M), x = side === 'l' ? M + 2 : W - s - M - 2;
+		fab.classList.add('is-snapping'); place(x, y);
+		setTimeout(function () { fab.classList.remove('is-snapping'); }, 400);
+		if (save) { try { localStorage.setItem(KEY, JSON.stringify({ side: side, y: y / H })); } catch (e) {} }
+	}
+	function restore() {
+		var p = null;
+		try { p = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+		if (!p) return;
+		var s = size(), H = innerHeight, W = innerWidth;
+		place(p.side === 'r' ? W - s - M - 2 : M + 2, clamp(p.y * H, M + 60, H - s - M));
+	}
+	restore();
+	addEventListener('resize', function () { if (fab.style.top) snap(false); });
+	fab.addEventListener('pointerdown', function (e) {
+		if (e.button) return;
+		var r = fab.getBoundingClientRect();
+		start = { x: e.clientX, y: e.clientY, dx: e.clientX - r.left, dy: e.clientY - r.top, id: e.pointerId };
+		moved = false;
+	});
+	fab.addEventListener('pointermove', function (e) {
+		if (!start || e.pointerId !== start.id) return;
+		if (!moved && Math.abs(e.clientX - start.x) + Math.abs(e.clientY - start.y) < 8) return;
+		if (!moved) { moved = true; fab.classList.add('is-dragging'); try { fab.setPointerCapture(e.pointerId); } catch (err) {} }
+		var s = size();
+		place(clamp(e.clientX - start.dx, 0, innerWidth - s), clamp(e.clientY - start.dy, 0, innerHeight - s));
+		e.preventDefault();
+	});
+	function end() {
+		if (!start) return;
+		start = null;
+		if (moved) { fab.classList.remove('is-dragging'); snap(true); }
+	}
+	fab.addEventListener('pointerup', end);
+	fab.addEventListener('pointercancel', end);
+	fab.addEventListener('click', function (e) {
+		if (moved) { e.preventDefault(); moved = false; return; }
+		if (fab.hasAttribute('data-is-home')) {
+			e.preventDefault();
+			var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+			scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+		}
+	});
+})();
