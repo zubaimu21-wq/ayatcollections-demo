@@ -55,9 +55,23 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 					<li><a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>"><?php esc_html_e( 'My account', 'ayatcollections' ); ?></a></li>
 					<li><a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><?php esc_html_e( 'Shopping bag', 'ayatcollections' ); ?></a></li>
 				<?php endif; ?>
-				<?php if ( get_privacy_policy_url() ) : ?>
-					<li><a href="<?php echo esc_url( get_privacy_policy_url() ); ?>"><?php esc_html_e( 'Privacy policy', 'ayatcollections' ); ?></a></li>
-				<?php endif; ?>
+				<?php
+				$help_pages = array(
+					'track-order'          => __( 'Track your order', 'ayatcollections' ),
+					'shipping-policy'      => __( 'Shipping policy', 'ayatcollections' ),
+					'refund_returns'       => __( 'Returns & exchanges', 'ayatcollections' ),
+					'privacy-policy'       => __( 'Privacy policy', 'ayatcollections' ),
+					'terms-and-conditions' => __( 'Terms & conditions', 'ayatcollections' ),
+					'contact-us'           => __( 'Contact us', 'ayatcollections' ),
+				);
+				foreach ( $help_pages as $help_slug => $help_label ) :
+					$help_page = get_page_by_path( $help_slug );
+					if ( ! $help_page || 'publish' !== $help_page->post_status ) {
+						continue;
+					}
+					?>
+					<li><a href="<?php echo esc_url( get_permalink( $help_page ) ); ?>"><?php echo esc_html( $help_label ); ?></a></li>
+				<?php endforeach; ?>
 				<?php if ( $whatsapp ) : ?>
 					<li><a href="<?php echo esc_url( $whatsapp ); ?>" rel="noopener"><?php esc_html_e( 'Order on WhatsApp', 'ayatcollections' ); ?></a></li>
 				<?php endif; ?>
