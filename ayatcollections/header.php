@@ -28,13 +28,13 @@ $head_wa      = function_exists( 'ayat_store_whatsapp' ) ? ayat_store_whatsapp()
 			<button class="header-icon menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false"><?php echo ayat_icon( 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span class="screen-reader-text"><?php esc_html_e( 'Menu', 'ayatcollections' ); ?></span></button>
 			<?php if ( $track_url ) : ?>
 				<a class="header-util" href="<?php echo esc_url( $track_url ); ?>">
-					<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5h10.5v9H3zM13.5 9.5h4l3.5 3.5v2.5h-7.5"/><circle cx="7" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg>
+					<?php echo ayat_brand_logo( 'Track', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<span class="header-util__text"><?php esc_html_e( 'Track order', 'ayatcollections' ); ?></span>
 				</a>
 			<?php endif; ?>
 			<?php if ( $head_wa ) : ?>
 				<a class="header-util header-util--wa" href="<?php echo esc_attr( 'https://wa.me/' . $head_wa ); ?>" target="_blank" rel="noopener">
-					<svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 17.8c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg>
+					<?php echo ayat_brand_logo( 'WhatsApp', 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<span class="header-util__text"><?php esc_html_e( 'Order on WhatsApp', 'ayatcollections' ); ?></span>
 				</a>
 			<?php endif; ?>

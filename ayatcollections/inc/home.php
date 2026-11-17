@@ -254,6 +254,34 @@ function ayat_social_icon( $name ) {
 }
 
 /**
+ * Full-colour brand logo (official colours) for social links and header buttons.
+ *
+ * @param string $name Facebook, Instagram, TikTok, YouTube, WhatsApp or Track.
+ * @param int    $size Pixel size.
+ * @return string
+ */
+function ayat_brand_logo( $name, $size = 26 ) {
+	static $n = 0;
+	++$n;
+	$ig   = 'ayat-ig-' . $n;
+	$tt   = 'M16.6 5.8c-.9-.6-1.5-1.6-1.6-2.8h-2.7v11.1a2.3 2.3 0 1 1-2.3-2.3c.24 0 .47.04.7.1V9.1a5 5 0 1 0 4.3 4.9V8.4a6.6 6.6 0 0 0 3.8 1.2V6.9c-.8 0-1.6-.4-2.2-1.1Z';
+	$wa   = 'M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Z';
+	$waph = 'M16.4 14c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z';
+	$svg  = array(
+		'Facebook'  => '<circle cx="12" cy="12" r="11" fill="#1877F2"/><path fill="#fff" d="M13.4 21v-7.1h2.4l.36-2.78H13.4V9.35c0-.8.22-1.35 1.38-1.35h1.47V5.5a19.7 19.7 0 0 0-2.15-.11c-2.13 0-3.58 1.3-3.58 3.68v2.05H8.1v2.78h2.42V21Z"/>',
+		'Instagram' => '<defs><radialGradient id="' . $ig . '" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6.2" fill="url(#' . $ig . ')"/><rect x="6" y="6" width="12" height="12" rx="3.7" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1.05" fill="#fff"/>',
+		'TikTok'    => '<g transform="translate(-.8 -.6)"><path fill="#25F4EE" d="' . $tt . '"/></g><g transform="translate(.8 .6)"><path fill="#FE2C55" d="' . $tt . '"/></g><path fill="#fff" d="' . $tt . '"/>',
+		'YouTube'   => '<rect x="1.2" y="5" width="21.6" height="14" rx="4.2" fill="#FF0000"/><path fill="#fff" d="m10 8.9 5.6 3.1-5.6 3.1Z"/>',
+		'WhatsApp'  => '<path fill="#25D366" d="' . $wa . '"/><path fill="#fff" d="' . $waph . '"/>',
+		'Track'     => '<rect x="1.5" y="5.5" width="12" height="10" rx="1.6" fill="#C79244"/><path fill="#E8C785" d="M13.5 8.6h4.2l3.8 3.9v3h-8Z"/><path fill="#16324f" d="M14.9 9.9h2.3l2.1 2.2h-4.4Z"/><path fill="#25D366" d="M7.5 6.9a2.3 2.3 0 0 0-2.3 2.3c0 1.7 2.3 3.9 2.3 3.9s2.3-2.2 2.3-3.9a2.3 2.3 0 0 0-2.3-2.3Z"/><circle cx="7.5" cy="9.2" r=".85" fill="#fff"/><circle cx="6.2" cy="17" r="2.3" fill="#1a1a1a" stroke="#f3d9a4" stroke-width="1.1"/><circle cx="17.4" cy="17" r="2.3" fill="#1a1a1a" stroke="#f3d9a4" stroke-width="1.1"/>',
+	);
+	if ( ! isset( $svg[ $name ] ) ) {
+		return ayat_social_icon( $name );
+	}
+	return '<svg class="ayat-brand ayat-brand--' . esc_attr( strtolower( $name ) ) . '" width="' . (int) $size . '" height="' . (int) $size . '" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' . $svg[ $name ] . '</svg>';
+}
+
+/**
  * Customizer: one section per homepage block.
  *
  * @param WP_Customize_Manager $c Manager.

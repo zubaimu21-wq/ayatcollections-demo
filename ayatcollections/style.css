@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.0.1
+Version: 3.1.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2179,3 +2179,13 @@ body .site-header--v3.is-scrolled .site-branding .site-logo img.site-logo__mark 
 	.site-header--v3 .header-account { margin-left: 0; }
 }
 @media (min-width: 901px) { .site-header--v3 .search-toggle { display: none !important; } }
+
+/* ===== 3.1.0: colourful brand logos inside theme circles ===== */
+.site-footer .site-footer__social a, .site-footer .site-footer__social a[aria-label], .site-footer .site-footer__social a[aria-label]:hover { background: radial-gradient(circle at 30% 25%, #26221b 0%, #121110 75%); border: 1px solid rgba(199,146,68,.55); box-shadow: 0 8px 18px -10px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.06); width: 48px; height: 48px; }
+.site-footer .site-footer__social a .ayat-brand { width: 26px; height: 26px; transition: transform .25s ease; }
+.site-footer .site-footer__social a:hover, .site-footer .site-footer__social a:focus-visible { border-color: #e8c785; box-shadow: 0 12px 24px -12px rgba(0,0,0,.9), 0 0 0 3px rgba(199,146,68,.25); transform: translateY(-3px); filter: none; }
+.site-footer .site-footer__social a:hover .ayat-brand { transform: scale(1.12); }
+.site-footer__social a[aria-label="TikTok"] svg { filter: none; }
+.header-util .ayat-brand { flex: none; display: block; }
+.site-header--v3 .header-util:hover .ayat-brand { transform: scale(1.08); }
+.header-util .ayat-brand { transition: transform .2s ease; }
