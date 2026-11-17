@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 2.9.4
+Version: 2.9.5
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2118,3 +2118,24 @@ body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-he
 @media (min-width: 801px) and (max-width: 1180px) { .site-footer__about-l2 { letter-spacing: .04em; font-size: 9.5px; } }
 .review-card__msg { display: inline-flex; align-items: center; gap: 6px; margin: 0 0 10px; padding: 4px 10px; border-radius: 999px; background: #fbf6ec; border: 1px solid #e3cfa6; color: #8a5f22; font: 600 10.5px/1 var(--font-sans); letter-spacing: .12em; text-transform: uppercase; }
 .review-card__msg span { font-size: 16px; line-height: .6; color: #c79244; }
+
+/* ===== 2.9.5: official brand colours for social logos ===== */
+.site-footer .site-footer__social a { width: 44px; height: 44px; border: 0; color: #fff; box-shadow: 0 6px 14px -6px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.12); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+.site-footer .site-footer__social a svg { width: 20px; height: 20px; }
+.site-footer .site-footer__social a:hover, .site-footer .site-footer__social a:focus-visible { transform: translateY(-3px) scale(1.06); filter: brightness(1.08); box-shadow: 0 10px 20px -8px rgba(0,0,0,.7), 0 0 0 2px #c79244; color: #fff; outline: none; }
+.site-footer__social a[aria-label="Facebook"] { background: #1877f2; }
+.site-footer__social a[aria-label="Instagram"] { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+.site-footer__social a[aria-label="TikTok"] { background: #010101; }
+.site-footer__social a[aria-label="TikTok"] svg { filter: drop-shadow(1.5px 1px 0 #fe2c55) drop-shadow(-1.5px -1px 0 #25f4ee); }
+.site-footer__social a[aria-label="YouTube"] { background: #ff0000; }
+.site-footer__social a[aria-label="WhatsApp"] { background: #25d366; }
+.site-footer .site-footer__social a[aria-label]:hover { background-color: inherit; }
+.site-footer__social a[aria-label="Facebook"]:hover { background: #1877f2; }
+.site-footer__social a[aria-label="YouTube"]:hover { background: #ff0000; }
+.site-footer__social a[aria-label="WhatsApp"]:hover { background: #25d366; }
+.site-footer__social a[aria-label="TikTok"]:hover { background: #010101; }
+.site-footer__social a[aria-label="Instagram"]:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+.header-util--wa svg { color: #25d366; }
+.header-util--wa:hover svg { color: #2fe57a; }
+.review-card__source svg { flex: none; }
+.review-card__source:has(svg) { gap: 6px; }
