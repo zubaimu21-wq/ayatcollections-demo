@@ -133,111 +133,6 @@
     "background": "removed, placed on white"
   },
   {
-    "file": "demo-product-jhumka.webp",
-    "photographer": "Sayak Bala",
-    "url": "https://unsplash.com/photos/qdg5cHUuTCU",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-drop-earrings.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/-R9iGxfYmhs",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-choker.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/Xwr-GeDQkco",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-pendant.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/68ulKJRHGUs",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-bangles.webp",
-    "photographer": "César O'neill",
-    "url": "https://unsplash.com/photos/WFonAPTKxCU",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-stone-bangle.webp",
-    "photographer": "Imam Kurniawan",
-    "url": "https://unsplash.com/photos/qoGdi3R3ekQ",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-halo-ring.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/n9roPJ9uIbE",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-ring-set.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/qgQkbMQBifw",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-anklet.webp",
-    "photographer": "Divaris Shirichena",
-    "url": "https://unsplash.com/photos/2Cdl_k2wXps",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-charm.webp",
-    "photographer": "César O'neill",
-    "url": "https://unsplash.com/photos/Qoaw-2dyQGM",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-permanent.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/uOPqXOOgu-8",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-cuff.webp",
-    "photographer": "PRAHANT STUDIO",
-    "url": "https://unsplash.com/photos/F_VqA-n3EYo",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-adjustable-cuff.webp",
-    "photographer": "Oscar Ramirez",
-    "url": "https://unsplash.com/photos/SAfrvrXLuY8",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-product-nose-ring.webp",
-    "photographer": "Samantha Peralta",
-    "url": "https://unsplash.com/photos/6udzUgtewa0",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "original photo, cropped"
-  },
-  {
-    "file": "demo-product-anja.webp",
-    "photographer": "Muhseenah Adamo",
-    "url": "https://unsplash.com/photos/PNXK2IxpyUA",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "original photo, cropped and brightened"
-  },
-  {
     "file": "demo-model-earrings-v5.webp",
     "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
     "url": "",
@@ -372,6 +267,111 @@
   },
   {
     "file": "demo-cat-charms.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-jhumka.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-drop-earrings.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-choker.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-pendant.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-bangles.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-stone-bangle.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-halo-ring.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-ring-set.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-anklet.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-cuff.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-adjustable-cuff.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-nose-ring.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-permanent.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-charm.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-product-anja.webp",
     "photographer": "AI-generated (Figma AI image generation)",
     "url": "",
     "license": "Generated for this store",
