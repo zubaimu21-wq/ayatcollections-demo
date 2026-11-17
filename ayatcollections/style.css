@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 2.7.0
+Version: 2.8.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2083,3 +2083,19 @@ body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-he
 .look__dots button[aria-current="true"] { width: 24px; background: #c79244; }
 .look__media:has(.look__slide--product) .look__slide-name { bottom: 44px; }
 @media (max-width: 900px) { .look__badge .look__badge-n { font-size: 22px; } .look__badge { gap: 4px; } }
+
+/* ===== 2.8.0: green Cash on Delivery strip (animated) ===== */
+.footer-strip--cod { position: relative; display: block; overflow: hidden; text-decoration: none; border-bottom: 1px solid #c79244; background: linear-gradient(90deg, #0b4a2c 0%, #13724a 50%, #0b4a2c 100%); background-size: 200% 100%; animation: ayat-cod-bg 8s ease-in-out infinite; transition: filter .25s ease; }
+.footer-strip--cod::after { content: ""; position: absolute; top: 0; bottom: 0; left: -40%; width: 30%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.22), transparent); transform: skewX(-20deg); animation: ayat-cod-shine 4.5s ease-in-out infinite; pointer-events: none; }
+.footer-strip--cod p { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 12px; color: #fff; font-weight: 600; transition: transform .25s ease, letter-spacing .25s ease; }
+.footer-strip__icon { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,.14); color: #f3d9a4; animation: ayat-cod-bob 2.4s ease-in-out infinite; }
+.footer-strip__tick { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #f3d9a4; color: #0b4a2c; transform: scale(.9); transition: transform .25s ease; }
+.footer-strip--cod:hover, .footer-strip--cod:focus-visible { filter: brightness(1.12); outline: none; }
+.footer-strip--cod:hover p, .footer-strip--cod:focus-visible p { transform: translateY(-1px); letter-spacing: .24em; }
+.footer-strip--cod:hover .footer-strip__tick { transform: scale(1.15) rotate(-8deg); }
+.footer-strip--cod:hover .footer-strip__icon { background: rgba(255,255,255,.24); }
+@keyframes ayat-cod-bg { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes ayat-cod-shine { 0% { left: -40%; } 60%, 100% { left: 120%; } }
+@keyframes ayat-cod-bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-3px) rotate(-6deg); } }
+@media (max-width: 767px) { .footer-strip--cod p { gap: 8px; font-size: 10.5px; letter-spacing: .12em; padding: 10px 12px; } .footer-strip__icon { width: 28px; height: 28px; } .footer-strip--cod:hover p { letter-spacing: .12em; } }
+@media (prefers-reduced-motion: reduce) { .footer-strip--cod { animation: ayat-cod-bg 14s ease-in-out infinite; } .footer-strip--cod::after { animation-duration: 9s; } .footer-strip__icon { animation: none; } }

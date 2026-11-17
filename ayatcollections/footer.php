@@ -15,9 +15,15 @@ $cats     = function_exists( 'ayat_get_collections' ) ? array_slice( ayat_get_co
 $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
 ?>
 <footer class="site-footer">
-	<?php $announcement = get_theme_mod( 'ayat_announcement', __( 'Cash on Delivery across Pakistan', 'ayatcollections' ) ); ?>
+	<?php $announcement = get_theme_mod( 'ayat_announcement', __( 'Cash on Delivery also available across Pakistan', 'ayatcollections' ) ); ?>
 	<?php if ( $announcement ) : ?>
-		<div class="footer-strip"><p><?php echo esc_html( $announcement ); ?></p></div>
+		<a class="footer-strip footer-strip--cod" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>">
+			<p>
+				<span class="footer-strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></span>
+				<span class="footer-strip__text"><?php echo esc_html( $announcement ); ?></span>
+				<span class="footer-strip__tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+			</p>
+		</a>
 	<?php endif; ?>
 	<div class="wrap site-footer__grid">
 		<div class="site-footer__brand">
