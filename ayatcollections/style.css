@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.2.1
+Version: 3.2.2
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2225,3 +2225,14 @@ body .site-footer .site-footer__credit { color: #7a6a52; } body .site-footer .si
 body .site-header--v3 .header-icon, body .site-header--v3 .menu-toggle { color: #3b2a12; }
 body .site-header--v3 .header-icon:hover, body .site-header--v3 .header-icon:focus-visible { color: #8a5f22; background: #f6ead2; }
 body .site-header--v3 .header-util { color: #3b2a12; }
+
+/* ===== 3.2.2: footer brand block centred, clean second line ===== */
+body .site-footer .site-footer__brand { display: flex; flex-direction: column; align-items: center; text-align: center; }
+body .site-footer .site-footer__logo { display: block; margin: 0 auto 14px; }
+body .site-footer .site-footer__about { align-items: center; text-align: center; margin-bottom: 18px; }
+body .site-footer .site-footer__about-l1 { white-space: nowrap; }
+body .site-footer .site-footer__about-l2 { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 8px; white-space: normal; letter-spacing: .12em; }
+body .site-footer .site-footer__about-l2 span { white-space: nowrap; }
+body .site-footer .site-footer__about-l2 i { font-style: normal; color: #c79244; }
+body .site-footer .site-footer__social { justify-content: center; gap: 12px; margin: 0; padding: 0; }
+@media (min-width: 801px) and (max-width: 1180px) { body .site-footer .site-footer__about-l1 { white-space: normal; } }
