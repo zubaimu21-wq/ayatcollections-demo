@@ -1,33 +1,5 @@
 [
   {
-    "file": "demo-col-earrings.webp",
-    "photographer": "Aniket Sharma",
-    "url": "https://unsplash.com/photos/OExX5suedaA",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-col-necklaces.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/Uv5_xs6IG9k",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-col-rings.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/fz0VMD5QNh0",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
-    "file": "demo-col-bracelets.webp",
-    "photographer": "Ruan Richard Rodrigues",
-    "url": "https://unsplash.com/photos/O7YCeE_65TE",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
     "file": "demo-bespoke-main.webp",
     "photographer": "Hosniye sadeghi",
     "url": "https://unsplash.com/photos/_Ycmc96ZxWM",
@@ -327,5 +299,82 @@
     "url": "",
     "license": "Owned by the store",
     "background": "Brand banner"
+  },
+  {
+    "file": "demo-cat-earrings.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-bracelets.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-anja.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-anklets.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-rings.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-hand-cuffs.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-adjustable-hand-cuffs.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-nose-rings.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-necklaces.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-permanent-bracelets.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
+  },
+  {
+    "file": "demo-cat-charms.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI product image (jewellery only)"
   }
 ]
