@@ -81,7 +81,6 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 		<div class="site-footer__col">
 			<h2 class="site-footer__title"><?php esc_html_e( 'Contact', 'ayatcollections' ); ?></h2>
 			<ul role="list" class="site-footer__contact">
-				<?php if ( $phone ) : ?><li><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a></li><?php endif; ?>
 				<?php if ( $email ) : ?><li><a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a></li><?php endif; ?>
 				<?php if ( $address ) : ?><li><?php echo esc_html( $address ); ?></li><?php endif; ?>
 				<li><?php esc_html_e( 'Cash on Delivery across Pakistan', 'ayatcollections' ); ?></li>
