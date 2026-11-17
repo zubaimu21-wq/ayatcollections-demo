@@ -252,11 +252,12 @@
 		start = { x: e.clientX, y: e.clientY, dx: e.clientX - r.left, dy: e.clientY - r.top, id: e.pointerId };
 		moved = false;
 		if (e.pointerType === 'mouse') e.preventDefault();
+		try { fab.setPointerCapture(e.pointerId); } catch (err) {}
 	});
 	fab.addEventListener('pointermove', function (e) {
 		if (!start || e.pointerId !== start.id) return;
 		if (!moved && Math.abs(e.clientX - start.x) + Math.abs(e.clientY - start.y) < 8) return;
-		if (!moved) { moved = true; fab.classList.add('is-dragging'); try { fab.setPointerCapture(e.pointerId); } catch (err) {} }
+		if (!moved) { moved = true; fab.classList.add('is-dragging'); }
 		var s = size();
 		place(clamp(e.clientX - start.dx, 0, innerWidth - s), clamp(e.clientY - start.dy, 0, innerHeight - s));
 		e.preventDefault();
