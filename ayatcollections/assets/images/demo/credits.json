@@ -383,5 +383,26 @@
     "url": "",
     "license": "Generated for this store",
     "background": "AI styled jewellery flat-lay"
+  },
+  {
+    "file": "demo-look-mehr-set.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI styled jewellery photo"
+  },
+  {
+    "file": "demo-look-hira.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI styled jewellery photo"
+  },
+  {
+    "file": "demo-look-amal.webp",
+    "photographer": "AI-generated (Figma AI image generation)",
+    "url": "",
+    "license": "Generated for this store",
+    "background": "AI styled jewellery photo"
   }
 ]

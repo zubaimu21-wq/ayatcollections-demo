@@ -300,10 +300,8 @@
 	function go(n) { i = (n + slides.length) % slides.length; box.scrollTo({ left: i * box.clientWidth, behavior: reduce ? 'instant' : 'smooth' }); paint(); }
 	box.addEventListener('scroll', function () { var n = Math.round(box.scrollLeft / Math.max(1, box.clientWidth)); if (n !== i) { i = n; paint(); } }, { passive: true });
 	function stop() { clearInterval(timer); timer = null; }
-	function restart() { stop(); timer = setInterval(function () { if (!document.hidden) go(i + 1); }, 4500); }
-	box.addEventListener('mouseenter', stop); box.addEventListener('mouseleave', restart);
+	function restart() { stop(); timer = setInterval(function () { if (!document.hidden) go(i + 1); }, 3500); }
 	box.addEventListener('touchstart', stop, { passive: true }); box.addEventListener('touchend', restart, { passive: true });
-	box.addEventListener('focus', stop); box.addEventListener('blur', restart);
 	box.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { go(i + 1); e.preventDefault(); } if (e.key === 'ArrowLeft') { go(i - 1); e.preventDefault(); } });
 	paint(); restart();
 })();

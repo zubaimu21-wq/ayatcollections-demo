@@ -147,13 +147,22 @@ if ( function_exists( 'wc_get_product' ) ) {
 				<figure class="look__media" data-reveal>
 					<div class="look__slides" data-look-slides tabindex="0" aria-label="<?php esc_attr_e( 'Photos of this look', 'ayatcollections' ); ?>">
 						<div class="look__slide"><?php echo ayat_home_img( 'look_img', ayat_home( 'look_title' ), 'look__img' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-						<?php foreach ( $look as $prod ) : ?>
-							<?php if ( $prod->get_image_id() ) : ?>
-								<a class="look__slide look__slide--product" href="<?php echo esc_url( $prod->get_permalink() ); ?>">
-									<?php echo wp_get_attachment_image( $prod->get_image_id(), 'large', false, array( 'class' => 'look__img', 'loading' => 'eager', 'alt' => $prod->get_name() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-									<span class="look__slide-name"><?php echo esc_html( $prod->get_name() ); ?></span>
-								</a>
-							<?php endif; ?>
+						<?php foreach ( array_values( $look ) as $look_i => $prod ) : ?>
+							<?php
+							$look_key  = 'look_img' . ( $look_i + 2 );
+							$look_pic  = ( $look_i < 3 && ayat_home( $look_key ) ) ? str_replace( 'loading="lazy"', 'loading="eager"', ayat_home_img( $look_key, $prod->get_name(), 'look__img' ) ) : '';
+							$look_flat = ! $look_pic;
+							if ( $look_flat && $prod->get_image_id() ) {
+								$look_pic = wp_get_attachment_image( $prod->get_image_id(), 'large', false, array( 'class' => 'look__img', 'loading' => 'eager', 'alt' => $prod->get_name() ) );
+							}
+							if ( ! $look_pic ) {
+								continue;
+							}
+							?>
+							<a class="look__slide<?php echo $look_flat ? ' look__slide--product' : ' look__slide--styled'; ?>" href="<?php echo esc_url( $prod->get_permalink() ); ?>">
+								<?php echo $look_pic; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<span class="look__slide-name"><?php echo esc_html( $prod->get_name() ); ?></span>
+							</a>
 						<?php endforeach; ?>
 					</div>
 					<div class="look__dots" data-look-dots aria-hidden="true"></div>
