@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.2.4
+Version: 3.2.5
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2246,4 +2246,15 @@ body .site-footer .site-footer__social { justify-content: center; gap: 12px; mar
 	.woocommerce ul.products li.product { padding-bottom: 10px; }
 	.woocommerce ul.products li.product .button { width: calc(100% - 16px) !important; margin: auto 8px 0 !important; min-height: 40px; padding: 8px 4px !important; font-size: 10px !important; letter-spacing: .08em !important; line-height: 1.2; white-space: nowrap; display: flex; align-items: center; justify-content: center; }
 	.woocommerce ul.products li.product .woocommerce-loop-product__title { font-size: .95rem; line-height: 1.25; }
+}
+
+/* ===== 3.2.5: smaller floating buttons on mobile ===== */
+@media (max-width: 767px) {
+	.ayat-home-fab { width: 44px; height: 44px; left: 12px; bottom: 12px; }
+	.ayat-home-fab__core svg { width: 15px; height: 15px; }
+	.ayat-home-fab__txt { font-size: 6.5px; letter-spacing: .1em; }
+	.ayat-home-fab__ring { inset: -3px; }
+	.ayat-home-fab::before { inset: -4px; }
+	.ayat-wa-float { width: 44px; height: 44px; right: 12px; bottom: 12px; }
+	.ayat-wa-float svg { width: 24px; height: 24px; }
 }
