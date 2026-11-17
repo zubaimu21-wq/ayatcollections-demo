@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 2.5.0
+Version: 2.6.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2044,3 +2044,24 @@ body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-he
 	.look__total { align-items: center; }
 	.look__btn { justify-content: center; }
 }
+
+/* ===== 2.6.0: Shop the Look round thumbnails + aligned rows ===== */
+.look__list a { align-items: center; }
+.look__list a::before { align-self: center; justify-self: start; }
+.look__list img { grid-row: 1 / 3; align-self: center; justify-self: center; width: 68px; height: 68px; margin: 0 !important; padding: 6px; border-radius: 50%; object-fit: contain; background: #fbf6ec; border: 1.5px solid #c79244; box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(199,146,68,.35); }
+.look__name { align-self: end; margin: 0; }
+.look__price { align-self: start; margin: 0 !important; }
+@media (max-width: 900px) { .look__list img { width: 56px; height: 56px; padding: 5px; } }
+
+/* ===== 2.6.0: Easypaisa / JazzCash ===== */
+.ayat-pay-label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.ayat-pay-label i { width: 10px; height: 10px; border-radius: 50%; background: #3bb54a; box-shadow: 0 0 0 3px rgba(59,181,74,.18); }
+.ayat-pay-label--jazzcash i { background: #d6001c; box-shadow: 0 0 0 3px rgba(214,0,28,.15); }
+.ayat-pay-hint p { margin: 0 0 6px; font-size: 13px; line-height: 1.5; }
+.ayat-pay-hint__acc { padding: 8px 10px; background: #fbf6ec; border: 1px dashed #c79244; border-radius: 4px; }
+.ayat-pay-box { margin: 24px 0; padding: 20px 22px; background: #fbf6ec; border: 1px solid #e3cfa6; border-radius: 8px; }
+.ayat-pay-box h2 { margin: 0 0 10px; font-family: var(--font-serif); font-weight: 400; font-size: 1.4rem; }
+.ayat-pay-box ol { margin: 0 0 14px; padding-left: 20px; }
+.ayat-pay-box li { margin: 6px 0; }
+.ayat-pay-box__wa { display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border-radius: 999px; background: #25d366; color: #fff !important; font-weight: 600; text-decoration: none; }
+.ayat-pay-box__note { margin: 12px 0 0; font-size: 13px; color: #6b5a40; }
