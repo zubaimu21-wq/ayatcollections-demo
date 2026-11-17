@@ -1,12 +1,5 @@
 [
   {
-    "file": "demo-hero.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/n9roPJ9uIbE",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, placed on white"
-  },
-  {
     "file": "demo-col-earrings.webp",
     "photographer": "Aniket Sharma",
     "url": "https://unsplash.com/photos/OExX5suedaA",
@@ -224,27 +217,6 @@
     "background": "removed, placed on white"
   },
   {
-    "file": "demo-banner.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/Uv5_xs6IG9k",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "original cream fabric, left side faded to theme colour"
-  },
-  {
-    "file": "demo-box-reveal.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/Xwr-GeDQkco",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, transparent cut-out for the jewellery-box hero"
-  },
-  {
-    "file": "demo-box-reveal-steel.webp",
-    "photographer": "Diego Castañeda",
-    "url": "https://unsplash.com/photos/qgQkbMQBifw",
-    "license": "Unsplash License (free for commercial use)",
-    "background": "removed, transparent cut-out for the jewellery-box hero"
-  },
-  {
     "file": "demo-product-anklet.webp",
     "photographer": "Divaris Shirichena",
     "url": "https://unsplash.com/photos/2Cdl_k2wXps",
@@ -292,34 +264,6 @@
     "url": "https://unsplash.com/photos/PNXK2IxpyUA",
     "license": "Unsplash License (free for commercial use)",
     "background": "original photo, cropped and brightened"
-  },
-  {
-    "file": "demo-box-reveal-cuffs.webp",
-    "photographer": "Ayat Collections (own product photo)",
-    "url": "",
-    "license": "Owned by the store",
-    "background": "cropped, edges faded into the black box"
-  },
-  {
-    "file": "demo-slide-earrings-ai.webp",
-    "photographer": "AI-generated (Figma AI image generation)",
-    "url": "",
-    "license": "Generated for this store",
-    "background": "AI model image, not a real person"
-  },
-  {
-    "file": "demo-slide-necklace-ai.webp",
-    "photographer": "AI-generated (Figma AI image generation)",
-    "url": "",
-    "license": "Generated for this store",
-    "background": "AI model image, not a real person"
-  },
-  {
-    "file": "demo-slide-cuffs-ai.webp",
-    "photographer": "AI-generated (Figma AI image generation)",
-    "url": "",
-    "license": "Generated for this store",
-    "background": "AI model image, not a real person"
   },
   {
     "file": "demo-model-earrings-v5.webp",
