@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.3.0
+Version: 3.4.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2278,3 +2278,43 @@ body .site-footer .site-footer__social { justify-content: center; gap: 12px; mar
 .rr-offer--home { max-width: 640px; margin: 4px auto 26px; }
 .rv__cta .rr-offer { width: 100%; }
 @media (max-width: 480px) { .rr-offer { padding: 12px; gap: 10px; } .rr-offer__badge { width: 52px; height: 52px; font-size: 16px; } .rr-offer p { font-size: 12.5px; } }
+
+/* ===== 3.4.0: premium product page ===== */
+.single-product div.product .woocommerce-product-gallery__image img, .single-product div.product .woocommerce-product-gallery .flex-viewport { border-radius: 14px; }
+.single-product div.product .woocommerce-product-gallery { border: 1px solid #ecdcbc; border-radius: 16px; padding: 10px; background: #fff; box-shadow: 0 24px 50px -36px rgba(90,60,15,.45); }
+.single-product div.product .summary { padding: clamp(4px, 1vw, 12px) 0 0; }
+.single-product div.product .product_title { font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.1; margin-bottom: 8px; }
+.single-product div.product p.price { font-size: 1.6rem; color: #8a5f22; margin: 6px 0 14px; padding-bottom: 16px; border-bottom: 1px solid #efe3cb; }
+.single-product div.product .woocommerce-product-details__short-description { font-size: 15px; line-height: 1.7; color: #4a3a22; }
+.single-product div.product .stock { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: #eaf6ee; color: #1f7a45 !important; font-size: 12px; font-weight: 600; }
+.single-product div.product .stock::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #25a35a; }
+.single-product div.product form.cart { display: flex; gap: 10px; align-items: stretch; margin: 16px 0 10px; }
+.single-product div.product form.cart .quantity input.qty { height: 52px; width: 76px; border: 1px solid #e3cfa6; border-radius: 10px; background: #fffdf8; font-weight: 600; }
+.single-product div.product form.cart .single_add_to_cart_button { min-height: 52px; border-radius: 10px; letter-spacing: .14em; box-shadow: 0 10px 22px -14px rgba(110,70,15,.8); transition: transform .2s, box-shadow .2s, filter .2s; }
+.single-product div.product form.cart .single_add_to_cart_button:hover { transform: translateY(-1px); filter: brightness(1.05); box-shadow: 0 14px 26px -14px rgba(110,70,15,.9); }
+.pdp-wa { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; margin: 0 0 18px; border: 1.5px solid #25d366; border-radius: 10px; background: #f2fcf6; color: #126b39 !important; font: 600 13px/1 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .2s, transform .2s; }
+.pdp-wa:hover, .pdp-wa:focus-visible { background: #e2f8eb; transform: translateY(-1px); outline: none; }
+.single-product .product-assurance { display: none; }
+.pdp-trust { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.pdp-trust li { display: flex; align-items: center; gap: 10px; padding: 12px; border: 1px solid #efe3cb; border-radius: 12px; background: linear-gradient(180deg, #fffdf8, #fbf3e3); }
+.pdp-trust__ic { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1px solid #e3cfa6; color: #a77a35; }
+.pdp-trust strong { display: block; font-size: 13px; color: #2a2016; line-height: 1.25; }
+.pdp-trust small { display: block; font-size: 11.5px; color: #7a6a52; margin-top: 2px; }
+.single-product div.product .product_meta { font-size: 12.5px; color: #7a6a52; }
+.single-product .woocommerce-tabs { margin-top: clamp(32px, 5vw, 64px); padding: clamp(18px, 3vw, 32px); border: 1px solid #efe3cb; border-radius: 16px; background: #fffdf8; }
+.single-product .woocommerce-tabs ul.tabs { margin-bottom: 18px !important; }
+.single-product section.related.products { margin-top: clamp(40px, 6vw, 80px); padding: clamp(28px, 4vw, 48px) clamp(16px, 3vw, 32px); border-radius: 20px; background: linear-gradient(180deg, #fbf3e3 0%, #f6ead2 100%); border: 1px solid #ecdcbc; }
+.single-product section.related.products > h2 { text-align: center; font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 0 0 6px; }
+.single-product section.related.products > h2::after { content: ""; display: block; width: 56px; height: 2px; margin: 12px auto 26px; background: #c79244; }
+.single-product section.related.products ul.products li.product { background: #fff; border-radius: 14px; padding: 10px 10px 14px; border: 1px solid #efe3cb; transition: transform .2s, box-shadow .2s; }
+.single-product section.related.products ul.products li.product:hover { transform: translateY(-3px); box-shadow: 0 18px 32px -22px rgba(90,60,15,.55); }
+@media (max-width: 767px) {
+	.single-product div.product .woocommerce-product-gallery { padding: 6px; border-radius: 12px; }
+	.pdp-trust { grid-template-columns: 1fr 1fr; gap: 8px; }
+	.pdp-trust li { padding: 10px 8px; gap: 8px; }
+	.pdp-trust__ic { width: 34px; height: 34px; }
+	.pdp-trust strong { font-size: 12px; }
+	.pdp-trust small { font-size: 10.5px; }
+	.single-product div.product form.cart .quantity input.qty { width: 64px; }
+	.single-product section.related.products { padding: 24px 12px; border-radius: 16px; }
+}
