@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 2.4.0
+Version: 2.4.1
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -1992,7 +1992,7 @@ body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-he
 }
 
 /* ===== 2.4.0: floating Home button (drag it anywhere, tap to go home) ===== */
-.ayat-home-fab { position: fixed; left: 20px; bottom: 20px; z-index: 199; width: 60px; height: 60px; border-radius: 50%; text-decoration: none; touch-action: none; -webkit-tap-highlight-color: transparent; user-select: none; opacity: .92; transition: opacity .3s ease, transform .25s ease; animation: ayat-fab-in .6s cubic-bezier(.2,.8,.2,1) .4s backwards; }
+.ayat-home-fab { position: fixed; left: 20px; bottom: 20px; z-index: 199; width: 60px; height: 60px; border-radius: 50%; text-decoration: none; touch-action: none; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; opacity: .92; transition: opacity .3s ease, transform .25s ease; animation: ayat-fab-in .6s cubic-bezier(.2,.8,.2,1) .4s backwards; }
 .ayat-home-fab.is-snapping { transition: left .35s cubic-bezier(.2,.8,.2,1), top .35s cubic-bezier(.2,.8,.2,1), opacity .3s ease; }
 .ayat-home-fab.is-dragging { opacity: 1; transform: scale(1.08); transition: none; }
 .ayat-home-fab:hover, .ayat-home-fab:focus-visible { opacity: 1; transform: translateY(-2px); outline: none; }
@@ -2007,5 +2007,6 @@ body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-he
 @keyframes ayat-fab-spin { to { transform: rotate(360deg); } }
 @keyframes ayat-fab-in { from { opacity: 0; transform: scale(.4) rotate(-90deg); } to { opacity: .92; transform: none; } }
 @media (max-width: 767px) { .ayat-home-fab { left: 14px; bottom: 14px; width: 54px; height: 54px; } .ayat-home-fab__txt { font-size: 8px; } }
-@media (prefers-reduced-motion: reduce) { .ayat-home-fab, .ayat-home-fab__ring, .ayat-home-fab::before { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .ayat-home-fab { animation: none; } .ayat-home-fab::before { animation-duration: 7s; } .ayat-home-fab__ring { animation: ayat-fab-glow 2.8s ease-in-out infinite; } }
+@keyframes ayat-fab-glow { 0%, 100% { opacity: .35; box-shadow: 0 0 0 0 rgba(199,146,68,0); } 50% { opacity: 1; box-shadow: 0 0 14px 2px rgba(199,146,68,.55); } }
 @media print { .ayat-home-fab { display: none; } }

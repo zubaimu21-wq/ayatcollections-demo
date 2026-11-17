@@ -244,12 +244,14 @@
 		place(p.side === 'r' ? W - s - M - 2 : M + 2, clamp(p.y * H, M + 60, H - s - M));
 	}
 	restore();
+	fab.addEventListener('dragstart', function (e) { e.preventDefault(); });
 	addEventListener('resize', function () { if (fab.style.top) snap(false); });
 	fab.addEventListener('pointerdown', function (e) {
 		if (e.button) return;
 		var r = fab.getBoundingClientRect();
 		start = { x: e.clientX, y: e.clientY, dx: e.clientX - r.left, dy: e.clientY - r.top, id: e.pointerId };
 		moved = false;
+		if (e.pointerType === 'mouse') e.preventDefault();
 	});
 	fab.addEventListener('pointermove', function (e) {
 		if (!start || e.pointerId !== start.id) return;
