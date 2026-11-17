@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.4.2
+Version: 3.4.3
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2328,3 +2328,8 @@ body .site-footer .site-footer__social { justify-content: center; gap: 12px; mar
 	#collections .cat-rounds__name { font-size: clamp(.85rem, .9vw, 1rem); overflow-wrap: anywhere; }
 }
 @media (min-width: 1100px) { #collections .cat-rounds__link { width: 100%; display: flex; flex-direction: column; align-items: center; } }
+@media (min-width: 1100px) {
+	#collections .cat-rounds { gap: clamp(10px, 1.2vw, 22px); }
+	#collections .cat-rounds > li { padding: 0; }
+	#collections .cat-rounds__img { width: min(calc(100% - 14px), 124px); }
+}
