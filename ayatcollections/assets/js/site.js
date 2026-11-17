@@ -315,3 +315,21 @@
 	addEventListener('scroll', check, { passive: true });
 	check();
 })();
+
+/* Banner safety net: 1.8s after a banner becomes active, show it fully even if the browser paused the CSS animation. */
+(function () {
+	var slides = document.querySelectorAll('.ayat-slide--banner');
+	if (!slides.length || !window.MutationObserver) return;
+	function arm(sl) {
+		clearTimeout(sl._shownT);
+		sl.classList.remove('is-shown');
+		if (sl.classList.contains('is-active')) sl._shownT = setTimeout(function () { sl.classList.add('is-shown'); }, 1800);
+	}
+	var mo = new MutationObserver(function (list) {
+		list.forEach(function (m) {
+			var sl = m.target, act = sl.classList.contains('is-active');
+			if (act !== !!sl._wasActive) { sl._wasActive = act; arm(sl); }
+		});
+	});
+	slides.forEach(function (sl) { sl._wasActive = sl.classList.contains('is-active'); arm(sl); mo.observe(sl, { attributes: true, attributeFilter: ['class'] }); });
+})();
