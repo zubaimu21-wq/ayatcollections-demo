@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AYAT_VERSION', '3.2.3' );
+define( 'AYAT_VERSION', '3.2.4' );
 define( 'AYAT_DIR', get_template_directory() );
 define( 'AYAT_URI', get_template_directory_uri() );
 
