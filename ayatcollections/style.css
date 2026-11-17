@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 3.5.0
+Version: 3.6.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2346,3 +2346,32 @@ body .site-footer .site-footer__social { justify-content: center; gap: 12px; mar
 .ayat-banner__shine::before { content: ""; position: absolute; top: -10%; bottom: -10%; left: -30%; width: 22%; background: linear-gradient(100deg, transparent 0%, rgba(255,240,205,.0) 20%, rgba(255,236,190,.55) 50%, rgba(255,240,205,0) 80%, transparent 100%); transform: skewX(-18deg); opacity: 0; }
 .ayat-slide--banner.is-active .ayat-banner__shine::before { animation: ayat-banner-shine 1.6s ease-in-out .9s both; }
 @keyframes ayat-banner-shine { 0% { left: -30%; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { left: 120%; opacity: 0; } }
+
+/* ===== 3.6.0: one consistent text style on every banner ===== */
+.ayat-banner__copy { position: absolute; z-index: 2; left: 5.5%; top: 50%; transform: translateY(-50%); width: 31%; display: flex; flex-direction: column; align-items: flex-start; gap: clamp(4px, .7vw, 12px); color: #1d1610; text-align: left; pointer-events: none; }
+.ayat-banner__brand { font: 500 clamp(14px, 2.1vw, 36px)/1 var(--font-serif); letter-spacing: .14em; color: #b07f35; margin-bottom: clamp(2px, .5vw, 10px); }
+.ayat-banner__brand small { display: block; margin-top: 6px; font: 600 clamp(7px, .55vw, 10px)/1 var(--font-sans); letter-spacing: .32em; text-transform: uppercase; color: #6b5a40; }
+.ayat-banner__kicker { display: inline-flex; align-items: center; gap: 8px; font: 600 clamp(9px, .75vw, 13px)/1 var(--font-sans); letter-spacing: .24em; text-transform: uppercase; color: #8a5f22; }
+.ayat-banner__kicker::before { content: ""; width: clamp(14px, 1.6vw, 28px); height: 1px; background: #c79244; }
+.ayat-banner__title { font: 400 clamp(17px, 3.3vw, 58px)/1.08 var(--font-serif); color: #1d1610; letter-spacing: -.005em; }
+.ayat-banner__line { width: clamp(28px, 3.4vw, 64px); height: 2px; background: linear-gradient(90deg, #c79244, #e9c987); border-radius: 2px; }
+.ayat-banner__btn { pointer-events: auto; display: inline-flex; align-items: center; gap: 8px; margin-top: clamp(2px, .4vw, 8px); padding: clamp(7px, .75vw, 13px) clamp(12px, 1.5vw, 26px); border-radius: 999px; background: #1d1610; color: #f3d9a4; font: 600 clamp(9px, .8vw, 13px)/1 var(--font-sans); letter-spacing: .16em; text-transform: uppercase; box-shadow: 0 10px 22px -14px rgba(0,0,0,.7); transition: background .2s, color .2s, transform .2s; }
+.ayat-banner:hover .ayat-banner__btn { background: #c79244; color: #fff; transform: translateX(3px); }
+.ayat-banner__copy > * { opacity: 0; transform: translateY(14px); }
+.ayat-slide--banner.is-active .ayat-banner__copy > * { animation: ayat-copy-in .7s cubic-bezier(.22,.8,.2,1) both; }
+.ayat-slide--banner.is-active .ayat-banner__copy > :nth-child(1) { animation-delay: .35s; }
+.ayat-slide--banner.is-active .ayat-banner__copy > :nth-child(2) { animation-delay: .5s; }
+.ayat-slide--banner.is-active .ayat-banner__copy > :nth-child(3) { animation-delay: .65s; }
+.ayat-slide--banner.is-active .ayat-banner__copy > :nth-child(4) { animation-delay: .8s; }
+.ayat-slide--banner.is-active .ayat-banner__copy > :nth-child(5) { animation-delay: .95s; }
+.ayat-slide--banner.is-active .ayat-banner__line { animation-name: ayat-line-in; }
+@keyframes ayat-copy-in { to { opacity: 1; transform: none; } }
+@keyframes ayat-line-in { from { opacity: 0; transform: none; width: 0; } to { opacity: 1; transform: none; } }
+@media (max-width: 767px) {
+	.ayat-banner__copy { left: 4.5%; width: 36%; gap: 4px; }
+	.ayat-banner__brand, .ayat-banner__line { display: none; }
+	.ayat-banner__title { font-size: clamp(14px, 4.4vw, 22px); line-height: 1.12; }
+	.ayat-banner__kicker { font-size: 8.5px; letter-spacing: .16em; gap: 5px; }
+	.ayat-banner__kicker::before { width: 10px; }
+	.ayat-banner__btn { padding: 6px 10px; font-size: 8.5px; letter-spacing: .1em; gap: 4px; }
+}

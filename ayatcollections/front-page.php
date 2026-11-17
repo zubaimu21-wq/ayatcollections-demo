@@ -79,6 +79,20 @@ if ( function_exists( 'wc_get_product' ) ) {
 							);
 						}
 						?>
+						<?php
+						$b_title  = trim( (string) ayat_home( 'banner' . $s . '_title' ) );
+						$b_kicker = trim( (string) ayat_home( 'banner' . $s . '_kicker' ) );
+						$b_btn    = trim( (string) ayat_home( 'banner' . $s . '_btn' ) );
+						if ( '' !== $b_title ) :
+							?>
+							<span class="ayat-banner__copy">
+								<span class="ayat-banner__brand" aria-hidden="true">SHAYA<small><?php esc_html_e( 'By Aayat Collections', 'ayatcollections' ); ?></small></span>
+								<?php if ( $b_kicker ) : ?><span class="ayat-banner__kicker"><?php echo esc_html( $b_kicker ); ?></span><?php endif; ?>
+								<span class="ayat-banner__title"><?php echo esc_html( $b_title ); ?></span>
+								<span class="ayat-banner__line" aria-hidden="true"></span>
+								<?php if ( $b_btn ) : ?><span class="ayat-banner__btn"><?php echo esc_html( $b_btn ); ?> <span aria-hidden="true">&rarr;</span></span><?php endif; ?>
+							</span>
+						<?php endif; ?>
 						<span class="ayat-banner__shine" aria-hidden="true"></span>
 					</a>
 				</div>

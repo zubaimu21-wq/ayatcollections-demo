@@ -154,41 +154,6 @@
     "background": "AI model image, not a real person"
   },
   {
-    "file": "demo-banner-colour.webp",
-    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
-    "url": "",
-    "license": "Owned by the store",
-    "background": "Brand banner"
-  },
-  {
-    "file": "demo-banner-hoops.webp",
-    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
-    "url": "",
-    "license": "Owned by the store",
-    "background": "Brand banner"
-  },
-  {
-    "file": "demo-banner-details.webp",
-    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
-    "url": "",
-    "license": "Owned by the store",
-    "background": "Brand banner"
-  },
-  {
-    "file": "demo-banner-shine.webp",
-    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
-    "url": "",
-    "license": "Owned by the store",
-    "background": "Brand banner"
-  },
-  {
-    "file": "demo-banner-move.webp",
-    "photographer": "Supplied by the store (SHAYA by Aayat Collections)",
-    "url": "",
-    "license": "Owned by the store",
-    "background": "Brand banner"
-  },
-  {
     "file": "demo-cat-earrings.webp",
     "photographer": "AI-generated (Figma AI image generation)",
     "url": "",
@@ -397,5 +362,40 @@
     "url": "",
     "license": "Generated for this store",
     "background": "AI styled jewellery photo"
+  },
+  {
+    "file": "demo-banner-move-clean.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections), text removed",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-details-clean.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections), text removed",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-colour-clean.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections), text removed",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-shine-clean.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections), text removed",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
+  },
+  {
+    "file": "demo-banner-hoops-clean.webp",
+    "photographer": "Supplied by the store (SHAYA by Aayat Collections), text removed",
+    "url": "",
+    "license": "Owned by the store",
+    "background": "Brand banner"
   }
 ]
