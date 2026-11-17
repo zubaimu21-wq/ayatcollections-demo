@@ -48,6 +48,9 @@ function ayat_rv_stats( $product_id ) {
 	$bars = array( 5 => 0, 4 => 0, 3 => 0, 2 => 0, 1 => 0 );
 	$sum  = 0;
 	foreach ( ayat_rv_for_product( $product_id ) as $r ) {
+		if ( '0' === (string) get_post_meta( $r->ID, '_ayat_rating', true ) ) {
+			continue; // Customer message without a star rating.
+		}
 		$n = max( 1, min( 5, (int) get_post_meta( $r->ID, '_ayat_rating', true ) ) );
 		++$bars[ $n ];
 		$sum += $n;

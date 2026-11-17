@@ -75,8 +75,8 @@ add_action( 'add_meta_boxes', 'ayat_review_meta_box' );
  */
 function ayat_review_meta_box_html( $post ) {
 	wp_nonce_field( 'ayat_review_save', 'ayat_review_nonce' );
-	$rating  = (int) get_post_meta( $post->ID, '_ayat_rating', true );
-	$rating  = $rating ? $rating : 5;
+	$raw     = get_post_meta( $post->ID, '_ayat_rating', true );
+	$rating  = '' === $raw ? 5 : (int) $raw;
 	$source  = get_post_meta( $post->ID, '_ayat_source', true );
 	$product = (int) get_post_meta( $post->ID, '_ayat_product', true );
 	$link    = get_post_meta( $post->ID, '_ayat_link', true );
@@ -86,6 +86,7 @@ function ayat_review_meta_box_html( $post ) {
 			<?php for ( $i = 5; $i >= 1; $i-- ) : ?>
 				<option value="<?php echo esc_attr( $i ); ?>" <?php selected( $rating, $i ); ?>><?php echo esc_html( str_repeat( '★', $i ) ); ?></option>
 			<?php endfor; ?>
+			<option value="0" <?php selected( $rating, 0 ); ?>><?php esc_html_e( 'No stars – customer message', 'ayatcollections' ); ?></option>
 		</select></p>
 	<p><label for="ayat_source"><strong><?php esc_html_e( 'Where was it posted?', 'ayatcollections' ); ?></strong></label><br>
 		<select name="ayat_source" id="ayat_source">
@@ -118,7 +119,7 @@ function ayat_review_save( $post_id ) {
 	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( 'edit_post', $post_id ) ) {
 		return;
 	}
-	$rating = isset( $_POST['ayat_rating'] ) ? max( 1, min( 5, (int) $_POST['ayat_rating'] ) ) : 5;
+	$rating = isset( $_POST['ayat_rating'] ) ? max( 0, min( 5, (int) $_POST['ayat_rating'] ) ) : 5;
 	$source = isset( $_POST['ayat_source'] ) ? sanitize_text_field( wp_unslash( $_POST['ayat_source'] ) ) : 'Website';
 	update_post_meta( $post_id, '_ayat_rating', $rating );
 	update_post_meta( $post_id, '_ayat_source', in_array( $source, ayat_review_sources(), true ) ? $source : 'Website' );
@@ -152,7 +153,8 @@ add_filter( 'manage_ayat_review_posts_columns', 'ayat_review_columns' );
  */
 function ayat_review_column_value( $col, $post_id ) {
 	if ( 'ayat_rating' === $col ) {
-		echo esc_html( str_repeat( '★', (int) get_post_meta( $post_id, '_ayat_rating', true ) ) );
+		$col_r = (int) get_post_meta( $post_id, '_ayat_rating', true );
+		echo esc_html( $col_r ? str_repeat( '★', $col_r ) : __( 'Message', 'ayatcollections' ) );
 	} elseif ( 'ayat_source' === $col ) {
 		echo esc_html( get_post_meta( $post_id, '_ayat_source', true ) );
 		if ( get_post_meta( $post_id, '_ayat_sample', true ) ) {
@@ -194,15 +196,19 @@ function ayat_get_reviews( $product_id = 0, $limit = 6 ) {
 function ayat_render_reviews( $reviews, $show_product = true ) {
 	echo '<ul class="reviews-grid" role="list">';
 	foreach ( $reviews as $r ) {
-		$rating = (int) get_post_meta( $r->ID, '_ayat_rating', true );
-		$rating = $rating ? $rating : 5;
+		$raw    = get_post_meta( $r->ID, '_ayat_rating', true );
+		$rating = '' === $raw ? 5 : (int) $raw;
 		$source = get_post_meta( $r->ID, '_ayat_source', true );
 		$link   = get_post_meta( $r->ID, '_ayat_link', true );
 		$pid    = (int) get_post_meta( $r->ID, '_ayat_product', true );
 		$sample = get_post_meta( $r->ID, '_ayat_sample', true );
 		echo '<li class="review-card">';
 		/* translators: %d: star rating */
-		echo '<p class="review-card__stars" aria-label="' . esc_attr( sprintf( __( 'Rated %d out of 5', 'ayatcollections' ), $rating ) ) . '">' . esc_html( str_repeat( '★', $rating ) . str_repeat( '☆', 5 - $rating ) ) . '</p>';
+		if ( $rating ) {
+			echo '<p class="review-card__stars" aria-label="' . esc_attr( sprintf( __( 'Rated %d out of 5', 'ayatcollections' ), $rating ) ) . '">' . esc_html( str_repeat( '★', $rating ) . str_repeat( '☆', 5 - $rating ) ) . '</p>';
+		} else {
+			echo '<p class="review-card__msg"><span aria-hidden="true">&#10077;</span> ' . esc_html__( 'Customer message', 'ayatcollections' ) . '</p>';
+		}
 		echo '<blockquote class="review-card__text">' . wp_kses_post( wpautop( $r->post_content ) ) . '</blockquote>';
 		if ( has_post_thumbnail( $r ) ) {
 			echo '<div class="review-card__shot">' . get_the_post_thumbnail( $r, 'medium', array( 'loading' => 'lazy' ) ) . '</div>';
