@@ -3,7 +3,7 @@ Theme Name: Ayatcollections
 Theme URI: https://ayatcollections.com/
 Author: Ayatcollections
 Description: WooCommerce theme for SHAYA by Aayat Collections – gold-tone stainless steel jewellery. Banner carousel, category strip, order tracking, customer reviews, sale banner and WhatsApp order alerts.
-Version: 2.9.5
+Version: 3.0.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -2139,3 +2139,42 @@ body .jbox__replay { display: inline-flex; align-items: center; gap: 6px; min-he
 .header-util--wa:hover svg { color: #2fe57a; }
 .review-card__source svg { flex: none; }
 .review-card__source:has(svg) { gap: 6px; }
+
+/* ===== 3.0.0: professional header – logo left, search centre, actions right ===== */
+body .site-header--v3 { background: linear-gradient(180deg, #121110 0%, #0b0b0a 100%); border-bottom: 1px solid rgba(199,146,68,.45); box-shadow: 0 1px 0 rgba(255,255,255,.03) inset; transition: box-shadow .25s ease; }
+body .site-header--v3.is-scrolled { box-shadow: 0 10px 28px -14px rgba(0,0,0,.75); }
+body .site-header--v3 .site-header__inner--full { display: flex; align-items: center; gap: 10px; min-height: 92px; padding-inline: clamp(16px, 3vw, 48px); transition: min-height .25s ease; }
+body .site-header--v3.is-scrolled .site-header__inner--full { min-height: 72px; }
+.site-header--v3 .site-header__inner--full > .header-left, .site-header--v3 .site-header__inner--full > .header-actions { display: contents; }
+.site-header--v3 .menu-toggle { order: 1; }
+.site-header--v3 .site-header__inner--full > .site-branding { order: 2; grid-column: auto; justify-self: auto; margin: 0 clamp(8px, 2vw, 28px) 0 4px; }
+body .site-header--v3 .site-branding .site-logo img.site-logo__mark { height: 74px; transition: height .25s ease; }
+body .site-header--v3.is-scrolled .site-branding .site-logo img.site-logo__mark { height: 56px; }
+.site-header--v3 .header-searchbar { order: 3; flex: 1 1 auto; max-width: 560px; margin-inline: auto; }
+.site-header--v3 .header-util { order: 4; height: 42px; min-height: 42px; padding: 0 16px; border: 1px solid rgba(199,146,68,.35); background: rgba(255,255,255,.02); }
+.site-header--v3 .header-util--wa { order: 5; }
+.site-header--v3 .header-util:hover, .site-header--v3 .header-util:focus-visible { border-color: #c79244; background: rgba(199,146,68,.12); color: #fff; outline: none; }
+.site-header--v3 .search-toggle { order: 6; }
+.site-header--v3 .header-account { order: 7; margin-left: 6px; }
+.site-header--v3 .header-bag { order: 8; }
+.site-header--v3 .header-account::before { content: ""; position: absolute; left: -8px; top: 50%; width: 1px; height: 24px; transform: translateY(-50%); background: rgba(199,146,68,.35); }
+.site-header--v3 .header-account { position: relative; }
+.site-header--v3 .header-icon { width: 44px; height: 44px; border-radius: 50%; transition: background .2s, color .2s; }
+.site-header--v3 .header-icon:hover, .site-header--v3 .header-icon:focus-visible { background: rgba(199,146,68,.14); color: #f3d9a4; outline: none; }
+.site-header--v3 .header-searchbar input { height: 46px; }
+@media (max-width: 1180px) { .site-header--v3 .header-util__text { display: none; } .site-header--v3 .header-util { width: 42px; padding: 0; justify-content: center; } }
+@media (max-width: 900px) {
+	.site-header--v3 .header-searchbar { display: none; }
+	.site-header--v3 .site-header__inner--full > .site-branding { margin-right: auto; }
+}
+@media (max-width: 767px) {
+	body .site-header--v3 .site-header__inner--full { min-height: 68px; gap: 2px; padding-inline: 8px; }
+	body .site-header--v3.is-scrolled .site-header__inner--full { min-height: 60px; }
+	body .site-header--v3 .site-branding .site-logo img.site-logo__mark { height: 52px; }
+	body .site-header--v3.is-scrolled .site-branding .site-logo img.site-logo__mark { height: 44px; }
+	.site-header--v3 .header-util { border: 0; background: none; width: 40px; }
+	.site-header--v3 .header-util--wa { display: none; }
+	.site-header--v3 .header-icon { width: 40px; height: 40px; }
+	.site-header--v3 .header-account::before { display: none; }
+	.site-header--v3 .header-account { margin-left: 0; }
+}

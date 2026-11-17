@@ -305,3 +305,13 @@
 	box.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { go(i + 1); e.preventDefault(); } if (e.key === 'ArrowLeft') { go(i - 1); e.preventDefault(); } });
 	paint(); restart();
 })();
+
+/* Header: compact + shadow after scrolling. */
+(function () {
+	var h = document.querySelector('.site-header--v3');
+	if (!h) return;
+	var on = false;
+	function check() { var s = window.scrollY > 24; if (s !== on) { on = s; h.classList.toggle('is-scrolled', s); } }
+	addEventListener('scroll', check, { passive: true });
+	check();
+})();
