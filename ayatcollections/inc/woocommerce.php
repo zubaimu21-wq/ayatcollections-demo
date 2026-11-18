@@ -290,3 +290,36 @@ add_filter(
 	10,
 	2
 );
+
+/* ---------- Checkout fields for Pakistan ---------- */
+
+/**
+ * Postcode optional in Pakistan (most customers don't know it).
+ *
+ * @param array $locale Locales.
+ * @return array
+ */
+function ayat_pk_locale( $locale ) {
+	$locale['PK']['postcode']['required'] = false;
+	$locale['PK']['postcode']['hidden']   = false;
+	return $locale;
+}
+add_filter( 'woocommerce_get_country_locale', 'ayat_pk_locale' );
+
+/**
+ * Phone is required: Cash on Delivery and Easypaisa orders are confirmed by phone/WhatsApp.
+ * Works for the block checkout (option) and the classic checkout (field).
+ */
+add_filter( 'pre_option_woocommerce_checkout_phone_field', static fn() => 'required' );
+add_filter(
+	'woocommerce_billing_fields',
+	static function ( $fields ) {
+		if ( isset( $fields['billing_phone'] ) ) {
+			$fields['billing_phone']['required'] = true;
+		}
+		if ( isset( $fields['billing_postcode'] ) ) {
+			$fields['billing_postcode']['required'] = false;
+		}
+		return $fields;
+	}
+);
